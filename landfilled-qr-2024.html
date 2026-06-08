@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<!-- Built with sgtemplates v.1.0.0 (2021-05-12) -->
+<!-- https://github.com/DataScienceScotland/sgtemplates/ -->
+<html xmlns="https://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+          <meta name="generator" content="pandoc">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="shortcut icon" href="template_libs/sg/images/favicons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="template_libs/sg/images/favicons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="template_libs/sg/images/favicons/favicon-16x16.png" type="image/png" sizes="16x16">
+  
+  <link rel="apple-touch-icon" href="template_libs/sg/images/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="mask-icon" href="template_libs/sg/images/favicons/safari-pinned-tab.svg" color="#0065bd">
+  
+  <title></title>
+  
+  <!-- RStudio's default scripts and style sheets -->
+      <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+      <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+      <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+      <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+      <style>h1 {font-size: 34px;}
+             h1.title {font-size: 38px;}
+             h2 {font-size: 30px;}
+             h3 {font-size: 24px;}
+             h4 {font-size: 18px;}
+             h5 {font-size: 16px;}
+             h6 {font-size: 12px;}
+             code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+             pre:not([class]) { background-color: white }</style>
+      <script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+      <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+      <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+      <script src="site_libs/navigation-1.1/tabsets.js"></script>
+      <link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+      <script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+      <script src="site_libs/proj4js-2.3.15/proj4.js"></script>
+      <link href="site_libs/highcharts-9.3.1/css/motion.css" rel="stylesheet" />
+      <script src="site_libs/highcharts-9.3.1/highcharts.js"></script>
+      <script src="site_libs/highcharts-9.3.1/highcharts-3d.js"></script>
+      <script src="site_libs/highcharts-9.3.1/highcharts-more.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/stock.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/map.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/data.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/exporting.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/offline-exporting.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/drilldown.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/item-series.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/overlapping-datalabels.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/annotations.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/export-data.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/funnel.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/heatmap.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/treemap.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/sankey.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/dependency-wheel.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/organization.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/solid-gauge.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/streamgraph.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/sunburst.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/vector.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/wordcloud.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/xrange.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/tilemap.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/venn.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/gantt.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/timeline.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/parallel-coordinates.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/bullet.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/coloraxis.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/dumbbell.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/lollipop.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/series-label.js"></script>
+      <script src="site_libs/highcharts-9.3.1/plugins/motion.js"></script>
+      <script src="site_libs/highcharts-9.3.1/custom/reset.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/boost.js"></script>
+      <script src="site_libs/highchart-binding-0.9.4/highchart.js"></script>
+      <script src="site_libs/pattern-fill.js-9.3.1/pattern-fill.js"></script>
+      <link href="site_libs/panelset-0.3.0/panelset.css" rel="stylesheet" />
+      <script src="site_libs/panelset-0.3.0/panelset.js"></script>
+      <link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+      <script src="site_libs/datatables-binding-0.34.0/datatables.js"></script>
+      <link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet" />
+      <link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet" />
+      <script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+      <script src="site_libs/jszip-1.13.6/jszip.min.js"></script>
+      <script src="site_libs/pdfmake-1.13.6/pdfmake.js"></script>
+      <script src="site_libs/pdfmake-1.13.6/vfs_fonts.js"></script>
+      <link href="site_libs/dt-ext-buttons-1.13.6/css/buttons.dataTables.min.css" rel="stylesheet" />
+      <script src="site_libs/dt-ext-buttons-1.13.6/js/dataTables.buttons.min.js"></script>
+      <script src="site_libs/dt-ext-buttons-1.13.6/js/buttons.html5.min.js"></script>
+      <script src="site_libs/dt-ext-buttons-1.13.6/js/buttons.colVis.min.js"></script>
+      <script src="site_libs/dt-ext-buttons-1.13.6/js/buttons.print.min.js"></script>
+      <link href="site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet" />
+      <script src="site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+    
+  <!-- SG's style sheets -->
+  <!-- Style sheets are broken up into separate files, where possible, to make them easier for users to change -->
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/design-system-base.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/design-system-fixes.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/layout.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/navbar.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/navbar-full.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/navbar-mobile.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/print.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/toc.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/tocify.css">
+  
+    
+  <!-- User style sheets -->
+    
+    
+  
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Ferrett, Peter</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">4489500.00000000</mso:Order>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:SharedWithUsers msdt:dt="string"></mso:SharedWithUsers>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Ferrett, Peter</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:ContentTypeId msdt:dt="string">0x010100D4A211F6D815FC43BD5F92C607DE9A2C</mso:ContentTypeId>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body class="article layout--component">
+  
+  <div class="ds_page">
+    
+    <!-- Page top section -->
+    <!-- Contains: Notifications; header; navigation elements (except breadcrumbs) -->
+    <div class="ds_page__top">
+      
+      <!-- Header -->
+      <header class="ds_site-header ds_site-header--gradient" role="banner">
+        <span id="page-top"></span>
+        
+        <!-- Site branding -->
+        <div class="ds_site-header__top">
+          <div class="ds_wrapper">
+            <div class="ds_site-header__content">
+              <div class="ds_site-branding">
+                <a class="ds_site-branding__logo ds_site-branding__link" href="/">
+                  <img class="ds_site-branding__logo-image" src="template_libs/sg/images/logos/scottish-government.svg" alt="Scottish Government logo" />
+                </a>
+                <div class="ds_site-branding__title">
+                                      <img src="sepa-logo.png" width="250" alt="sepa-logo" />
+                                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Phase banner -->
+                
+        <!-- Elements included before the body -->
+        <!-- Includes Bootstrap / default RStudio navbar -->
+                  <div class="ds_wrapper">
+                          
+                          <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+                            <div class="container">
+                              <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="index.html">waste-stats-navbar</a>
+                              </div>
+                              <div id="navbar" class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav">
+                                  <li>
+                            <a href="index.html">Home</a>
+                          </li>
+                          <li>
+                            <a href="wfas.html">Waste from all sources</a>
+                          </li>
+                          <li>
+                            <a href="household.html">Household</a>
+                          </li>
+                          <li>
+                            <a href="landfilled.html">Landfill</a>
+                          </li>
+                          <li>
+                            <a href="incinerated.html">Incineration</a>
+                          </li>
+                                </ul>
+                                <ul class="nav navbar-nav navbar-right">
+                                  
+                                </ul>
+                              </div><!--/.nav-collapse -->
+                            </div><!--/.container -->
+                          </div><!--/.navbar -->
+                      </div>
+                
+      </header>
+      
+      
+    </div>
+    
+    <!-- Page middle section -->
+    <!-- Contains breadcrumbs, table of contents, body, and main content -->
+    <div class="ds_page__middle">
+      <div id="body-wrapper" class="body-wrapper">
+        
+        <!-- Breadcrumbs -->
+                
+        <!-- Main content -->
+        <div class="ds_wrapper">
+          <!-- Elements within main-content are arranged according to the grid layout -->
+          <main id="main-content" class="ds_layout ds_layout--pl-component">
+            
+            <!-- Sidebar -->
+            <!-- Contains automatically-generated table of contents -->
+            <div class="ds_layout__sidebar">
+              <nav class="ds_side-navigation" aria-label="Sections" data-module="ds-side-navigation">
+                                  <div id="TOC" class="tocify"></div>
+                              </nav>
+            </div>
+            
+            <!-- Main body header -->
+                          <div class="ds_layout__header">
+                <header class="heading">
+                  <div class="ds_page-header">
+                                          <span class="ds_page-header__label ds_content-label">Report</span>
+                                        <h1 class="ds_page-header__title title toc-ignore">Quality Report for Waste Landfilled in Scotland 2024</h1>
+                                        <dl class="ds_page-header__metadata ds_metadata">
+                                                                </dl>
+                  </div>
+                </header>
+              </div>
+                        
+            <!-- Main body content -->
+            <div class="ds_layout__content toc-content">
+                            <style type="text/css">
+
+                            .tocify {
+                                color: rgb(0,101,189);
+                            }
+
+
+                            .tocify .tocify-item a, .tocify .list-group-item {
+                                /* padding: 5px; */
+                                padding: 5px;
+                                padding-top: 0px;
+                                padding-bottom: 0px;
+                                line-height: 18px;
+                                margin-top: 8px;
+                                margin-bottom: 8px;
+                            }
+
+                            .tocify-item .active{
+                              /*color: black;*/
+                              background-color: #d9effc;
+                            }
+
+                            .tocify-item.active, .tocify-item.active:focus, .tocify-item.active:hover {
+                                z-index: 2;
+                                 color: rgb(0,101,189);
+                                background-color: #d9effc;
+                                border-color: #d9effc;
+                                
+                            }
+
+
+                            }
+                            .tocify-subheader > .tocify-item {
+                              text-indent: initial;
+                              padding-left: 2em;
+
+                            }
+
+                            .tocify-header > .tocify-item {
+                              text-indent: initial;
+                              padding-left: 6px;
+
+                            }
+
+                            <!important-- remove the large white space between end of page and the footnotes -->
+                            .tocify-extend-page {
+                              height: 0px !important;
+                            }
+
+
+                            .exporting_chart_class .highcharts-background {
+                              fill: white;
+                              background-color: white;
+                              
+                            }
+
+
+
+                            .footnotes.footnotes-end-of-document{
+                              margin-left: 24px;
+                              margin-right: 24px;
+                              
+                            }
+
+                            /* Generic css styles */
+
+                            .mt-6 {  margin-top: 6px; }
+                            .mt-3 {  margin-top: 3px;}
+                            .mb-3 {  margin-bottom: 3px;}
+                            .mb-6 {  margin-bottom: 6px;}
+
+
+                            .highcharts-container {
+                              margin: 0 auto;
+                            }
+
+                            /*
+                            these remove padding from the toc, and make it sticky
+                            combination of both make it possible to see long menu's 
+                            on most screens
+                            */
+                            .ds_side-navigation {
+                            position: sticky;
+                            top: 10px;
+                            }
+
+                            nav.ds_side-navigation ul > li > a
+                            {
+
+                            padding: 0px;
+                            padding-top: 3px;
+                            padding-bottom: 3px;
+                            }
+
+                            @media only screen and (max-height: 800px) {
+                             nav.ds_side-navigation ul > li > a
+                            {
+
+                            padding: 0px;
+
+                            }
+                            }
+
+
+
+                            /* styles for captins */
+
+                            .df-caption {
+                            /*color: darkgrey; */
+                            display: flex;
+                            margin-top: 12px;
+                            margin-bottom: -12px;
+                            }
+
+
+
+                            .df-caption>div {
+                            display: inline-block;
+                            }
+                            .df-caption .df-prefix {
+                            font-weight: bold;
+                            }
+
+                            .df-fig { }
+
+                            .df-tab { }
+
+
+                            table.table-sites-input tr:nth-child(3),
+                            table.table-sites-input tr:nth-child(6){
+                              font-weight: bold;
+                             
+                            }
+
+                            table.table-sites-input tr:nth-child(3) td:nth-child(1), 
+                            table.table-sites-input tr:nth-child(6) td:nth-child(1){
+                              padding-left: 24px;
+                            }
+
+
+
+                            /*
+                            indicator triangles for collapsible paragraphs
+                            the markup must be in format
+                            <details>
+                            <summary><div class="indicator"></div>Summary text here</summary>
+
+                            Details here
+
+                            </details>
+
+                            */
+
+
+                            details summary div.indicator  {
+                            display: inline-block;
+                              width: 0; 
+                              height: 0; 
+                              border-top: 6px solid transparent;
+                              border-bottom: 6px solid transparent;
+                              border-left: 6px solid black;
+                            }
+
+                            details[open] summary div.indicator  {
+
+                               width: 0; 
+                              height: 0; 
+                              border-left: 6px solid transparent;
+                              border-right: 6px solid transparent;
+                              border-top: 6px solid black;
+                            }
+
+
+
+
+                             
+                             
+                             
+                             h2 {
+                            margin-top: 24px !important;
+                            }
+
+
+
+                             tbody .waste-cat {
+                               /* font-weight: bold; */
+                                white-space: nowrap;
+                            }
+
+                             tbody .ewc-col{
+                               /* font-weight: bold; */
+                                white-space: nowrap !important;
+                              
+
+                            }
+
+
+
+                            .dt-summary-table thead th:nth-child(10),
+                            .dt-summary-table tbody tr td:nth-child(10),
+                            .dt-summary-table tfoot tr th:nth-child(10)
+                            {
+                              background-color: #eff3f6;
+                            }
+
+
+                            .dt-key-figures {
+                            font-size: 14px;
+                            }
+
+                            .dt-key-figures td {
+                            line-height: 20px ;
+                            padding-top: 0px !important;
+                            padding-bottom: 0px !important;
+                            }
+
+                            .dt-key-figures  .no-data {
+                            font-style: italic;
+                            color: gray;
+                            }
+
+
+                            .targ-line {
+                            height: 18px;
+                            }
+
+                            .dataTable td.year {
+                            font-weight: bold;
+                            }
+
+                            /* .dataTable.missing, .dataTable.missing2 */
+                            .dataTable.row-missing-2020,
+                            .dataTable.row-missing-20192020,
+                            .dataTable.row-missing-qr-sites {
+                             table-layout:  fixed; /* needs to be fixed for td width to work */
+                            }
+
+                            .dataTable.row-missing-2020 td.year,
+                            .dataTable.row-missing-20192020  td.year,
+                            .dataTable.row-missing-qr-sites td.year {
+                                overflow:  visible; /* so missing text overlaps adjacent cells */
+                                width: 25px;
+                                white-space: nowrap;
+
+                            }
+
+                            .dataTable.row-missing-2020 tr:nth-child(10) td,
+                            .dataTable.row-missing-20192020  tr:nth-child(9) td,
+                            .dataTable.row-missing-qr-sites  tr:nth-child(3) td {
+                                color:  gray;
+                                font-style: italic;
+                                font-weight: 200;
+                            }
+
+
+                            .dataTable.row-missing-20192020 tr:nth-child(9) td:nth-child(1):before,
+                            .dataTable.row-missing-qr-sites tr:nth-child(3) td:nth-child(1):before
+                            {
+                              
+                              content: "\00a0\00a0 2019 and 2020 data unavailable"; 
+                              
+                            }
+
+
+                            .dataTable.row-missing-2020 tr:nth-child(10) td:nth-child(1):before {
+                              content: "\00a0\00a0 2020 data unavailable"; 
+                              
+                            }
+
+
+
+
+                            .dataTable .total {
+                            font-weight: bold;
+                            }
+
+
+                            /* the 'col-miss' classes are where the years are in columns and 2019/2020 or 2020 are missing /
+
+                            .dataTable.col-missing2020 td.waste-cat,
+                            .dataTable.col-missing20192020 td.waste-cat {
+                                max-width: 300px;
+                                text-overflow: ellipsis;
+                                width:  200px;
+                                overflow: hidden;
+                            }
+
+                            .dataTable.col-missing2020 td.waste-cat,
+                            .dataTable.col-missing20192020 td.waste-cat:hover {
+                                overflow: visible;
+                                white-space: normal;
+                                height:auto;  /* just added this line */
+                            };
+
+
+                            .dataTable.col-missing2020 td.missing-col ,
+                            .dataTable.col-missing20192020 td.missing-col {
+                              width: 25px;
+                            }
+
+                            .dataTable.col-missing2020 td.missing-col ,
+                            .dataTable.col-missing20192020 td.missing-col {
+                              max-width: 25px;
+                              width: 18px;
+                            }
+
+                            .dataTable.col-missing2020 tr:nth-child(1) td.missing-col::after {
+                              
+                              content: "2020 data unavailable";
+                            }
+
+                            .dataTable.col-missing20192020 tr:nth-child(1) td.missing-col::after {
+                               content: "2019 and 2020 data unavailable";
+                            }
+
+                            .dataTable.col-missing2020 tr:nth-child(1) td.missing-col::after,
+                            .dataTable.col-missing20192020 tr:nth-child(1) td.missing-col::after {
+                                display: inline-block;
+                                transform: rotate(90deg) translate(-8px, -30px);
+                                font-size: 16px;
+                                color: cornflowerblue;
+                                overflow: visible;
+                                white-space: nowrap;
+                                transform-origin: 0 0;
+                                font-style: italic;
+                                font-weight: lighter;
+                                background-color: white;
+                                padding: 2px 12px 2px 12px;
+                                border-bottom: 1px solid cornflowerblue;
+                                border-top: 1px solid cornflowerblue;
+                                font-palette: light;
+                            };
+
+                            </style>
+                            <style type="text/css">
+
+                            h2 {
+                            margin-top: 24px !important;
+                            }
+
+
+                            .caption-notes {
+                            /*width: 80%;*/
+                            margin-top: 6px;
+                            margin-left: auto;
+                            margin-right: auto;
+                            background-color: #f3f3f3;
+                            }
+
+
+                             td.waste-cat
+                            {
+                               /* font-weight: bold; */
+                                white-space: nowrap;
+                            }
+                            </style>
+                            <style type="text/css">
+
+                            /* this is to make very large TOC's scrollable
+                            see  https://stackoverflow.com/questions/67877935/how-to-make-a-table-of-contents-that-can-be-scrolled-manually-in-rmarkdown */
+
+                            </style>
+                            <p><strong>An Official Statistics Publication for Scotland</strong></p>
+                            <p><b>Published on 28th October 2025 9:30 AM</b></p>
+                            <div id="introduction" class="section level2">
+                            <h2>Introduction</h2>
+                            <p>This report describes the methodologies used to produce summary data on waste landfilled in Scotland for the 2024 calendar year. The report should be used alongside the 2024 <a href="landfilled.html">Waste landfilled in Scotland official statistics commentary document</a>.</p>
+                            <p>The 2024 data are presented as follows:</p>
+                            <ul>
+                            <li><p>The Waste landfilled in Scotland and associated data tables are presented in an online commentary document. This describes the major trends and provides an interpretation of the data.</p></li>
+                            <li><p>Scotland’s Environment Waste Discover Data tool presents the waste from all sources (WFAS) data in an interactive and visual format and is found on <a href="https://informatics.sepa.org.uk/WasteAllSources/">Scotland’s Environment web</a>. This tool covers the total waste managed, whether it be waste from households, waste from construction and demolition, or waste from commerce and industry. It includes the waste landfilled in Scotland dataset.</p></li>
+                            </ul>
+                            <p>The WFAS Discover tool is updated once yearly, in about March, when all data for Scottish waste generated and managed, of which waste landfilled in and outwith Scotland is a subset, becomes available. The waste landfilled in Scotland statistics are released about six months before the annual update of the WFAS Discover tool. This is because the landfill data comes primarily from one discrete dataset and, in line with the <a href="https://code.statisticsauthority.gov.uk/the-code/trustworthiness/t3-orderly-release/">Code of Practice for Statistics</a> which provides that statistics should be released as soon as they are considered ready, can be prepared and published earlier than the WFAS.</p>
+                            <p><a href="#lbl-appendix1">Appendix 1</a> provides a summary of the coding of waste using the European Waste Catalogue (EWC) and European Waste Catalogue for Statistics (EWC-Stat), which are used throughout this document. Appendix 2 also provides a table of EWC codes that comprise municipal waste, for the purpose of reporting biodegradable municipal waste landfilled.</p>
+                            <p><a href="#lbl-appendix2">Appendix 2</a> provides a glossary of terms.</p>
+                            <p><a href="#lbl-appendix3">Appendix 3</a> provides a list of acronyms.</p>
+                            <div id="revisions-policy" class="section level3">
+                            <h3>Revisions Policy</h3>
+                            <p>Revisions could occur for various reasons, including when data from third parties are unavailable or provisional at the time of publishing or if there are subsequent methodological improvements or refinements. The figures are accurate at the time of publication. However, the data may be updated if further revisions are necessary. Normally these revisions will be published concurrent with the next release. Where there have been changes in methodology for the waste data tables, the complete dataset is revised for all years to ensure that comparisons between years are valid.</p>
+                            </div>
+                            </div>
+                            <div id="reporting" class="section level2">
+                            <h2>Reporting</h2>
+                            <p>This section describes how we report waste landfilled in Scotland. A list of Scottish landfill sites is maintained quarterly. In 2024, there were 39 operational landfill sites in Scotland.</p>
+                            <p>The number of landfill sites that are actively disposing of waste to landfill varies from year to year. The number of active landfill sites has decreased steadily between 2005 and 2024, consistent with a decrease in waste landfilled from 7.1 million tonnes in 2005 to 1.8 million tonnes in 2024.</p>
+                            <p>Individual PPC permitted sites submit quarterly licensed/permitted waste site returns (waste data returns) to SEPA via email or post. In 2024, 39 of these were operational landfill sites. The return form submitted by authorised sites consists of Table B (Waste inputs to site), Table C (Waste treated on-site), Table C4 (Waste landfilled or incinerated after treatment on-site – landfill or incineration sites only) and Table D (Waste sent off-site). A copy of the return form can be downloaded from the <a href="https://www.sepa.org.uk/environment/waste/waste-data/guidance-and-forms-for-operators/">SEPA website</a>.</p>
+                            <p>Data on waste disposed to landfill in Scotland were taken from the waste data returns dataset which is managed and checked by SEPA. Data submissions were collected, processed and checked by SEPA staff with the assistance of various automation and visualisation tools. SEPA carried out quality assurance of the dataset by comparing individual site data with previous quarters/years, reviewing the consistency of EWC codes with the description of waste provided by the operator, and checking for missing data.</p>
+                            <p>The quantity of waste landfilled is measured as the total tonnage of waste reported in Tables B and C4 of the return form with the management method of LF (landfilled). Waste data are supplied in the return form as EWC codes which are aggregated into final EWC-Stat reporting categories. Waste type descriptions are separated into non-hazardous/hazardous using EWC codes.</p>
+                            </div>
+                            <div id="lbl-appendix1" class="section level2">
+                            <h2>Appendix 1</h2>
+                            <div id="european-waste-catalogue" class="section level3">
+                            <h3>European Waste Catalogue</h3>
+                            <p>Throughout this document reference is made to both the European Waste Catalogue (EWC) list of wastes and European Waste Catalogue for Statistics (EWC-Stat). A brief explanation of each is given below, along with links to further information.</p>
+                            </div>
+                            <div id="european-waste-catalogue-list-of-waste-ewc-2000" class="section level3">
+                            <h3>European Waste Catalogue List of Waste (EWC 2000)</h3>
+                            <p>The <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32014D0955">EWC 2000</a> is a harmonised, non-exhaustive list of waste types established by the European Commission (2000/532/EC) as amended in 2015 (<a href="https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32014D0955">2014/955/EU</a>). The list is used to categorise wastes based on a combination of what they are, and the process or activity that
+                            produces them.</p>
+                            <p>The list is divided into 20 chapters, most of which are industry-based, although some are based on materials and processes. Each chapter is represented by a two-digit code between 01 and 20 and comprises one or more sub-chapters. Individual waste types are detailed in the sub-chapters and are assigned a six-digit code that comprises two digits for the chapter, two for the sub-chapter and two to the waste type.</p>
+                            <p>Hazardous wastes are designated by entries where the EWC code is terminated by an asterisk (*).</p>
+                            <p>The use of EWC codes to describe waste on waste transfer notes in Scotland has been statutory since April 2004. Most statutory waste data returns received by SEPA, including licensed/permitted site returns, exempt activity returns, and special waste consignment notes require waste to be classified according to the EWC 2000 (as amended).</p>
+                            </div>
+                            <div id="european-waste-catalogue-for-statistics-ewc-stat" class="section level3">
+                            <h3>European Waste Catalogue for Statistics (EWC-Stat)</h3>
+                            <p>The EWC-Stat is a (mainly) substance-oriented statistical classification of waste established by the European Commission (2004/574/EC). The EWC-Stat contains thirteen categories, each represented by a two-digit code between 01 and 13. These are sub-divided into individual waste types.</p>
+                            <p>A <a href="https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2010:253:0002:0041:EN:PDF">table of equivalence</a> allows wastes coded in the EWC 2000 (as amended) to convert into the EWC-Stat. However, because of the way the coding system operates, it is not possible to do the reverse conversion.</p>
+                            </div>
+                            <div id="ewc-codes-which-comprise-municipal-waste-and-biodegradability-factors" class="section level3">
+                            <h3>EWC codes which comprise Municipal Waste and biodegradability factors</h3>
+                            <div id="table-BMW-bio-qr" class="df-caption df-tab">
+                            <div class="df-prefix">
+                            Table 1. 
+                            </div>
+                            <div class="df-caption-text">
+                            The biodegradability of the European Waste Catalogue (EWC) codes that are counted as Municipal Waste.
+                            </div>
+                            </div>
+                            <p><br></p>
+                            <div class="datatables html-widget html-fill-item" id="htmlwidget-2ec4e27a5b65dac34dfc" style="width:100%;height:auto;"></div>
+                            <script type="application/json" data-for="htmlwidget-2ec4e27a5b65dac34dfc">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["20 01 01 ","20 01 02 ","20 01 08 ","20 01 10 ","20 01 11 ","20 01 13* ","20 01 14* ","20 01 15* ","20 01 17* ","20 01 19* ","20 01 21* ","20 01 23* ","20 01 25 ","20 01 26* ","20 01 27* ","20 01 28 ","20 01 29* ","20 01 30 ","20 01 31* ","20 01 32 ","20 01 33* ","20 01 34 ","20 01 35* ","20 01 36 ","20 01 37* ","20 01 38 ","20 01 39 ","20 01 40 ","20 01 41 ","20 01 99 ","20 02 01 ","20 02 02 ","20 02 03 ","20 03 01 ","20 03 02 ","20 03 03 ","20 03 04 ","20 03 06 ","20 03 07 ","20 03 99 ","19 01 02 ","19 01 11* ","19 01 12 ","19 01 13* ","19 01 14 ","19 01 15* ","19 01 16 ","19 01 17* ","19 01 18 ","19 01 99 ","19 04 01 ","19 04 02* ","19 04 03* ","19 04 04 ","19 05 01 ","19 05 03 ","19 06 03 ","19 06 04 ","19 06 05 ","19 06 06 ","19 12 01 ","19 12 02 ","19 12 03 ","19 12 04 ","19 12 05 ","19 12 06* ","19 12 07 ","19 12 08 ","19 12 09 ","19 12 10 ","19 12 11* ","19 12 12 ","15 01 01 ","15 01 02 ","15 01 05 ","15 01 06 ","15 01 07 ","15 01 09 "],["1 ","0 ","1 ","0.5 ","0.5 ","0 ","0 ","0 ","0 ","0 ","0 ","0 ","1 ","1 ","0 ","0 ","0 ","0 ","0 ","0 ","0 ","0 ","0 ","0 ","1 ","1 ","0 ","0 ","0 ","0.63 ","1 ","0 ","0 ","0.63 ","0.63 ","0.51 ","0.2 ","0.1 ","0.5 ","0.63 ","0 ","0 ","0 ","0 ","0 ","0 ","0 ","0 ","0 ","0 ","0 ","0 ","0 ","0 ","0.63 ","0.63 ","0 ","0.2 ","0 ","0.2 ","1 ","0 ","0 ","0 ","0 ","1 ","1 ","0.5 ","0 ","0.5 ","0.5 ","0.63 ","1 ","0 ","0.74 ","0.63 ","0 ","0.5 "]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>EWC code <\/th>\n      <th>Biodegradability factor <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"lfrtipB","buttons":["copy",{"extend":"csv","title":"BMW_ratio_qr"},{"extend":"excel","title":"BMW_ratio_qr"},{"extend":"pdf","title":"BMW_ratio_qr"},"print"],"lengthMenu":[[5,15,-1],["5","15","All"]],"columnDefs":[{"name":"EWC code ","targets":0},{"name":"Biodegradability factor ","targets":1}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+                            <small>
+                            <details open>
+                            <summary>
+                            <div class="indicator">
+
+                            </div>
+                            Notes:
+                            </summary>
+                            <ol>
+                            <li>
+                            The fraction of 19 12 12 coded waste considered municipal waste is calculated on a site by site basis, in order to account for municipal waste inputs that contribute to the formation of the 19 12 12 waste.
+                            </li>
+                            <li>
+                            An EWC code with an asterisk is a hazardous waste.
+                            </li>
+                            </ol>
+                            </details>
+                            <p></small></p>
+                            </div>
+                            </div>
+                            <div id="lbl-appendix2" class="section level2">
+                            <h2>Appendix 2</h2>
+                            <div id="glossary" class="section level3">
+                            <h3>Glossary</h3>
+                            <p><strong>EWC Code</strong> – a six-digit code listed in the European Waste Catalogue. These codes are used to identify and classify waste into different categories. They are structured as three pairs of numbers, each representing chapters, sub-chapters, and individual entries. For example, 12 01 06*.</p>
+                            <p><strong>Hazardous Waste</strong> – waste with hazardous properties which may render it harmful to human health or the environment. Hazardous waste is also called Special Waste in Scotland, as defined in the <a href="https://www.legislation.gov.uk/uksi/1996/972/contents">Special Waste Regulations 1996</a> .</p>
+                            <p><strong>PPC Permit</strong> – a permit issued by SEPA under the Pollution Prevention and Control (Scotland) Regulations 2012.</p>
+                            <p><strong>Waste from all sources (WFAS)</strong> – waste that originates from commercial and industrial sources, construction and demolition sources as well as from household sources.</p>
+                            </div>
+                            </div>
+                            <div id="lbl-appendix3" class="section level2">
+                            <h2>Appendix 3</h2>
+                            <div id="acronyms" class="section level3">
+                            <h3>Acronyms</h3>
+                            <p><strong>EWC</strong>: European Waste Catalogue</p>
+                            <p><strong>EWC-Stat</strong>: European Waste Catalogue for Statistics</p>
+                            <p><strong>SEPA</strong>: Scottish Environment Protection Agency</p>
+                            <div class="caption-notes">
+                            <p><small>
+                            For information on accessing this document in an alternative format or language please contact SEPA by email at <a href="mailto:equalities@sepa.org.uk" class="email">equalities@sepa.org.uk</a>.</p>
+                            <p>If you are a user of British Sign Language (BSL) the Contact Scotland BSL service gives you access to an online interpreter enabling you to communicate with us using sign language.
+                            <a href="http://contactscotland-bsl.org/" class="uri">http://contactscotland-bsl.org/</a></p>
+                            <p></small></p>
+                            </div>
+                            <style type="text/css">
+
+                            .gloss-item{
+
+                            }
+
+
+                            .glossary {
+                            }
+
+                            .term{
+
+                            font-weight: bold;
+                            /*  font-size: 18px; */
+                            }
+
+
+                            .definition {
+                            }
+
+                            .definition::before {
+                              content: " - ";
+                            }
+
+                            </style>
+                            <p><br></p>
+                            </div>
+                            </div>
+              <!-- PF 25/9/25 
+              tocify-extend-page removes the extra space b/w the main body and the footnote when
+              there is a floating TOC -->
+              <div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>
+            </div>
+            
+            <!-- Content to be included after the main body -->
+                        
+                        
+          </main> <!-- /#main-content -->
+        </div> <!-- /.ds_wrapper -->
+      </div> <!-- /#body-wrapper -->
+    </div> <!-- /.ds_page__middle -->
+    
+    <!-- "Back to top" floating button -->
+    <nav data-module="ds-back-to-top">
+      <div class="ds_back-to-top">
+        <a class="ds_back-to-top__button" href="#page-top">
+          Back to top
+        </a>
+      </div>
+    </nav>
+    
+    <!-- Page bottom section -->
+    <!-- Contains: Footer; scripts -->
+    <div class="ds_page__bottom">
+      
+      <!-- Site footer -->
+      <footer class="ds_site-footer ds_reversed">
+        <div class="ds_wrapper">
+          <div class="ds_site-footer__content">
+            
+            <!-- Links -->
+            <!-- Links are referred to as "items" in the Design System vocabulary -->
+            <!-- This section should contain links to accessibility and privacy statements, cookie controls, and contact information -->
+                          <ul class="ds_site-footer__site-items">
+                                  <li class="ds_site-items__item">
+                      <a href="accessibility.html">
+                                          Accessibility
+                                          </a>
+                  </li>
+                                  <li class="ds_site-items__item">
+                      <a href="contact.html">
+                                          Contact
+                                          </a>
+                  </li>
+                              </ul>
+                        
+            <!-- Copyright statement -->
+            <div class="ds_site-footer__copyright">
+              <a class="ds_site-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">
+                <img src="template_libs/sg/images/logos/ogl.svg" alt="Open Government License Logo" />
+              </a>
+              <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>, except for graphic assets and where otherwise stated.</p>
+              <p>&copy; Crown Copyright</p>
+            </div>
+            
+          </div>
+        </div>
+      </footer>
+      
+    </div> <!-- /.ds_page__bottom -->
+    
+  </div> <!-- /.ds_page -->
+  
+  <div id="embedded-scripts">
+    
+    <!-- MathJax -->
+    <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    
+    <!-- Navbar -->
+          <script>
+        // Manage active state of menu based on current page
+        $(document).ready(function () {
+          // Active menu anchor
+          href = window.location.pathname
+          href = href.substr(href.lastIndexOf('/') + 1)
+          if (href === "")
+            href = "index.html";
+          var menuAnchor = $('a[href="' + href + '"]');
+
+          // Mark it active
+          menuAnchor.parent().addClass('active');
+
+          // If it's got a parent navbar menu, mark it active as well
+          menuAnchor.closest('li.dropdown').addClass('active');
+        });
+      </script>
+        
+    <!-- Tabsets -->
+    <script>
+      $(document).ready(function () {
+        window.buildTabsets("TOC");
+      });
+    </script>
+    
+    <!-- Tocify -->
+        <script>
+      $(document).ready(function () {
+    
+      // move toc-ignore selectors from section div to header
+      $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+    
+      // establish options
+      var options = {
+        selectors: "h1,h2,h3",
+        theme: "bootstrap3",
+        context: '.toc-content',
+        hashGenerator: function (text) {
+          return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+        },
+        ignoreSelector: ".toc-ignore",
+        scrollTo: 0
+      };
+    
+              options.showAndHide = true;
+          
+              options.smoothScroll = true;
+          
+    // these updated by PF
+    // see http://gregfranko.com/jquery.tocify.js/docs/jquery.tocify.html
+      options.smoothScroll = false
+      options.smoothScrollSpeed = 'fast'
+      options.showEffect = 'none'
+      options.hideEffect = 'none'
+      // Tocify
+        var toc = $("#TOC").tocify(options).data("toc-tocify");
+        
+      });
+    </script>
+    
+    <style type="text/css">
+                    
+      .ds_side-navigation ul {
+        list-style-type: none;
+      }
+    </style>
+    
+  </div> <!-- /#embedded-scripts -->
+  
+</body>
+
+</html>

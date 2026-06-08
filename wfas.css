@@ -1,0 +1,162 @@
+
+
+
+
+ 
+ 
+ 
+ h2 {
+margin-top: 24px !important;
+}
+
+
+
+ tbody .waste-cat {
+   /* font-weight: bold; */
+    white-space: nowrap;
+}
+
+ tbody .ewc-col{
+   /* font-weight: bold; */
+    white-space: nowrap !important;
+  
+
+}
+
+
+
+.dt-summary-table thead th:nth-child(10),
+.dt-summary-table tbody tr td:nth-child(10),
+.dt-summary-table tfoot tr th:nth-child(10)
+{
+  background-color: #eff3f6;
+}
+
+
+.dt-key-figures {
+font-size: 14px;
+}
+
+.dt-key-figures td {
+line-height: 20px ;
+padding-top: 0px !important;
+padding-bottom: 0px !important;
+}
+
+.dt-key-figures  .no-data {
+font-style: italic;
+color: gray;
+}
+
+
+.targ-line {
+height: 18px;
+}
+
+.dataTable td.year {
+font-weight: bold;
+}
+
+/* .dataTable.missing, .dataTable.missing2 */
+.dataTable.row-missing-2020,
+.dataTable.row-missing-20192020,
+.dataTable.row-missing-qr-sites {
+ table-layout:  fixed; /* needs to be fixed for td width to work */
+}
+
+.dataTable.row-missing-2020 td.year,
+.dataTable.row-missing-20192020  td.year,
+.dataTable.row-missing-qr-sites td.year {
+    overflow:  visible; /* so missing text overlaps adjacent cells */
+    width: 25px;
+    white-space: nowrap;
+
+}
+
+.dataTable.row-missing-2020 tr:nth-child(10) td,
+.dataTable.row-missing-20192020  tr:nth-child(9) td,
+.dataTable.row-missing-qr-sites  tr:nth-child(3) td {
+    color:  gray;
+    font-style: italic;
+    font-weight: 200;
+}
+
+
+.dataTable.row-missing-20192020 tr:nth-child(9) td:nth-child(1):before,
+.dataTable.row-missing-qr-sites tr:nth-child(3) td:nth-child(1):before
+{
+  
+  content: "\00a0\00a0 2019 and 2020 data unavailable"; 
+  
+}
+
+
+.dataTable.row-missing-2020 tr:nth-child(10) td:nth-child(1):before {
+  content: "\00a0\00a0 2020 data unavailable"; 
+  
+}
+
+
+
+
+.dataTable .total {
+font-weight: bold;
+}
+
+
+/* the 'col-miss' classes are where the years are in columns and 2019/2020 or 2020 are missing /
+
+.dataTable.col-missing2020 td.waste-cat,
+.dataTable.col-missing20192020 td.waste-cat {
+    max-width: 300px;
+    text-overflow: ellipsis;
+    width:  200px;
+    overflow: hidden;
+}
+
+.dataTable.col-missing2020 td.waste-cat,
+.dataTable.col-missing20192020 td.waste-cat:hover {
+    overflow: visible;
+    white-space: normal;
+    height:auto;  /* just added this line */
+};
+
+
+.dataTable.col-missing2020 td.missing-col ,
+.dataTable.col-missing20192020 td.missing-col {
+  width: 25px;
+}
+
+.dataTable.col-missing2020 td.missing-col ,
+.dataTable.col-missing20192020 td.missing-col {
+  max-width: 25px;
+  width: 18px;
+}
+
+.dataTable.col-missing2020 tr:nth-child(1) td.missing-col::after {
+  
+  content: "2020 data unavailable";
+}
+
+.dataTable.col-missing20192020 tr:nth-child(1) td.missing-col::after {
+   content: "2019 and 2020 data unavailable";
+}
+
+.dataTable.col-missing2020 tr:nth-child(1) td.missing-col::after,
+.dataTable.col-missing20192020 tr:nth-child(1) td.missing-col::after {
+    display: inline-block;
+    transform: rotate(90deg) translate(-8px, -30px);
+    font-size: 16px;
+    color: cornflowerblue;
+    overflow: visible;
+    white-space: nowrap;
+    transform-origin: 0 0;
+    font-style: italic;
+    font-weight: lighter;
+    background-color: white;
+    padding: 2px 12px 2px 12px;
+    border-bottom: 1px solid cornflowerblue;
+    border-top: 1px solid cornflowerblue;
+    font-palette: light;
+};
+

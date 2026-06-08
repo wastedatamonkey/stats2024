@@ -1,0 +1,35 @@
+
+
+h2 {
+margin-top: 24px !important;
+}
+
+/* summary data-table - first column no wrapping of la names, and in bold*/
+.dt-table-summary tbody .la-col,
+.dt-table-summary-pp tbody .la-col,
+.dt-table-revisions tbody .la-col
+{
+  /*  font-weight: bold; */
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.dt-waste-generated tbody .waste-cat,
+.dt-rr-material tbody .waste-cat,
+.dt-table-compost tbody .waste-cat,
+.dt-table-inc-materials tbody .waste-cat,
+.dt-table-landfill tbody .waste-cat {
+   /* font-weight: bold; */
+    white-space: nowrap;
+}
+
+
+
+.dt-table-summary thead th:nth-child(10),
+.dt-table-summary tbody tr td:nth-child(10),
+.dt-table-summary tfoot tr th:nth-child(10)
+{
+  background-color: #eff3f6;
+}
+
+

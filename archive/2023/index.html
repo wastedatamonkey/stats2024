@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<!-- Built with sgtemplates v.1.0.0 (2021-05-12) -->
+<!-- https://github.com/DataScienceScotland/sgtemplates/ -->
+<html xmlns="https://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+          <meta name="generator" content="pandoc">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="shortcut icon" href="template_libs/sg/images/favicons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="template_libs/sg/images/favicons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="template_libs/sg/images/favicons/favicon-16x16.png" type="image/png" sizes="16x16">
+  
+  <link rel="apple-touch-icon" href="template_libs/sg/images/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="mask-icon" href="template_libs/sg/images/favicons/safari-pinned-tab.svg" color="#0065bd">
+  
+  <title></title>
+  
+  <!-- RStudio's default scripts and style sheets -->
+      <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+      <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+      <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+      <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+      <style>h1 {font-size: 34px;}
+             h1.title {font-size: 38px;}
+             h2 {font-size: 30px;}
+             h3 {font-size: 24px;}
+             h4 {font-size: 18px;}
+             h5 {font-size: 16px;}
+             h6 {font-size: 12px;}
+             code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+             pre:not([class]) { background-color: white }</style>
+      <script src="site_libs/navigation-1.1/tabsets.js"></script>
+    
+  <!-- SG's style sheets -->
+  <!-- Style sheets are broken up into separate files, where possible, to make them easier for users to change -->
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/design-system-base.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/design-system-fixes.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/layout.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/navbar.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/navbar-full.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/navbar-mobile.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/print.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/toc.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/tocify.css">
+  
+    
+  <!-- User style sheets -->
+    
+    
+  
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Ferrett, Peter</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">4498700.00000000</mso:Order>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:SharedWithUsers msdt:dt="string"></mso:SharedWithUsers>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Ferrett, Peter</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:ContentTypeId msdt:dt="string">0x010100D4A211F6D815FC43BD5F92C607DE9A2C</mso:ContentTypeId>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body class="article layout--component">
+  
+  <div class="ds_page">
+    
+    <!-- Page top section -->
+    <!-- Contains: Notifications; header; navigation elements (except breadcrumbs) -->
+    <div class="ds_page__top">
+      
+      <!-- Header -->
+      <header class="ds_site-header ds_site-header--gradient" role="banner">
+        <span id="page-top"></span>
+        
+        <!-- Site branding -->
+        <div class="ds_site-header__top">
+          <div class="ds_wrapper">
+            <div class="ds_site-header__content">
+              <div class="ds_site-branding">
+                <a class="ds_site-branding__logo ds_site-branding__link" href="/">
+                  <img class="ds_site-branding__logo-image" src="template_libs/sg/images/logos/scottish-government.svg" alt="Scottish Government logo" />
+                </a>
+                <div class="ds_site-branding__title">
+                                      <img src="SEPA_Logo.png" width="250" alt="SEPA_LOGO" />
+                                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Phase banner -->
+                
+        <!-- Elements included before the body -->
+        <!-- Includes Bootstrap / default RStudio navbar -->
+                  <div class="ds_wrapper">
+                          
+                          <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+                            <div class="container">
+                              <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="index.html">waste-stats-navbar</a>
+                              </div>
+                              <div id="navbar" class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav">
+                                  <li>
+                            <a href="index.html">Home</a>
+                          </li>
+                          <li>
+                            <a href="wfas.html">Waste from all sources</a>
+                          </li>
+                          <li>
+                            <a href="household.html">Household</a>
+                          </li>
+                          <li>
+                            <a href="landfilled.html">Landfill</a>
+                          </li>
+                          <li>
+                            <a href="incinerated.html">Incineration</a>
+                          </li>
+                                </ul>
+                                <ul class="nav navbar-nav navbar-right">
+                                  
+                                </ul>
+                              </div><!--/.nav-collapse -->
+                            </div><!--/.container -->
+                          </div><!--/.navbar -->
+                      </div>
+                
+      </header>
+      
+      
+    </div>
+    
+    <!-- Page middle section -->
+    <!-- Contains breadcrumbs, table of contents, body, and main content -->
+    <div class="ds_page__middle">
+      <div id="body-wrapper" class="body-wrapper">
+        
+        <!-- Breadcrumbs -->
+                
+        <!-- Main content -->
+        <div class="ds_wrapper">
+          <!-- Elements within main-content are arranged according to the grid layout -->
+          <main id="main-content" class="ds_layout ds_layout--pl-article">
+            
+            <!-- Sidebar -->
+            <!-- Contains automatically-generated table of contents -->
+            <div class="ds_layout__sidebar">
+              <nav class="ds_side-navigation" aria-label="Sections" data-module="ds-side-navigation">
+                                  
+                              </nav>
+            </div>
+            
+            <!-- Main body header -->
+                          <div class="ds_layout__header">
+                <header class="heading">
+                  <div class="ds_page-header">
+                                        <h1 class="ds_page-header__title title toc-ignore">Scottish Official Waste Statistics</h1>
+                                        <dl class="ds_page-header__metadata ds_metadata">
+                                                                </dl>
+                  </div>
+                </header>
+              </div>
+                        
+            <!-- Main body content -->
+            <div class="ds_layout__content toc-content">
+                            <style type="text/css">
+
+                            .tocify {
+                                color: rgb(0,101,189);
+                            }
+
+
+                            .tocify .tocify-item a, .tocify .list-group-item {
+                                /* padding: 5px; */
+                                padding: 5px;
+                                padding-top: 0px;
+                                padding-bottom: 0px;
+                                line-height: 18px;
+                                margin-top: 8px;
+                                margin-bottom: 8px;
+                            }
+
+                            .tocify-item .active{
+                              /*color: black;*/
+                              background-color: #d9effc;
+                            }
+
+                            .tocify-item.active, .tocify-item.active:focus, .tocify-item.active:hover {
+                                z-index: 2;
+                                 color: rgb(0,101,189);
+                                background-color: #d9effc;
+                                border-color: #d9effc;
+                                
+                            }
+
+
+                            }
+                            .tocify-subheader > .tocify-item {
+                              text-indent: initial;
+                              padding-left: 2em;
+
+                            }
+
+                            .tocify-header > .tocify-item {
+                              text-indent: initial;
+                              padding-left: 6px;
+
+                            }
+
+
+                            .exporting_chart_class .highcharts-background {
+                              fill: white;
+                              background-color: white;
+                              
+                            }
+
+
+
+                            /* Generic css styles */
+
+                            .mt-6 {  margin-top: 6px; }
+                            .mt-3 {  margin-top: 3px;}
+                            .mb-3 {  margin-bottom: 3px;}
+                            .mb-6 {  margin-bottom: 6px;}
+
+
+                            .highcharts-container {
+                              margin: 0 auto;
+                            }
+
+                            /*
+                            these remove padding from the toc, and make it sticky
+                            combination of both make it possible to see long menu's 
+                            on most screens
+                            */
+                            .ds_side-navigation {
+                            position: sticky;
+                            top: 10px;
+                            }
+
+                            nav.ds_side-navigation ul > li > a
+                            {
+
+                            padding: 0px;
+                            padding-top: 3px;
+                            padding-bottom: 3px;
+                            }
+
+                            @media only screen and (max-height: 800px) {
+                             nav.ds_side-navigation ul > li > a
+                            {
+
+                            padding: 0px;
+
+                            }
+                            }
+
+
+
+                            /* styles for captins */
+
+                            .df-caption {
+                            /*color: darkgrey; */
+                            display: flex;
+                            margin-top: 12px;
+                            margin-bottom: -12px;
+                            }
+
+
+
+                            .df-caption>div {
+                            display: inline-block;
+                            }
+                            .df-caption .df-prefix {
+                            font-weight: bold;
+                            }
+
+                            .df-fig { }
+
+                            .df-tab { }
+
+
+                            table.table-sites-input tr:nth-child(3),
+                            table.table-sites-input tr:nth-child(6){
+                              font-weight: bold;
+                             
+                            }
+
+                            table.table-sites-input tr:nth-child(3) td:nth-child(1), 
+                            table.table-sites-input tr:nth-child(6) td:nth-child(1){
+                              padding-left: 24px;
+                            }
+
+
+
+                            /*
+                            indicator triangles for collapsible paragraphs
+                            the markup must be in format
+                            <details>
+                            <summary><div class="indicator"></div>Summary text here</summary>
+
+                            Details here
+
+                            </details>
+
+                            */
+
+
+                            details summary div.indicator  {
+                            display: inline-block;
+                              width: 0; 
+                              height: 0; 
+                              border-top: 6px solid transparent;
+                              border-bottom: 6px solid transparent;
+                              border-left: 6px solid black;
+                            }
+
+                            details[open] summary div.indicator  {
+
+                               width: 0; 
+                              height: 0; 
+                              border-left: 6px solid transparent;
+                              border-right: 6px solid transparent;
+                              border-top: 6px solid black;
+                            }
+                            </style>
+                            <p><b>An Official Statistics Publication for Scotland</b></p>
+                            <p><b>Last Published on 15th July 2025 9:30 AM</b></p>
+                            <p>Here we present data and information on the types and quantities of waste generated and managed across Scotland. The available statistics are:</p>
+                            <ul>
+                            <li><a href="https://data.gov.scot/sepa/waste/wfas.html">Scottish waste from all sources generated and managed 2023</a>, published 15th July 2025</li>
+                            <li><a href="https://data.gov.scot/sepa/waste/household.html">Scottish household waste generated and managed 2023</a>, published 29th October 2024</li>
+                            <li><a href="https://data.gov.scot/sepa/waste/landfilled.html">Waste landfilled in Scotland 2023</a>, published 29th October 2024</li>
+                            <li><a href="https://data.gov.scot/sepa/waste/incinerated.html">Waste incinerated in Scotland 2023</a>, published 29th October 2024</li>
+                            </ul>
+                            <div id="navigating-the-charts-and-tables-contained-in-the-statistics" class="section level4 unlisted unnumbered">
+                            <h4 class="unlisted unnumbered">Navigating the charts and tables contained in the statistics</h4>
+                            <details open>
+                            <summary>
+                            <div class="indicator">
+
+                            </div>
+                            <strong>Reports</strong>
+                            </summary>
+                            <p>Each of the statistical commentary reports for the Scottish waste from all source,Scottish household waste from Scotland, Waste landfilled in Scotland and Waste incinerated in Scotland can be access by clicking the appropriate tab at the top of this page.</p>
+                            </details>
+                            <details>
+                            <summary>
+                            <div class="indicator">
+
+                            </div>
+                            <strong>Tabs</strong>
+                            </summary>
+                            <p>Some of the tables are set in tabs, next to the relevant figure. To view the tables, click on the tab. To return to the figure, click on the figure tab.</p>
+                            For example: <br>
+                            <img src="Tabs.PNG" width="250" alt="Tabs" />
+                            </details>
+                            <details>
+                            <summary>
+                            <div class="indicator">
+
+                            </div>
+                            <strong>Tables</strong>
+                            </summary>
+                            <ul>
+                            <li>By default, the tables are presented either with all rows visible or limited to five. To expand the limited ones, use the drop-down menu at the top left to select to show a greater number, or all rows.</li>
+                            </ul>
+                            <p>For example: <br>
+                            <img src="drop_down.PNG" width="250" alt="drop_down" /></p>
+                            <ul>
+                            <li>The search menu filter at the top right of the tables allows you to filter the rows. All rows in which any column for that row which matches the filter will be shown.</li>
+                            </ul>
+                            <p>For example: <br>
+                            <img src="Search.PNG" width="250" alt="Search" /></p>
+                            <ul>
+                            <li>You can sort the table in ascending or descending for any of the columns by clicking on the arrows by the column header.</li>
+                            </ul>
+                            <p>For example (the arrows are highlighted in yellow): <br>
+                            <img src="order.PNG" width="250" alt="order" /></p>
+                            <ul>
+                            <li>Data download options are available at the foot of each table.</li>
+                            </ul>
+                            </details>
+                            <details>
+                            <summary>
+                            <div class="indicator">
+
+                            </div>
+                            <strong>Figures</strong>
+                            </summary>
+                            <ul>
+                            <li>In their default state the figures can be hovered over, to show a tool tip and information about where your cursor is hovering. This can be read by a screen reader.</li>
+                            </ul>
+                            <p>For example: <br>
+                            <img src="Tool_tip.png" width="250" alt="Tool_tip" /></p>
+                            <ul>
+                            <li>If you click on a category in the key/legend it will be removed from the plot (click again to bring it back).</li>
+                            </ul>
+                            <p>For example (the legend is highlighted by the black box, click one of these options. In other plots the legend may be below the figure): <br>
+                            <img src="clicked.PNG" width="250" alt="clicked" /></p>
+                            <ul>
+                            <li>On the figures with many categories plotted, there are show all and hide all buttons at the top right. If you only want to see a small number of categories, click hide all and then select the categories you want to see.</li>
+                            </ul>
+                            <p>For example: <br>
+                            <img src="show_all.PNG" width="250" alt="show_all" /></p>
+                            <ul>
+                            <li>In the top right corner there are three lines, in this menu you have the figure download options, including the data download for the figure. Here you also have the option to view the figure in full screen.</li>
+                            </ul>
+                            </details>
+                            <p><br>
+                            <br>
+                            <br></p>
+                            </div>
+            </div>
+            
+            <!-- Content to be included after the main body -->
+                        
+                        
+          </main> <!-- /#main-content -->
+        </div> <!-- /.ds_wrapper -->
+      </div> <!-- /#body-wrapper -->
+    </div> <!-- /.ds_page__middle -->
+    
+    <!-- "Back to top" floating button -->
+    <nav data-module="ds-back-to-top">
+      <div class="ds_back-to-top">
+        <a class="ds_back-to-top__button" href="#page-top">
+          Back to top
+        </a>
+      </div>
+    </nav>
+    
+    <!-- Page bottom section -->
+    <!-- Contains: Footer; scripts -->
+    <div class="ds_page__bottom">
+      
+      <!-- Site footer -->
+      <footer class="ds_site-footer ds_reversed">
+        <div class="ds_wrapper">
+          <div class="ds_site-footer__content">
+            
+            <!-- Links -->
+            <!-- Links are referred to as "items" in the Design System vocabulary -->
+            <!-- This section should contain links to accessibility and privacy statements, cookie controls, and contact information -->
+                          <ul class="ds_site-footer__site-items">
+                                  <li class="ds_site-items__item">
+                      <a href="accessibility.html">
+                                          Accessibility
+                                          </a>
+                  </li>
+                                  <li class="ds_site-items__item">
+                      <a href="contact.html">
+                                          Contact
+                                          </a>
+                  </li>
+                              </ul>
+                        
+            <!-- Copyright statement -->
+            <div class="ds_site-footer__copyright">
+              <a class="ds_site-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">
+                <img src="template_libs/sg/images/logos/ogl.svg" alt="Open Government License Logo" />
+              </a>
+              <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>, except for graphic assets and where otherwise stated.</p>
+              <p>&copy; Crown Copyright</p>
+            </div>
+            
+          </div>
+        </div>
+      </footer>
+      
+    </div> <!-- /.ds_page__bottom -->
+    
+  </div> <!-- /.ds_page -->
+  
+  <div id="embedded-scripts">
+    
+    <!-- MathJax -->
+    <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    
+    <!-- Navbar -->
+          <script>
+        // Manage active state of menu based on current page
+        $(document).ready(function () {
+          // Active menu anchor
+          href = window.location.pathname
+          href = href.substr(href.lastIndexOf('/') + 1)
+          if (href === "")
+            href = "index.html";
+          var menuAnchor = $('a[href="' + href + '"]');
+
+          // Mark it active
+          menuAnchor.parent().addClass('active');
+
+          // If it's got a parent navbar menu, mark it active as well
+          menuAnchor.closest('li.dropdown').addClass('active');
+        });
+      </script>
+        
+    <!-- Tabsets -->
+    <script>
+      $(document).ready(function () {
+        window.buildTabsets("TOC");
+      });
+    </script>
+    
+    <!-- Tocify -->
+    
+  </div> <!-- /#embedded-scripts -->
+  
+</body>
+
+</html>

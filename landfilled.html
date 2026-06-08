@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<!-- Built with sgtemplates v.1.0.0 (2021-05-12) -->
+<!-- https://github.com/DataScienceScotland/sgtemplates/ -->
+<html xmlns="https://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+          <meta name="generator" content="pandoc">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="shortcut icon" href="template_libs/sg/images/favicons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="template_libs/sg/images/favicons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="template_libs/sg/images/favicons/favicon-16x16.png" type="image/png" sizes="16x16">
+  
+  <link rel="apple-touch-icon" href="template_libs/sg/images/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="mask-icon" href="template_libs/sg/images/favicons/safari-pinned-tab.svg" color="#0065bd">
+  
+  <title></title>
+  
+  <!-- RStudio's default scripts and style sheets -->
+      <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+      <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+      <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+      <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+      <style>h1 {font-size: 34px;}
+             h1.title {font-size: 38px;}
+             h2 {font-size: 30px;}
+             h3 {font-size: 24px;}
+             h4 {font-size: 18px;}
+             h5 {font-size: 16px;}
+             h6 {font-size: 12px;}
+             code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+             pre:not([class]) { background-color: white }</style>
+      <script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+      <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+      <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+      <script src="site_libs/navigation-1.1/tabsets.js"></script>
+      <link href="site_libs/panelset-0.3.0/panelset.css" rel="stylesheet" />
+      <script src="site_libs/panelset-0.3.0/panelset.js"></script>
+      <link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+      <script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+      <script src="site_libs/proj4js-2.3.15/proj4.js"></script>
+      <link href="site_libs/highcharts-9.3.1/css/motion.css" rel="stylesheet" />
+      <script src="site_libs/highcharts-9.3.1/highcharts.js"></script>
+      <script src="site_libs/highcharts-9.3.1/highcharts-3d.js"></script>
+      <script src="site_libs/highcharts-9.3.1/highcharts-more.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/stock.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/map.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/data.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/exporting.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/offline-exporting.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/drilldown.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/item-series.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/overlapping-datalabels.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/annotations.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/export-data.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/funnel.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/heatmap.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/treemap.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/sankey.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/dependency-wheel.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/organization.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/solid-gauge.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/streamgraph.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/sunburst.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/vector.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/wordcloud.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/xrange.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/tilemap.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/venn.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/gantt.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/timeline.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/parallel-coordinates.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/bullet.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/coloraxis.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/dumbbell.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/lollipop.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/series-label.js"></script>
+      <script src="site_libs/highcharts-9.3.1/plugins/motion.js"></script>
+      <script src="site_libs/highcharts-9.3.1/custom/reset.js"></script>
+      <script src="site_libs/highcharts-9.3.1/modules/boost.js"></script>
+      <script src="site_libs/highchart-binding-0.9.4/highchart.js"></script>
+      <script src="site_libs/pattern-fill.js-9.3.1/pattern-fill.js"></script>
+      <link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+      <script src="site_libs/datatables-binding-0.34.0/datatables.js"></script>
+      <link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet" />
+      <link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet" />
+      <script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+      <script src="site_libs/jszip-1.13.6/jszip.min.js"></script>
+      <script src="site_libs/pdfmake-1.13.6/pdfmake.js"></script>
+      <script src="site_libs/pdfmake-1.13.6/vfs_fonts.js"></script>
+      <link href="site_libs/dt-ext-buttons-1.13.6/css/buttons.dataTables.min.css" rel="stylesheet" />
+      <script src="site_libs/dt-ext-buttons-1.13.6/js/dataTables.buttons.min.js"></script>
+      <script src="site_libs/dt-ext-buttons-1.13.6/js/buttons.html5.min.js"></script>
+      <script src="site_libs/dt-ext-buttons-1.13.6/js/buttons.colVis.min.js"></script>
+      <script src="site_libs/dt-ext-buttons-1.13.6/js/buttons.print.min.js"></script>
+      <link href="site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet" />
+      <script src="site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+    
+  <!-- SG's style sheets -->
+  <!-- Style sheets are broken up into separate files, where possible, to make them easier for users to change -->
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/design-system-base.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/design-system-fixes.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/layout.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/navbar.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/navbar-full.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/navbar-mobile.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/print.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/toc.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/tocify.css">
+  
+    
+  <!-- User style sheets -->
+    
+    
+  
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Ferrett, Peter</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">4489400.00000000</mso:Order>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:SharedWithUsers msdt:dt="string"></mso:SharedWithUsers>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Ferrett, Peter</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:ContentTypeId msdt:dt="string">0x010100D4A211F6D815FC43BD5F92C607DE9A2C</mso:ContentTypeId>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body class="article layout--component">
+  
+  <div class="ds_page">
+    
+    <!-- Page top section -->
+    <!-- Contains: Notifications; header; navigation elements (except breadcrumbs) -->
+    <div class="ds_page__top">
+      
+      <!-- Header -->
+      <header class="ds_site-header ds_site-header--gradient" role="banner">
+        <span id="page-top"></span>
+        
+        <!-- Site branding -->
+        <div class="ds_site-header__top">
+          <div class="ds_wrapper">
+            <div class="ds_site-header__content">
+              <div class="ds_site-branding">
+                <a class="ds_site-branding__logo ds_site-branding__link" href="/">
+                  <img class="ds_site-branding__logo-image" src="template_libs/sg/images/logos/scottish-government.svg" alt="Scottish Government logo" />
+                </a>
+                <div class="ds_site-branding__title">
+                                      <img src="sepa-logo.png" width="250" alt="sepa-logo" />
+                                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Phase banner -->
+                
+        <!-- Elements included before the body -->
+        <!-- Includes Bootstrap / default RStudio navbar -->
+                  <div class="ds_wrapper">
+                          
+                          <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+                            <div class="container">
+                              <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="index.html">waste-stats-navbar</a>
+                              </div>
+                              <div id="navbar" class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav">
+                                  <li>
+                            <a href="index.html">Home</a>
+                          </li>
+                          <li>
+                            <a href="wfas.html">Waste from all sources</a>
+                          </li>
+                          <li>
+                            <a href="household.html">Household</a>
+                          </li>
+                          <li>
+                            <a href="landfilled.html">Landfill</a>
+                          </li>
+                          <li>
+                            <a href="incinerated.html">Incineration</a>
+                          </li>
+                                </ul>
+                                <ul class="nav navbar-nav navbar-right">
+                                  
+                                </ul>
+                              </div><!--/.nav-collapse -->
+                            </div><!--/.container -->
+                          </div><!--/.navbar -->
+                      </div>
+                
+      </header>
+      
+      
+    </div>
+    
+    <!-- Page middle section -->
+    <!-- Contains breadcrumbs, table of contents, body, and main content -->
+    <div class="ds_page__middle">
+      <div id="body-wrapper" class="body-wrapper">
+        
+        <!-- Breadcrumbs -->
+                
+        <!-- Main content -->
+        <div class="ds_wrapper">
+          <!-- Elements within main-content are arranged according to the grid layout -->
+          <main id="main-content" class="ds_layout ds_layout--pl-component">
+            
+            <!-- Sidebar -->
+            <!-- Contains automatically-generated table of contents -->
+            <div class="ds_layout__sidebar">
+              <nav class="ds_side-navigation" aria-label="Sections" data-module="ds-side-navigation">
+                                  <div id="TOC" class="tocify"></div>
+                              </nav>
+            </div>
+            
+            <!-- Main body header -->
+                          <div class="ds_layout__header">
+                <header class="heading">
+                  <div class="ds_page-header">
+                                        <h1 class="ds_page-header__title title toc-ignore">Waste landfilled in Scotland 2024</h1>
+                                        <dl class="ds_page-header__metadata ds_metadata">
+                                                                </dl>
+                  </div>
+                </header>
+              </div>
+                        
+            <!-- Main body content -->
+            <div class="ds_layout__content toc-content">
+                            <style type="text/css">
+
+                            .tocify {
+                                color: rgb(0,101,189);
+                            }
+
+
+                            .tocify .tocify-item a, .tocify .list-group-item {
+                                /* padding: 5px; */
+                                padding: 5px;
+                                padding-top: 0px;
+                                padding-bottom: 0px;
+                                line-height: 18px;
+                                margin-top: 8px;
+                                margin-bottom: 8px;
+                            }
+
+                            .tocify-item .active{
+                              /*color: black;*/
+                              background-color: #d9effc;
+                            }
+
+                            .tocify-item.active, .tocify-item.active:focus, .tocify-item.active:hover {
+                                z-index: 2;
+                                 color: rgb(0,101,189);
+                                background-color: #d9effc;
+                                border-color: #d9effc;
+                                
+                            }
+
+
+                            }
+                            .tocify-subheader > .tocify-item {
+                              text-indent: initial;
+                              padding-left: 2em;
+
+                            }
+
+                            .tocify-header > .tocify-item {
+                              text-indent: initial;
+                              padding-left: 6px;
+
+                            }
+
+                            <!important-- remove the large white space between end of page and the footnotes -->
+                            .tocify-extend-page {
+                              height: 0px !important;
+                            }
+
+
+                            .exporting_chart_class .highcharts-background {
+                              fill: white;
+                              background-color: white;
+                              
+                            }
+
+
+
+                            .footnotes.footnotes-end-of-document{
+                              margin-left: 24px;
+                              margin-right: 24px;
+                              
+                            }
+
+                            /* Generic css styles */
+
+                            .mt-6 {  margin-top: 6px; }
+                            .mt-3 {  margin-top: 3px;}
+                            .mb-3 {  margin-bottom: 3px;}
+                            .mb-6 {  margin-bottom: 6px;}
+
+
+                            .highcharts-container {
+                              margin: 0 auto;
+                            }
+
+                            /*
+                            these remove padding from the toc, and make it sticky
+                            combination of both make it possible to see long menu's 
+                            on most screens
+                            */
+                            .ds_side-navigation {
+                            position: sticky;
+                            top: 10px;
+                            }
+
+                            nav.ds_side-navigation ul > li > a
+                            {
+
+                            padding: 0px;
+                            padding-top: 3px;
+                            padding-bottom: 3px;
+                            }
+
+                            @media only screen and (max-height: 800px) {
+                             nav.ds_side-navigation ul > li > a
+                            {
+
+                            padding: 0px;
+
+                            }
+                            }
+
+
+
+                            /* styles for captins */
+
+                            .df-caption {
+                            /*color: darkgrey; */
+                            display: flex;
+                            margin-top: 12px;
+                            margin-bottom: -12px;
+                            }
+
+
+
+                            .df-caption>div {
+                            display: inline-block;
+                            }
+                            .df-caption .df-prefix {
+                            font-weight: bold;
+                            }
+
+                            .df-fig { }
+
+                            .df-tab { }
+
+
+                            table.table-sites-input tr:nth-child(3),
+                            table.table-sites-input tr:nth-child(6){
+                              font-weight: bold;
+                             
+                            }
+
+                            table.table-sites-input tr:nth-child(3) td:nth-child(1), 
+                            table.table-sites-input tr:nth-child(6) td:nth-child(1){
+                              padding-left: 24px;
+                            }
+
+
+
+                            /*
+                            indicator triangles for collapsible paragraphs
+                            the markup must be in format
+                            <details>
+                            <summary><div class="indicator"></div>Summary text here</summary>
+
+                            Details here
+
+                            </details>
+
+                            */
+
+
+                            details summary div.indicator  {
+                            display: inline-block;
+                              width: 0; 
+                              height: 0; 
+                              border-top: 6px solid transparent;
+                              border-bottom: 6px solid transparent;
+                              border-left: 6px solid black;
+                            }
+
+                            details[open] summary div.indicator  {
+
+                               width: 0; 
+                              height: 0; 
+                              border-left: 6px solid transparent;
+                              border-right: 6px solid transparent;
+                              border-top: 6px solid black;
+                            }
+                            </style>
+                            <p><b>An Official Statistics Publication for Scotland</b></p>
+                            <p><b>Published on 28th October 2025 9:30 AM</b></p>
+                            <p>This release provides a summary of all waste landfilled in Scotland for calendar year 2024. It excludes Scottish waste landfilled elsewhere. Information on the methodology used to prepare this release and a definition of terms is in the <a href="landfilled-qr-2024.html">landfilled waste quality report</a> and <a href="#lbl-glossary">glossary</a>.</p>
+                            <div id="section" class="section level2 unlisted unnumbered toc-ignore">
+                            <h2 class="unlisted unnumbered toc-ignore"></h2>
+                            </div>
+                            <div id="key-points" class="section level2">
+                            <h2>Key points</h2>
+                            <ul>
+                            <li><p>The total quantity of waste landfilled in Scotland in 2024 was 1.81 million tonnes (<a class='df-xref' href='#chart-landfilled-total' onclick="(()=> {
+                                    const tabAnchorHRef = '#' + $('.df-caption#chart-landfilled-total').closest('.tab-pane').attr('id');
+                                    console.log(tabAnchorHRef);
+                                     $(`a[href='${tabAnchorHRef}']`).click();
+                                     return true;
+                                     } )() " >Figure 1</a>), a reduction of 172,000 tonnes (8.6%) from 2023. This continues a long term trend with a reduction of 5.24 million tonnes (74.3%) from 2005 and is the lowest annual amount of waste landfilled in Scotland in the time series. The drop in waste landfilled between 2023 and 2024 is likely due to changes in the waste management sector preparing for the 2025 ban of biodegradable municipal waste to landfill<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p></li>
+                            <li><p>The largest reduction in waste landfilled in Scotland in 2024 compared with 2023 was seen in Household and similar wastes (a decrease of 236,000 tonnes or 44.5%). This was offset to some extent by the amount of Soils wastes landfilled between 2023 and 2024, which increased by 172,000 tonnes or 33.5%.</p></li>
+                            <li><p>The top three categories of waste landfilled in 2024 were Soils (685,000 tonnes, 37.8% of total), Sorting residues (562,000 tonnes, 31.0% of total) and Household and similar wastes (294,000 tonnes, 16.2% of total) (<a class='df-xref' href='#table-landfilled-total' onclick="(()=> {
+                                    const tabAnchorHRef = '#' + $('.df-caption#table-landfilled-total').closest('.tab-pane').attr('id');
+                                    console.log(tabAnchorHRef);
+                                     $(`a[href='${tabAnchorHRef}']`).click();
+                                     return true;
+                                     } )() " >Table 1</a>).</p></li>
+                            <li><p>A total of 29,900 tonnes of hazardous waste was disposed of to landfill in 2024 (<a class='df-xref' href='#table-landfilled-haz' onclick="(()=> {
+                                      const tabAnchorHRef = '#' + $('.df-caption#table-landfilled-haz').closest('.tab-pane').attr('id');
+                                      console.log(tabAnchorHRef);
+                                       $(`a[href='${tabAnchorHRef}']`).click();
+                                       return true;
+                                       } )() " >Table 2</a>). This accounts for 1.6% of all waste landfilled in 2024. Over half of the hazardous waste landfilled in 2024 was Other mineral wastes (18,300 tonnes, 61.2%), which primarily comprise insulating materials such as asbestos.</p></li>
+                            <li><p>The amount of Biodegradable Municipal Waste (BMW - the biodegradable component of Municipal Waste) disposed of to landfill in 2024 in Scotland was 336,000 tonnes (<a class='df-xref' href='#chart-BMW' onclick="(()=> {
+                                      const tabAnchorHRef = '#' + $('.df-caption#chart-BMW').closest('.tab-pane').attr('id');
+                                      console.log(tabAnchorHRef);
+                                       $(`a[href='${tabAnchorHRef}']`).click();
+                                       return true;
+                                       } )() " >Figure 3</a>). This was a reduction of 218,000 tonnes (39.4%) from 2023 and a reduction of 1.70 million tonnes (83.5%) from 2005.</p></li>
+                            </ul>
+                            <!-- ### Summary table 2023 {.unlisted .unnumbered } -->
+                            </div>
+                            <div id="data-and-trends" class="section level2">
+                            <h2>Data and Trends</h2>
+                            <div id="total-waste-landfilled" class="section level3 unlisted unnumbered">
+                            <h3 class="unlisted unnumbered">Total waste landfilled</h3>
+                            <p>The total quantity of waste landfilled in Scotland in 2024 was 1.81 million tonnes (<a class='df-xref' href='#chart-landfilled-total' onclick="(()=> {
+                                        const tabAnchorHRef = '#' + $('.df-caption#chart-landfilled-total').closest('.tab-pane').attr('id');
+                                        console.log(tabAnchorHRef);
+                                         $(`a[href='${tabAnchorHRef}']`).click();
+                                         return true;
+                                         } )() " >Figure 1</a>), across 39 permitted sites. This was a reduction of 172,000 tonnes (8.6%) from 2023 and is the lowest amount of waste landfilled since this record began in 2005. The long-term trend in the total amount of waste landfilled in Scotland is a decrease of 5.24 million tonnes (74.3%) since 2005. The drop in waste landfilled between 2023 and 2024 is likely due to changes in the waste management sector preparing for the 2025 ban of biodegradable municipal waste to landfill<a href="#fn1"><sup>1</sup></a>.</p>
+                            <p>The decrease in waste landfilled between 2023 and 2024 was largely due to Household and similar wastes, which decreased by 236,000 tonnes (44.5%) followed by Mineral wastes from waste treatment and stabilised wastes which decreased by 76,000 tonnes (34.0%). These reductions were somewhat offset by an increase of 172,000 tonnes or 33.5% in Soils between 2023 and 2024.</p>
+                            <p>In 2024, four waste categories comprised over 90% of the waste landfilled in Scotland: Soils (685,000 tonnes, 37.8% of total), Sorting residues (562,000 tonnes, 31.0% of total), Household and similar wastes (294,000 tonnes, 16.2% of total), and Mineral wastes from waste treatment and stabilised wastes (147,000 tonnes, 8.1% of total) (<a class='df-xref' href='#table-landfilled-total' onclick="(()=> {
+                                        const tabAnchorHRef = '#' + $('.df-caption#table-landfilled-total').closest('.tab-pane').attr('id');
+                                        console.log(tabAnchorHRef);
+                                         $(`a[href='${tabAnchorHRef}']`).click();
+                                         return true;
+                                         } )() " >Table 1</a>).</p>
+                            <div id="section-1" class="section level5 unnumbered tabset toc-ignore">
+                            <h5 class="unnumbered tabset toc-ignore"></h5>
+                            <div id="figure---landfill" class="section level6 unlisted unnumbered toc-ignore">
+                            <h6 class="unlisted unnumbered toc-ignore">Figure - landfill</h6>
+                            <div id="chart-landfilled-total" class="df-caption df-fig">
+                            <div class="df-prefix">
+                            Figure 1. 
+                            </div>
+                            <div class="df-caption-text">
+                            Waste landfilled in Scotland by waste category 2005 - 2024 (tonnes)
+                            </div>
+                            </div>
+                            <p><br></p>
+                            <div class="highchart html-widget html-fill-item" id="figure-total-landfilled" style="width:672px;height:480px;"></div>
+                            <script type="application/json" data-for="figure-total-landfilled">{"x":{"hc_opts":{"chart":{"reflow":true,"type":"column","backgroundColor":"white"},"title":{"text":null},"yAxis":{"title":{"text":"Waste landfilled (tonnes)"}},"credits":{"enabled":false},"exporting":{"enabled":true,"filename":"figure-total-landfilled","chartOptions":{"title":{"text":"Figure 1. Waste landfilled in Scotland by waste category 2005 - 2024 (tonnes)","align":"left"}},"buttons":{"contextButton":{"enabled":true},"hideAllButton":{"text":"Hide all","onclick":"\n        function(){\n             $container = $('#figure-total-landfilled')\n             let chart=$container.first().highcharts();\n              $(chart.series).each(function(){\n                      this.setVisible(false, true);\n                        });\n            chart.redraw();\n          }\n        "},"showAllButton":{"text":"Show all","onclick":"\n         function() {\n             $container = $('#figure-total-landfilled')\n             let chart=$container.first().highcharts();\n              $(chart.series).each(function(){\n                      this.setVisible(true, true);\n                        });\n            chart.redraw();\n          }\n        "}}},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"},"column":{"stacking":"normal","accessibility":{"enabled":true,"keyboardNavigation":{"enabled":true}},"dataLabels":{"enabled":false},"cursor":"pointer","borderWidth":1}},"tooltip":{"valueDecimals":1,"valueSuffix":" tonnes","formatter":"\n     function() {\n      //var stackName = this.series.userOptions.stack;\n\n      return `\n      \n      <b>${this.x}<\/b> <br/>\n       <b>${this.series.name}:<\/b> ${ Highcharts.numberFormat(this.y, 0, '.', ',')} tonnes <br/>\n        <b>Total (filtered)<\/b>: ${Highcharts.numberFormat(this.point.stackTotal, 0, '.', ',')} tonnes <br/>\n        <b>Percent of total<\/b>: ${Highcharts.numberFormat(this.y / this.point.stackTotal *100, 1, '.', ',')}%\n        \n    `\n     }\n     "},"xAxis":{"type":"category","categories":[2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024],"allowDecimals":false,"tickInterval":1,"labels":{"autoRotation":[-10,-20,-30,-40,-50,-60,-70,-80,-90]},"title":{"text":"Year"}},"series":[{"name":"Acid, alkaline or saline wastes","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"#c0d4ff","path":"M 0 10 L 10 0 M -1 1 L 1 -1 M 9 11 L 11 9"}},"data":[{"x":2005,"y":0},{"x":2006,"y":1838.12},{"x":2007,"y":9705.48},{"x":2008,"y":1921.78},{"x":2009,"y":0},{"x":2010,"y":0},{"x":2011,"y":0.06},{"x":2012,"y":0},{"x":2013,"y":0},{"x":2014,"y":0},{"x":2015,"y":0},{"x":2016,"y":0},{"x":2017,"y":0},{"x":2018,"y":0},{"x":2019,"y":0},{"x":2020,"y":3},{"x":2021,"y":0},{"x":2022,"y":0},{"x":2023,"y":0},{"x":2024,"y":0}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Batteries and accumulators wastes","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"#41b6c4","path":"M 0 0 L 10 10 M 9 -1 L 11 1 M -1 9 L 1 11"}},"data":[{"x":2005,"y":0},{"x":2006,"y":0},{"x":2007,"y":0},{"x":2008,"y":672.08},{"x":2009,"y":0},{"x":2010,"y":0},{"x":2011,"y":0},{"x":2012,"y":0},{"x":2013,"y":0},{"x":2014,"y":0},{"x":2015,"y":0},{"x":2016,"y":0},{"x":2017,"y":0},{"x":2018,"y":0},{"x":2019,"y":0},{"x":2020,"y":0},{"x":2021,"y":0},{"x":2022,"y":0},{"x":2023,"y":0},{"x":2024,"y":0}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Discarded vehicles","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"#4663ac","path":"M 5 5 m -4 0 a 4 4 0 1 1 8 0 a 4 4 0 1 1 -8 0"}},"data":[{"x":2005,"y":326.1},{"x":2006,"y":0},{"x":2007,"y":0},{"x":2008,"y":21.64},{"x":2009,"y":1146.14},{"x":2010,"y":5403.98},{"x":2011,"y":0},{"x":2012,"y":0},{"x":2013,"y":0},{"x":2014,"y":0.28},{"x":2015,"y":0},{"x":2016,"y":0},{"x":2017,"y":0},{"x":2018,"y":0},{"x":2019,"y":0},{"x":2020,"y":0},{"x":2021,"y":0},{"x":2022,"y":0},{"x":2023,"y":0},{"x":2024,"y":0}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Metallic wastes, ferrous","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"lightgrey","path":"M 3 3 L 8 3 L 8 8 L 3 8 Z"}},"data":[{"x":2005,"y":155.58},{"x":2006,"y":209.8},{"x":2007,"y":6954.68},{"x":2008,"y":126.02},{"x":2009,"y":44.02},{"x":2010,"y":948.86},{"x":2011,"y":9330.719999999999},{"x":2012,"y":3096.02},{"x":2013,"y":0},{"x":2014,"y":7.84},{"x":2015,"y":24.68},{"x":2016,"y":25.63},{"x":2017,"y":0},{"x":2018,"y":37.08},{"x":2019,"y":38.5},{"x":2020,"y":0},{"x":2021,"y":47},{"x":2022,"y":9},{"x":2023,"y":0},{"x":2024,"y":0}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Spent solvents","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"#7cb5ec","path":"M 0 0 L 5 10 L 10 0"}},"data":[{"x":2005,"y":0},{"x":2006,"y":0},{"x":2007,"y":45.22},{"x":2008,"y":0},{"x":2009,"y":0},{"x":2010,"y":0},{"x":2011,"y":0},{"x":2012,"y":0},{"x":2013,"y":0},{"x":2014,"y":0},{"x":2015,"y":0},{"x":2016,"y":0},{"x":2017,"y":0},{"x":2018,"y":0},{"x":2019,"y":0},{"x":2020,"y":0},{"x":2021,"y":0},{"x":2022,"y":0},{"x":2023,"y":0},{"x":2024,"y":0}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Waste containing PCB","color":{"pattern":{"width":5,"height":5,"stroke":"#FFFFFF","strokeWidth":2,"color":"#c0d4ff","path":"M 0 1.5 L 2.5 1.5 L 2.5 0 M 2.5 5 L 2.5 3.5 L 5 3.5"}},"data":[{"x":2005,"y":0},{"x":2006,"y":0},{"x":2007,"y":0},{"x":2008,"y":0},{"x":2009,"y":0},{"x":2010,"y":18.18},{"x":2011,"y":0},{"x":2012,"y":2039.52},{"x":2013,"y":0},{"x":2014,"y":0},{"x":2015,"y":0},{"x":2016,"y":0},{"x":2017,"y":0},{"x":2018,"y":0},{"x":2019,"y":0},{"x":2020,"y":0},{"x":2021,"y":0},{"x":2022,"y":0},{"x":2023,"y":0},{"x":2024,"y":0}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Metallic wastes, mixed ferrous and non-ferrous","color":{"pattern":{"width":5,"height":5,"stroke":"#FFFFFF","strokeWidth":2,"color":"#41b6c4","path":"M 0 2 L 5 2 M 0 4 L 5 4"}},"data":[{"x":2005,"y":112.08},{"x":2006,"y":12.88},{"x":2007,"y":532.9},{"x":2008,"y":31.5},{"x":2009,"y":0.85},{"x":2010,"y":8.92},{"x":2011,"y":92.65000000000001},{"x":2012,"y":7.26},{"x":2013,"y":3.48},{"x":2014,"y":6.8},{"x":2015,"y":1.84},{"x":2016,"y":5.18},{"x":2017,"y":15.24},{"x":2018,"y":18.28},{"x":2019,"y":50.6},{"x":2020,"y":19},{"x":2021,"y":3},{"x":2022,"y":1},{"x":2023,"y":3},{"x":2024,"y":12}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Animal faeces, urine and manure","color":{"pattern":{"width":5,"height":5,"stroke":"#FFFFFF","strokeWidth":2,"color":"#4663ac","path":"M 2 0 L 2 5 M 4 0 L 4 5"}},"data":[{"x":2005,"y":200.86},{"x":2006,"y":180.76},{"x":2007,"y":187.42},{"x":2008,"y":186.26},{"x":2009,"y":191.99},{"x":2010,"y":8.9},{"x":2011,"y":11.76},{"x":2012,"y":127.96},{"x":2013,"y":146.62},{"x":2014,"y":156.48},{"x":2015,"y":147.96},{"x":2016,"y":134.62},{"x":2017,"y":61.4},{"x":2018,"y":27.38},{"x":2019,"y":72.2},{"x":2020,"y":106},{"x":2021,"y":24},{"x":2022,"y":30},{"x":2023,"y":28},{"x":2024,"y":14}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Wood wastes","color":{"pattern":{"width":5,"height":5,"stroke":"#111111","strokeWidth":2,"color":"lightgrey","path":"M 0 5 L 5 0 M -0.5 0.5 L 0.5 -0.5 M 4.5 5.5 L 5.5 4.5"}},"data":[{"x":2005,"y":4589.83},{"x":2006,"y":2669.665},{"x":2007,"y":922.24},{"x":2008,"y":11637.64},{"x":2009,"y":10641.34},{"x":2010,"y":4087.920000000001},{"x":2011,"y":2899.1},{"x":2012,"y":3217.38},{"x":2013,"y":3655.34},{"x":2014,"y":1588.42},{"x":2015,"y":986.58},{"x":2016,"y":437.34},{"x":2017,"y":296.57},{"x":2018,"y":331.88},{"x":2019,"y":78.10000000000001},{"x":2020,"y":20},{"x":2021,"y":34},{"x":2022,"y":113},{"x":2023,"y":61},{"x":2024,"y":36}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Discarded equipment (excluding discarded vehicles, batteries and accumulators wastes)","color":{"pattern":{"width":5,"height":5,"strokeWidth":2,"strokeWidth.1":2,"color":"#7cb5ec","path":"M 0 0 L 5 5 M 4.5 -0.5 L 5.5 0.5 M -0.5 4.5 L 0.5 5.5\""}},"data":[{"x":2005,"y":60},{"x":2006,"y":81.52},{"x":2007,"y":94.42},{"x":2008,"y":15.76},{"x":2009,"y":1291.12},{"x":2010,"y":46.78},{"x":2011,"y":585.96},{"x":2012,"y":946.2600000000001},{"x":2013,"y":1105},{"x":2014,"y":2459.5},{"x":2015,"y":2899.94},{"x":2016,"y":1400.4},{"x":2017,"y":213.5},{"x":2018,"y":74.94},{"x":2019,"y":509.3},{"x":2020,"y":336},{"x":2021,"y":621},{"x":2022,"y":243},{"x":2023,"y":319},{"x":2024,"y":69}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Paper and cardboard wastes","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"#c0d4ff","path":"M 0 10 L 10 0 M -1 1 L 1 -1 M 9 11 L 11 9"}},"data":[{"x":2005,"y":12773.11},{"x":2006,"y":14684.5},{"x":2007,"y":10319.57},{"x":2008,"y":9244.52},{"x":2009,"y":778.7700000000001},{"x":2010,"y":821.29},{"x":2011,"y":434.56},{"x":2012,"y":419.74},{"x":2013,"y":492.54},{"x":2014,"y":843.58},{"x":2015,"y":567.58},{"x":2016,"y":17.17},{"x":2017,"y":24.64},{"x":2018,"y":36.4},{"x":2019,"y":39.5},{"x":2020,"y":49},{"x":2021,"y":36},{"x":2022,"y":29},{"x":2023,"y":71},{"x":2024,"y":79}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Used oils","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"#41b6c4","path":"M 0 0 L 10 10 M 9 -1 L 11 1 M -1 9 L 1 11"}},"data":[{"x":2005,"y":36.77},{"x":2006,"y":24.585},{"x":2007,"y":0},{"x":2008,"y":0},{"x":2009,"y":0},{"x":2010,"y":194.44},{"x":2011,"y":197.94},{"x":2012,"y":116},{"x":2013,"y":54.78},{"x":2014,"y":0},{"x":2015,"y":0},{"x":2016,"y":0},{"x":2017,"y":0},{"x":2018,"y":0},{"x":2019,"y":0},{"x":2020,"y":0},{"x":2021,"y":0},{"x":2022,"y":0},{"x":2023,"y":110},{"x":2024,"y":122}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Rubber wastes","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"#4663ac","path":"M 5 5 m -4 0 a 4 4 0 1 1 8 0 a 4 4 0 1 1 -8 0"}},"data":[{"x":2005,"y":293.5},{"x":2006,"y":1140.54},{"x":2007,"y":0},{"x":2008,"y":72.08},{"x":2009,"y":49.36},{"x":2010,"y":0},{"x":2011,"y":80.36},{"x":2012,"y":53.88},{"x":2013,"y":74.92},{"x":2014,"y":110.98},{"x":2015,"y":46.54},{"x":2016,"y":43.06},{"x":2017,"y":382.48},{"x":2018,"y":1308.78},{"x":2019,"y":89.7},{"x":2020,"y":347},{"x":2021,"y":176},{"x":2022,"y":124},{"x":2023,"y":189},{"x":2024,"y":137}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Metallic wastes, non-ferrous","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"lightgrey","path":"M 3 3 L 8 3 L 8 8 L 3 8 Z"}},"data":[{"x":2005,"y":0},{"x":2006,"y":5166.38},{"x":2007,"y":1873.38},{"x":2008,"y":1086.91},{"x":2009,"y":145.92},{"x":2010,"y":1002.2},{"x":2011,"y":261.92},{"x":2012,"y":110.22},{"x":2013,"y":114.2},{"x":2014,"y":109.6},{"x":2015,"y":3856.88},{"x":2016,"y":0},{"x":2017,"y":0},{"x":2018,"y":0},{"x":2019,"y":0},{"x":2020,"y":144},{"x":2021,"y":29},{"x":2022,"y":16},{"x":2023,"y":23},{"x":2024,"y":193}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Dredging spoils","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"#7cb5ec","path":"M 0 0 L 5 10 L 10 0"}},"data":[{"x":2005,"y":21070.14},{"x":2006,"y":11514.2},{"x":2007,"y":1999.4},{"x":2008,"y":244.42},{"x":2009,"y":80},{"x":2010,"y":15185},{"x":2011,"y":1765.18},{"x":2012,"y":60},{"x":2013,"y":2420.16},{"x":2014,"y":202.38},{"x":2015,"y":1535.9},{"x":2016,"y":0},{"x":2017,"y":63.14},{"x":2018,"y":2333.8},{"x":2019,"y":72.90000000000001},{"x":2020,"y":0},{"x":2021,"y":0},{"x":2022,"y":216},{"x":2023,"y":251},{"x":2024,"y":206}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Vegetal wastes","color":{"pattern":{"width":5,"height":5,"stroke":"#FFFFFF","strokeWidth":2,"color":"#c0d4ff","path":"M 0 1.5 L 2.5 1.5 L 2.5 0 M 2.5 5 L 2.5 3.5 L 5 3.5"}},"data":[{"x":2005,"y":13146.75},{"x":2006,"y":10816},{"x":2007,"y":5126.42},{"x":2008,"y":47877.00999999999},{"x":2009,"y":9676.27},{"x":2010,"y":1788.38},{"x":2011,"y":1822.44},{"x":2012,"y":3112.58},{"x":2013,"y":5201.36},{"x":2014,"y":6012.759999999999},{"x":2015,"y":4051.67},{"x":2016,"y":7078.09},{"x":2017,"y":4304.22},{"x":2018,"y":5095.07},{"x":2019,"y":4528},{"x":2020,"y":18106},{"x":2021,"y":10461},{"x":2022,"y":7459},{"x":2023,"y":543},{"x":2024,"y":594}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Chemical wastes","color":{"pattern":{"width":5,"height":5,"stroke":"#FFFFFF","strokeWidth":2,"color":"#41b6c4","path":"M 0 2 L 5 2 M 0 4 L 5 4"}},"data":[{"x":2005,"y":1075.72},{"x":2006,"y":8434.610000000001},{"x":2007,"y":1639.48},{"x":2008,"y":1328.44},{"x":2009,"y":698.8},{"x":2010,"y":630.49},{"x":2011,"y":603.33},{"x":2012,"y":1345.24},{"x":2013,"y":1823.02},{"x":2014,"y":703.85},{"x":2015,"y":744.88},{"x":2016,"y":1169.9},{"x":2017,"y":2597.32},{"x":2018,"y":1941.8},{"x":2019,"y":1208.7},{"x":2020,"y":622},{"x":2021,"y":791},{"x":2022,"y":450},{"x":2023,"y":526},{"x":2024,"y":642}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Combustion wastes","color":{"pattern":{"width":5,"height":5,"stroke":"#FFFFFF","strokeWidth":2,"color":"#4663ac","path":"M 2 0 L 2 5 M 4 0 L 4 5"}},"data":[{"x":2005,"y":532419.8300000001},{"x":2006,"y":758621.48},{"x":2007,"y":555923.6399999999},{"x":2008,"y":436725.42},{"x":2009,"y":353902.98},{"x":2010,"y":521327},{"x":2011,"y":511178.48},{"x":2012,"y":453592.7},{"x":2013,"y":318713.96},{"x":2014,"y":364588.82},{"x":2015,"y":333995.7},{"x":2016,"y":83764.73},{"x":2017,"y":1385.52},{"x":2018,"y":722.8799999999999},{"x":2019,"y":3.8},{"x":2020,"y":468},{"x":2021,"y":2150},{"x":2022,"y":1480},{"x":2023,"y":1120},{"x":2024,"y":1136}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Glass wastes","color":{"pattern":{"width":5,"height":5,"stroke":"#111111","strokeWidth":2,"color":"lightgrey","path":"M 0 5 L 5 0 M -0.5 0.5 L 0.5 -0.5 M 4.5 5.5 L 5.5 4.5"}},"data":[{"x":2005,"y":1220.72},{"x":2006,"y":3674.62},{"x":2007,"y":1668.6},{"x":2008,"y":1886.94},{"x":2009,"y":2235.72},{"x":2010,"y":1950.63},{"x":2011,"y":976.1},{"x":2012,"y":174.82},{"x":2013,"y":163.58},{"x":2014,"y":2227.08},{"x":2015,"y":13323.18},{"x":2016,"y":16820.07},{"x":2017,"y":19429.21},{"x":2018,"y":2489.83},{"x":2019,"y":9456.299999999999},{"x":2020,"y":7377},{"x":2021,"y":12884},{"x":2022,"y":6153},{"x":2023,"y":2789},{"x":2024,"y":1510}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Animal and mixed food waste","color":{"pattern":{"width":5,"height":5,"strokeWidth":2,"strokeWidth.1":2,"color":"#7cb5ec","path":"M 0 0 L 5 5 M 4.5 -0.5 L 5.5 0.5 M -0.5 4.5 L 0.5 5.5\""}},"data":[{"x":2005,"y":28078.45},{"x":2006,"y":18709.99},{"x":2007,"y":20766.23},{"x":2008,"y":12961.058},{"x":2009,"y":9560.227000000001},{"x":2010,"y":6073.5576},{"x":2011,"y":5617.13},{"x":2012,"y":6538.03},{"x":2013,"y":8034.440000000001},{"x":2014,"y":11382.29},{"x":2015,"y":10522.72},{"x":2016,"y":8120.69},{"x":2017,"y":5666.610000000001},{"x":2018,"y":4352.42},{"x":2019,"y":6329},{"x":2020,"y":2548},{"x":2021,"y":2091},{"x":2022,"y":1733},{"x":2023,"y":1807},{"x":2024,"y":2046}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Common sludges","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"#c0d4ff","path":"M 0 10 L 10 0 M -1 1 L 1 -1 M 9 11 L 11 9"}},"data":[{"x":2005,"y":70017.34699999999},{"x":2006,"y":47748.49},{"x":2007,"y":39761.96},{"x":2008,"y":40752.94},{"x":2009,"y":33722.37},{"x":2010,"y":28589.54999999999},{"x":2011,"y":37637.85},{"x":2012,"y":33323.99},{"x":2013,"y":27917.83},{"x":2014,"y":24808.74},{"x":2015,"y":11521.84},{"x":2016,"y":6746.35},{"x":2017,"y":2756},{"x":2018,"y":3192.42},{"x":2019,"y":4420.4},{"x":2020,"y":4169},{"x":2021,"y":3188},{"x":2022,"y":3247},{"x":2023,"y":2879},{"x":2024,"y":2708}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Textile wastes","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"#41b6c4","path":"M 0 0 L 10 10 M 9 -1 L 11 1 M -1 9 L 1 11"}},"data":[{"x":2005,"y":3989.08},{"x":2006,"y":3091.68},{"x":2007,"y":2061.99},{"x":2008,"y":1634.54},{"x":2009,"y":3025.27},{"x":2010,"y":6262.09},{"x":2011,"y":6294.53},{"x":2012,"y":1654.98},{"x":2013,"y":1494.69},{"x":2014,"y":6737.56},{"x":2015,"y":8330.57},{"x":2016,"y":6580.94},{"x":2017,"y":2863.97},{"x":2018,"y":996.13},{"x":2019,"y":843.9},{"x":2020,"y":548},{"x":2021,"y":1781},{"x":2022,"y":1562},{"x":2023,"y":1260},{"x":2024,"y":2783}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Industrial effluent sludges","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"#4663ac","path":"M 5 5 m -4 0 a 4 4 0 1 1 8 0 a 4 4 0 1 1 -8 0"}},"data":[{"x":2005,"y":22288.12},{"x":2006,"y":23284.85},{"x":2007,"y":21215.43},{"x":2008,"y":25721.13},{"x":2009,"y":15475.32},{"x":2010,"y":14557.08},{"x":2011,"y":15413.63},{"x":2012,"y":13595.82},{"x":2013,"y":15329.58},{"x":2014,"y":12471.78},{"x":2015,"y":9452.6},{"x":2016,"y":14941.64},{"x":2017,"y":17200.92},{"x":2018,"y":18716.68},{"x":2019,"y":20466.8},{"x":2020,"y":12639},{"x":2021,"y":10517},{"x":2022,"y":5625},{"x":2023,"y":6039},{"x":2024,"y":2803}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Plastic wastes","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"lightgrey","path":"M 3 3 L 8 3 L 8 8 L 3 8 Z"}},"data":[{"x":2005,"y":6735},{"x":2006,"y":7725.419999999999},{"x":2007,"y":6042.3},{"x":2008,"y":6037.339999999999},{"x":2009,"y":3348.63},{"x":2010,"y":1937.47},{"x":2011,"y":377.68},{"x":2012,"y":3198.77},{"x":2013,"y":557.6199999999999},{"x":2014,"y":1358.78},{"x":2015,"y":1970.46},{"x":2016,"y":1366.8},{"x":2017,"y":2449.95},{"x":2018,"y":858.74},{"x":2019,"y":1833.7},{"x":2020,"y":2414},{"x":2021,"y":1598},{"x":2022,"y":2632},{"x":2023,"y":1646},{"x":2024,"y":3072}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Sludges and liquid wastes from waste treatment","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"#7cb5ec","path":"M 0 0 L 5 10 L 10 0"}},"data":[{"x":2005,"y":3898.06},{"x":2006,"y":2146.36},{"x":2007,"y":1805.8},{"x":2008,"y":1696.38},{"x":2009,"y":759.79},{"x":2010,"y":717.14},{"x":2011,"y":697.5},{"x":2012,"y":6680.460000000001},{"x":2013,"y":9805.120000000001},{"x":2014,"y":1419.62},{"x":2015,"y":900.4400000000001},{"x":2016,"y":6466.5},{"x":2017,"y":673.3},{"x":2018,"y":3739.18},{"x":2019,"y":6922.2},{"x":2020,"y":5992},{"x":2021,"y":6732},{"x":2022,"y":4349},{"x":2023,"y":4206},{"x":2024,"y":4655}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Health care and biological wastes","color":{"pattern":{"width":5,"height":5,"stroke":"#FFFFFF","strokeWidth":2,"color":"#c0d4ff","path":"M 0 1.5 L 2.5 1.5 L 2.5 0 M 2.5 5 L 2.5 3.5 L 5 3.5"}},"data":[{"x":2005,"y":11642.6155},{"x":2006,"y":15986.5005},{"x":2007,"y":14150.9927},{"x":2008,"y":9531.7037},{"x":2009,"y":5915.8828},{"x":2010,"y":5426.990600000001},{"x":2011,"y":5589.5},{"x":2012,"y":5885.139999999999},{"x":2013,"y":5396.92},{"x":2014,"y":3589.19},{"x":2015,"y":6813.13},{"x":2016,"y":5042.23},{"x":2017,"y":8024.41},{"x":2018,"y":8548.720000000001},{"x":2019,"y":9289.799999999999},{"x":2020,"y":9021},{"x":2021,"y":6902},{"x":2022,"y":6437},{"x":2023,"y":6381},{"x":2024,"y":6067}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Other mineral wastes","color":{"pattern":{"width":5,"height":5,"stroke":"#FFFFFF","strokeWidth":2,"color":"#41b6c4","path":"M 0 2 L 5 2 M 0 4 L 5 4"}},"data":[{"x":2005,"y":90782.095},{"x":2006,"y":82090.54000000001},{"x":2007,"y":48801.28},{"x":2008,"y":42669.96},{"x":2009,"y":38159.85999999999},{"x":2010,"y":69134.22},{"x":2011,"y":51089.76},{"x":2012,"y":56409.71},{"x":2013,"y":78921.89},{"x":2014,"y":54990.84999999999},{"x":2015,"y":50135.08},{"x":2016,"y":48446.57},{"x":2017,"y":55828.13},{"x":2018,"y":39504.17},{"x":2019,"y":31318.4},{"x":2020,"y":18105},{"x":2021,"y":31335},{"x":2022,"y":35251},{"x":2023,"y":28918},{"x":2024,"y":24649}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Mixed and undifferentiated materials","color":{"pattern":{"width":5,"height":5,"stroke":"#FFFFFF","strokeWidth":2,"color":"#4663ac","path":"M 2 0 L 2 5 M 4 0 L 4 5"}},"data":[{"x":2005,"y":93096.78},{"x":2006,"y":95909.196},{"x":2007,"y":107268.009},{"x":2008,"y":83170.66999999998},{"x":2009,"y":75701.8138},{"x":2010,"y":62346.92},{"x":2011,"y":75231.41},{"x":2012,"y":47622.7},{"x":2013,"y":43203.25},{"x":2014,"y":42553.78},{"x":2015,"y":62139.21000000001},{"x":2016,"y":54305.75},{"x":2017,"y":34671.25},{"x":2018,"y":46496.63},{"x":2019,"y":45081.7},{"x":2020,"y":36141},{"x":2021,"y":37884},{"x":2022,"y":29574},{"x":2023,"y":32777},{"x":2024,"y":28205}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Mineral waste from construction and demolition","color":{"pattern":{"width":5,"height":5,"stroke":"#111111","strokeWidth":2,"color":"lightgrey","path":"M 0 5 L 5 0 M -0.5 0.5 L 0.5 -0.5 M 4.5 5.5 L 5.5 4.5"}},"data":[{"x":2005,"y":456288.785},{"x":2006,"y":411665.8050000001},{"x":2007,"y":426597.03},{"x":2008,"y":413526.81},{"x":2009,"y":100690.133},{"x":2010,"y":97702.94},{"x":2011,"y":178669.74},{"x":2012,"y":95702.34000000001},{"x":2013,"y":60305.9},{"x":2014,"y":150915.22},{"x":2015,"y":61745.96000000001},{"x":2016,"y":82854.78},{"x":2017,"y":97833.87000000001},{"x":2018,"y":36890.62},{"x":2019,"y":25904.6},{"x":2020,"y":29027},{"x":2021,"y":49390},{"x":2022,"y":40044},{"x":2023,"y":35240},{"x":2024,"y":44245}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Mineral wastes from waste treatment and stabilised wastes","color":{"pattern":{"width":5,"height":5,"strokeWidth":2,"strokeWidth.1":2,"color":"#7cb5ec","path":"M 0 0 L 5 5 M 4.5 -0.5 L 5.5 0.5 M -0.5 4.5 L 0.5 5.5\""}},"data":[{"x":2005,"y":79464.46000000001},{"x":2006,"y":88267.45},{"x":2007,"y":164900.06},{"x":2008,"y":176633.6},{"x":2009,"y":124430.85},{"x":2010,"y":142952},{"x":2011,"y":157485.86},{"x":2012,"y":189297.93},{"x":2013,"y":132802.38},{"x":2014,"y":145233.22},{"x":2015,"y":233679.86},{"x":2016,"y":250392.62},{"x":2017,"y":275363.74},{"x":2018,"y":214429.55},{"x":2019,"y":234959.3},{"x":2020,"y":207576},{"x":2021,"y":188302},{"x":2022,"y":161190},{"x":2023,"y":222260},{"x":2024,"y":146599}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Household and similar wastes","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"#c0d4ff","path":"M 0 10 L 10 0 M -1 1 L 1 -1 M 9 11 L 11 9"}},"data":[{"x":2005,"y":3212099.08},{"x":2006,"y":2972576.968},{"x":2007,"y":2848252.547},{"x":2008,"y":2434477.105},{"x":2009,"y":2184192.04},{"x":2010,"y":1929465.750000001},{"x":2011,"y":1726994.95},{"x":2012,"y":1466307.78},{"x":2013,"y":1351372.83},{"x":2014,"y":1313489.8},{"x":2015,"y":1166257.64},{"x":2016,"y":1245786.48},{"x":2017,"y":1222957},{"x":2018,"y":1187185.35},{"x":2019,"y":756721.7999999999},{"x":2020,"y":735833},{"x":2021,"y":736645},{"x":2022,"y":744318},{"x":2023,"y":529996},{"x":2024,"y":294131}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Sorting residues","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"#41b6c4","path":"M 0 0 L 10 10 M 9 -1 L 11 1 M -1 9 L 1 11"}},"data":[{"x":2005,"y":407809.4},{"x":2006,"y":445094.62},{"x":2007,"y":570575.493},{"x":2008,"y":738220.4099999999},{"x":2009,"y":723363.9399999999},{"x":2010,"y":683934.62},{"x":2011,"y":668476.02},{"x":2012,"y":866218.77},{"x":2013,"y":796418.37},{"x":2014,"y":833128.89},{"x":2015,"y":945509.28},{"x":2016,"y":867344.92},{"x":2017,"y":813569},{"x":2018,"y":745403.3400000001},{"x":2019,"y":670443.1000000001},{"x":2020,"y":689188},{"x":2021,"y":967309},{"x":2022,"y":656099},{"x":2023,"y":592433},{"x":2024,"y":561808}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Soils","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"#4663ac","path":"M 5 5 m -4 0 a 4 4 0 1 1 8 0 a 4 4 0 1 1 -8 0"}},"data":[{"x":2005,"y":1981068.395},{"x":2006,"y":2074444.974},{"x":2007,"y":2494876.96},{"x":2008,"y":1629731.17},{"x":2009,"y":1007471.67},{"x":2010,"y":950445.0600000001},{"x":2011,"y":1210974.99},{"x":2012,"y":1220688.96},{"x":2013,"y":1207592.22},{"x":2014,"y":1137523.48},{"x":2015,"y":1243087.42},{"x":2016,"y":1026686.84},{"x":2017,"y":1256725.01},{"x":2018,"y":1415748.09},{"x":2019,"y":1173991.3},{"x":2020,"y":908639},{"x":2021,"y":931209},{"x":2022,"y":636561},{"x":2023,"y":512777},{"x":2024,"y":684509}],"tooltip":{"valueSuffix":" tonnes"}}],"legend":{"reversed":true,"itemWidth":200,"maxHeight":"10000px","itemStyle":{"color":"#000000","fontWeight":200,"textOverflow":"ellipsis"}}},"theme":{"chart":{"backgroundColor":"transparent"},"colors":["#7cb5ec","#434348","#90ed7d","#f7a35c","#8085e9","#f15c80","#e4d354","#2b908f","#f45b5b","#91e8e1"]},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadCSV":"Download CSV","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","downloadXLS":"Download XLS","drillUpText":"◁ Back to {series.name}","exitFullscreen":"Exit from full screen","exportData":{"annotationHeader":"Annotations","categoryDatetimeHeader":"DateTime","categoryHeader":"Category"},"hideData":"Hide data table","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbolMagnitude":1000,"numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"shortWeekdays":["Sat","Sun","Mon","Tue","Wed","Thu","Fri"],"thousandsSep":" ","viewData":"View data table","viewFullscreen":"View in full screen","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":[],"debug":false},"evals":["hc_opts.exporting.buttons.hideAllButton.onclick","hc_opts.exporting.buttons.showAllButton.onclick","hc_opts.tooltip.formatter"],"jsHooks":[]}</script>
+                            </div>
+                            <div id="table---landfill" class="section level6 unlisted unnumbered toc-ignore">
+                            <h6 class="unlisted unnumbered toc-ignore">Table - landfill</h6>
+                            <div id="table-landfilled-total" class="df-caption df-tab">
+                            <div class="df-prefix">
+                            Table 1. 
+                            </div>
+                            <div class="df-caption-text">
+                            Waste landfilled in Scotland by waste category 2005 - 2024 (tonnes)
+                            </div>
+                            </div>
+                            <p><br></p>
+                            <div class="datatables html-widget html-fill-item" id="htmlwidget-d934cb9252051d0f2b44" style="width:100%;height:auto;"></div>
+                            <script type="application/json" data-for="htmlwidget-d934cb9252051d0f2b44">{"x":{"filter":"none","vertical":false,"class":"display","extensions":["Buttons"],"data":[["Household and similar wastes","Soils","Combustion wastes","Mineral waste from construction and demolition","Sorting residues","Mixed and undifferentiated materials","Other mineral wastes","Mineral wastes from waste treatment and stabilised wastes","Common sludges","Animal and mixed food waste","Industrial effluent sludges","Dredging spoils","Vegetal wastes","Paper and cardboard wastes","Health care and biological wastes","Plastic wastes","Wood wastes","Textile wastes","Sludges and liquid wastes from waste treatment","Glass wastes","Chemical wastes","Discarded vehicles","Rubber wastes","Animal faeces, urine and manure","Metallic wastes, ferrous","Metallic wastes, mixed ferrous and non-ferrous","Discarded equipment (excluding discarded vehicles, batteries and accumulators wastes)","Used oils","Acid, alkaline or saline wastes","Batteries and accumulators wastes","Metallic wastes, non-ferrous","Spent solvents","Waste containing PCB"],[3212099.08,1981068.395,532419.8300000001,456288.785,407809.4,93096.78,90782.095,79464.46000000001,70017.34699999999,28078.45,22288.12,21070.14,13146.75,12773.11,11642.6155,6735,4589.83,3989.08,3898.06,1220.72,1075.72,326.1,293.5,200.86,155.58,112.08,60,36.77,0,0,0,0,0],[2972576.968,2074444.974,758621.48,411665.8050000001,445094.62,95909.196,82090.54000000001,88267.45,47748.49,18709.99,23284.85,11514.2,10816,14684.5,15986.5005,7725.419999999999,2669.665,3091.68,2146.36,3674.62,8434.610000000001,0,1140.54,180.76,209.8,12.88,81.52,24.585,1838.12,0,5166.38,0,0],[2848252.547,2494876.96,555923.6399999999,426597.03,570575.493,107268.009,48801.28,164900.06,39761.96,20766.23,21215.43,1999.4,5126.42,10319.57,14150.9927,6042.3,922.24,2061.99,1805.8,1668.6,1639.48,0,0,187.42,6954.68,532.9,94.42,0,9705.48,0,1873.38,45.22,0],[2434477.105,1629731.17,436725.42,413526.81,738220.4099999999,83170.66999999998,42669.96,176633.6,40752.94,12961.058,25721.13,244.42,47877.00999999999,9244.52,9531.7037,6037.339999999999,11637.64,1634.54,1696.38,1886.94,1328.44,21.64,72.08,186.26,126.02,31.5,15.76,0,1921.78,672.08,1086.91,0,0],[2184192.04,1007471.67,353902.98,100690.133,723363.9399999999,75701.8138,38159.85999999999,124430.85,33722.37,9560.227000000001,15475.32,80,9676.27,778.7700000000001,5915.8828,3348.63,10641.34,3025.27,759.79,2235.72,698.8,1146.14,49.36,191.99,44.02,0.85,1291.12,0,0,0,145.92,0,0],[1929465.750000001,950445.0600000001,521327,97702.94,683934.62,62346.92,69134.22,142952,28589.54999999999,6073.5576,14557.08,15185,1788.38,821.29,5426.990600000001,1937.47,4087.920000000001,6262.09,717.14,1950.63,630.49,5403.98,0,8.9,948.86,8.92,46.78,194.44,0,0,1002.2,0,18.18],[1726994.95,1210974.99,511178.48,178669.74,668476.02,75231.41,51089.76,157485.86,37637.85,5617.13,15413.63,1765.18,1822.44,434.56,5589.5,377.68,2899.1,6294.53,697.5,976.1,603.33,0,80.36,11.76,9330.719999999999,92.65000000000001,585.96,197.94,0.06,0,261.92,0,0],[1466307.78,1220688.96,453592.7,95702.34000000001,866218.77,47622.7,56409.71,189297.93,33323.99,6538.03,13595.82,60,3112.58,419.74,5885.139999999999,3198.77,3217.38,1654.98,6680.460000000001,174.82,1345.24,0,53.88,127.96,3096.02,7.26,946.2600000000001,116,0,0,110.22,0,2039.52],[1351372.83,1207592.22,318713.96,60305.9,796418.37,43203.25,78921.89,132802.38,27917.83,8034.440000000001,15329.58,2420.16,5201.36,492.54,5396.92,557.6199999999999,3655.34,1494.69,9805.120000000001,163.58,1823.02,0,74.92,146.62,0,3.48,1105,54.78,0,0,114.2,0,0],[1313489.8,1137523.48,364588.82,150915.22,833128.89,42553.78,54990.84999999999,145233.22,24808.74,11382.29,12471.78,202.38,6012.759999999999,843.58,3589.19,1358.78,1588.42,6737.56,1419.62,2227.08,703.85,0.28,110.98,156.48,7.84,6.8,2459.5,0,0,0,109.6,0,0],[1166257.64,1243087.42,333995.7,61745.96000000001,945509.28,62139.21000000001,50135.08,233679.86,11521.84,10522.72,9452.6,1535.9,4051.67,567.58,6813.13,1970.46,986.58,8330.57,900.4400000000001,13323.18,744.88,0,46.54,147.96,24.68,1.84,2899.94,0,0,0,3856.88,0,0],[1245786.48,1026686.84,83764.73,82854.78,867344.92,54305.75,48446.57,250392.62,6746.35,8120.69,14941.64,0,7078.09,17.17,5042.23,1366.8,437.34,6580.94,6466.5,16820.07,1169.9,0,43.06,134.62,25.63,5.18,1400.4,0,0,0,0,0,0],[1222957,1256725.01,1385.52,97833.87000000001,813569,34671.25,55828.13,275363.74,2756,5666.610000000001,17200.92,63.14,4304.22,24.64,8024.41,2449.95,296.57,2863.97,673.3,19429.21,2597.32,0,382.48,61.4,0,15.24,213.5,0,0,0,0,0,0],[1187185.35,1415748.09,722.8799999999999,36890.62,745403.3400000001,46496.63,39504.17,214429.55,3192.42,4352.42,18716.68,2333.8,5095.07,36.4,8548.720000000001,858.74,331.88,996.13,3739.18,2489.83,1941.8,0,1308.78,27.38,37.08,18.28,74.94,0,0,0,0,0,0],[756721.7999999999,1173991.3,3.8,25904.6,670443.1000000001,45081.7,31318.4,234959.3,4420.4,6329,20466.8,72.90000000000001,4528,39.5,9289.799999999999,1833.7,78.10000000000001,843.9,6922.2,9456.299999999999,1208.7,0,89.7,72.2,38.5,50.6,509.3,0,0,0,0,0,0],[735833,908639,468,29027,689188,36141,18105,207576,4169,2548,12639,0,18106,49,9021,2414,20,548,5992,7377,622,0,347,106,0,19,336,0,3,0,144,0,0],[736645,931209,2150,49390,967309,37884,31335,188302,3188,2091,10517,0,10461,36,6902,1598,34,1781,6732,12884,791,0,176,24,47,3,621,0,0,0,29,0,0],[744318,636561,1480,40044,656099,29574,35251,161190,3247,1733,5625,216,7459,29,6437,2632,113,1562,4349,6153,450,0,124,30,9,1,243,0,0,0,16,0,0],[529996,512777,1120,35240,592433,32777,28918,222260,2879,1807,6039,251,543,71,6381,1646,61,1260,4206,2789,526,0,189,28,0,3,319,110,0,0,23,0,0],[294131,684509,1136,44245,561808,28205,24649,146599,2708,2046,2803,206,594,79,6067,3072,36,2783,4655,1510,642,0,137,14,0,12,69,122,0,0,193,0,0]],"container":"<table class=\"dt-lf-series\">\n  <thead>\n    <tr>\n      <th>Waste category<\/th>\n      <th>2005<\/th>\n      <th>2006<\/th>\n      <th>2007<\/th>\n      <th>2008<\/th>\n      <th>2009<\/th>\n      <th>2010<\/th>\n      <th>2011<\/th>\n      <th>2012<\/th>\n      <th>2013<\/th>\n      <th>2014<\/th>\n      <th>2015<\/th>\n      <th>2016<\/th>\n      <th>2017<\/th>\n      <th>2018<\/th>\n      <th>2019<\/th>\n      <th>2020<\/th>\n      <th>2021<\/th>\n      <th>2022<\/th>\n      <th>2023<\/th>\n      <th>2024<\/th>\n    <\/tr>\n  <\/thead>\n  <tfoot>\n    <tr>\n      <th>Total<\/th>\n      <th>7,054,739<\/th>\n      <th>7,107,813<\/th>\n      <th>7,364,069<\/th>\n      <th>6,129,843<\/th>\n      <th>4,706,701<\/th>\n      <th>4,552,968<\/th>\n      <th>4,670,791<\/th>\n      <th>4,481,545<\/th>\n      <th>4,073,122<\/th>\n      <th>4,118,622<\/th>\n      <th>4,174,250<\/th>\n      <th>3,735,979<\/th>\n      <th>3,825,356<\/th>\n      <th>3,740,480<\/th>\n      <th>3,004,674<\/th>\n      <th>2,689,437<\/th>\n      <th>3,002,139<\/th>\n      <th>2,344,945<\/th>\n      <th>1,984,652<\/th>\n      <th>1,813,030<\/th>\n    <\/tr>\n  <\/tfoot>\n<\/table>","options":{"dom":"lfrtipB","buttons":["copy",{"extend":"csv","title":"lf-trend_2005-2024","footer":true},{"extend":"excel","title":"lf-trend_2005-2024","footer":true},{"extend":"pdf","title":"lf-trend_2005-2024","footer":true},"print"],"order":[[19,"desc"]],"lengthMenu":[[5,10,-1],["5","10","All"]],"columnDefs":[{"targets":1,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":8,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":9,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":10,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":11,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":12,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":13,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":14,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":15,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":16,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":17,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":18,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":19,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":20,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]},{"name":"WASTE_CAT","targets":0},{"name":"2005","targets":1},{"name":"2006","targets":2},{"name":"2007","targets":3},{"name":"2008","targets":4},{"name":"2009","targets":5},{"name":"2010","targets":6},{"name":"2011","targets":7},{"name":"2012","targets":8},{"name":"2013","targets":9},{"name":"2014","targets":10},{"name":"2015","targets":11},{"name":"2016","targets":12},{"name":"2017","targets":13},{"name":"2018","targets":14},{"name":"2019","targets":15},{"name":"2020","targets":16},{"name":"2021","targets":17},{"name":"2022","targets":18},{"name":"2023","targets":19},{"name":"2024","targets":20}],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'white-space':'nowrap'});\n}"}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render","options.columnDefs.6.render","options.columnDefs.7.render","options.columnDefs.8.render","options.columnDefs.9.render","options.columnDefs.10.render","options.columnDefs.11.render","options.columnDefs.12.render","options.columnDefs.13.render","options.columnDefs.14.render","options.columnDefs.15.render","options.columnDefs.16.render","options.columnDefs.17.render","options.columnDefs.18.render","options.columnDefs.19.render","options.rowCallback"],"jsHooks":[]}</script>
+                            </div>
+                            </div>
+                            </div>
+                            <div id="hazardous-waste-landfilled" class="section level3 unlisted unnumbered">
+                            <h3 class="unlisted unnumbered">Hazardous waste landfilled</h3>
+                            <p>The amount of Hazardous waste landfilled in Scotland in 2024 was 29,900 tonnes, 1.6% of the total waste landfilled and a decrease of 14,000 tonnes (31.8%) compared with 2023 (<a class='df-xref' href='#chart-landfilled-haz' onclick="(()=> {
+                                        const tabAnchorHRef = '#' + $('.df-caption#chart-landfilled-haz').closest('.tab-pane').attr('id');
+                                        console.log(tabAnchorHRef);
+                                         $(`a[href='${tabAnchorHRef}']`).click();
+                                         return true;
+                                         } )() " >Figure 2</a>). Over the longer term, the amount of hazardous waste landfilled in Scotland has reduced by 46,000 tonnes (60.7%) from 2005.</p>
+                            <p>Between 2005 and 2012, the largest component of hazardous waste disposed to landfill was Soils which comprised between 62% and 76% of hazardous waste landfilled during the period. From 2013 onward, that percentage has dropped (now ranging from 2% to 50%), and in 2024 comprised 4% (1,200 tonnes) (<a class='df-xref' href='#chart-landfilled-haz' onclick="(()=> {
+                                        const tabAnchorHRef = '#' + $('.df-caption#chart-landfilled-haz').closest('.tab-pane').attr('id');
+                                        console.log(tabAnchorHRef);
+                                         $(`a[href='${tabAnchorHRef}']`).click();
+                                         return true;
+                                         } )() " >Figure 2</a>). This pattern corresponds to a change in 2012 when a landfill tax exemption for disposing of waste from contaminated land was removed. Soils have since been replaced by Other mineral wastes as the largest component of hazardous waste (ranging from 30% to 67% of the total since 2013). In 2024, over half the hazardous waste landfilled was Other mineral wastes (18,300 tonnes, 61.2%), which primarily comprise insulating materials such as asbestos.</p>
+                            <div id="section-2" class="section level5 tabset unlisted unnumbered">
+                            <h5 class="tabset unlisted unnumbered"></h5>
+                            <div id="figure---hazardous-landfill" class="section level6 unlisted unnumbered toc-ignore">
+                            <h6 class="unlisted unnumbered toc-ignore">Figure - Hazardous landfill</h6>
+                            <div id="chart-landfilled-haz" class="df-caption df-fig">
+                            <div class="df-prefix">
+                            Figure 2. 
+                            </div>
+                            <div class="df-caption-text">
+                            Hazardous waste landfilled in Scotland by waste category 2005 - 2024 (tonnes)
+                            </div>
+                            </div>
+                            <p><br></p>
+                            <div class="highchart html-widget html-fill-item" id="figure-haz-landfilled" style="width:672px;height:480px;"></div>
+                            <script type="application/json" data-for="figure-haz-landfilled">{"x":{"hc_opts":{"chart":{"reflow":true,"type":"column","backgroundColor":"white"},"title":{"text":null},"yAxis":{"title":{"text":"Hazardous Waste landfilled (tonnes)"}},"credits":{"enabled":false},"exporting":{"enabled":true,"filename":"figure-haz-landfilled","chartOptions":{"title":{"text":"Figure 2. Hazardous waste landfilled in Scotland by waste category 2005 - 2024 (tonnes)","align":"left"}},"buttons":{"contextButton":{"enabled":true},"hideAllButton":{"text":"Hide all","onclick":"\n        function(){\n             $container = $('#figure-haz-landfilled')\n             let chart=$container.first().highcharts();\n              $(chart.series).each(function(){\n                      this.setVisible(false, true);\n                        });\n            chart.redraw();\n          }\n        "},"showAllButton":{"text":"Show all","onclick":"\n         function() {\n             $container = $('#figure-haz-landfilled')\n             let chart=$container.first().highcharts();\n              $(chart.series).each(function(){\n                      this.setVisible(true, true);\n                        });\n            chart.redraw();\n          }\n        "}}},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"},"column":{"stacking":"normal","accessibility":{"enabled":true,"keyboardNavigation":{"enabled":true}},"dataLabels":{"enabled":false},"cursor":"pointer","borderWidth":1}},"tooltip":{"valueDecimals":1,"valueSuffix":" tonnes","formatter":"\n     function() {\n      //var stackName = this.series.userOptions.stack;\n\n      return `\n      \n      <b>${this.x}<\/b> <br/>\n       <b>${this.series.name}:<\/b> ${ Highcharts.numberFormat(this.y, 0, '.', ',')} tonnes <br/>\n        <b>Total (filtered)<\/b>: ${Highcharts.numberFormat(this.point.stackTotal, 0, '.', ',')} tonnes <br/>\n        <b>Percent of total<\/b>: ${Highcharts.numberFormat(this.y / this.point.stackTotal *100, 1, '.', ',')}%\n        \n    `\n     }\n     "},"xAxis":{"type":"category","categories":[2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024],"allowDecimals":false,"tickInterval":1,"labels":{"autoRotation":[-10,-20,-30,-40,-50,-60,-70,-80,-90]},"title":{"text":"Year"}},"series":[{"name":"Acid, alkaline or saline wastes","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"#c0d4ff","path":"M 0 10 L 10 0 M -1 1 L 1 -1 M 9 11 L 11 9"}},"data":[{"x":2005,"y":0},{"x":2006,"y":0},{"x":2007,"y":0},{"x":2008,"y":0},{"x":2009,"y":0},{"x":2010,"y":0},{"x":2011,"y":0.06},{"x":2012,"y":0},{"x":2013,"y":0},{"x":2014,"y":0},{"x":2015,"y":0},{"x":2016,"y":0},{"x":2017,"y":0},{"x":2018,"y":0},{"x":2019,"y":0},{"x":2020,"y":3},{"x":2021,"y":0},{"x":2022,"y":0},{"x":2023,"y":0},{"x":2024,"y":0}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Batteries and accumulators wastes","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"#41b6c4","path":"M 0 0 L 10 10 M 9 -1 L 11 1 M -1 9 L 1 11"}},"data":[{"x":2005,"y":0},{"x":2006,"y":0},{"x":2007,"y":0},{"x":2008,"y":542.48},{"x":2009,"y":0},{"x":2010,"y":0},{"x":2011,"y":0},{"x":2012,"y":0},{"x":2013,"y":0},{"x":2014,"y":0},{"x":2015,"y":0},{"x":2016,"y":0},{"x":2017,"y":0},{"x":2018,"y":0},{"x":2019,"y":0},{"x":2020,"y":0},{"x":2021,"y":0},{"x":2022,"y":0},{"x":2023,"y":0},{"x":2024,"y":0}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Combustion wastes","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"#4663ac","path":"M 5 5 m -4 0 a 4 4 0 1 1 8 0 a 4 4 0 1 1 -8 0"}},"data":[{"x":2005,"y":0},{"x":2006,"y":0},{"x":2007,"y":702.3200000000001},{"x":2008,"y":0},{"x":2009,"y":0},{"x":2010,"y":248},{"x":2011,"y":159.38},{"x":2012,"y":0},{"x":2013,"y":0},{"x":2014,"y":1644.38},{"x":2015,"y":2646.86},{"x":2016,"y":2578.58},{"x":2017,"y":1165.26},{"x":2018,"y":557.1799999999999},{"x":2019,"y":0},{"x":2020,"y":0},{"x":2021,"y":0},{"x":2022,"y":0},{"x":2023,"y":0},{"x":2024,"y":0}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Discarded vehicles","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"lightgrey","path":"M 3 3 L 8 3 L 8 8 L 3 8 Z"}},"data":[{"x":2005,"y":0},{"x":2006,"y":0},{"x":2007,"y":0},{"x":2008,"y":20.3},{"x":2009,"y":0},{"x":2010,"y":0},{"x":2011,"y":0},{"x":2012,"y":0},{"x":2013,"y":0},{"x":2014,"y":0},{"x":2015,"y":0},{"x":2016,"y":0},{"x":2017,"y":0},{"x":2018,"y":0},{"x":2019,"y":0},{"x":2020,"y":0},{"x":2021,"y":0},{"x":2022,"y":0},{"x":2023,"y":0},{"x":2024,"y":0}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Dredging spoils","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"#7cb5ec","path":"M 0 0 L 5 10 L 10 0"}},"data":[{"x":2005,"y":0},{"x":2006,"y":0},{"x":2007,"y":0},{"x":2008,"y":1.56},{"x":2009,"y":0},{"x":2010,"y":5100},{"x":2011,"y":0},{"x":2012,"y":0},{"x":2013,"y":0},{"x":2014,"y":0},{"x":2015,"y":0},{"x":2016,"y":0},{"x":2017,"y":0},{"x":2018,"y":0},{"x":2019,"y":0},{"x":2020,"y":0},{"x":2021,"y":0},{"x":2022,"y":0},{"x":2023,"y":0},{"x":2024,"y":0}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Health care and biological wastes","color":{"pattern":{"width":5,"height":5,"stroke":"#FFFFFF","strokeWidth":2,"color":"#c0d4ff","path":"M 0 1.5 L 2.5 1.5 L 2.5 0 M 2.5 5 L 2.5 3.5 L 5 3.5"}},"data":[{"x":2005,"y":0},{"x":2006,"y":0},{"x":2007,"y":0},{"x":2008,"y":0},{"x":2009,"y":0},{"x":2010,"y":0},{"x":2011,"y":0},{"x":2012,"y":6.86},{"x":2013,"y":0},{"x":2014,"y":0},{"x":2015,"y":0},{"x":2016,"y":0},{"x":2017,"y":0},{"x":2018,"y":0},{"x":2019,"y":0},{"x":2020,"y":0},{"x":2021,"y":0},{"x":2022,"y":0},{"x":2023,"y":1},{"x":2024,"y":0}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Industrial effluent sludges","color":{"pattern":{"width":5,"height":5,"stroke":"#FFFFFF","strokeWidth":2,"color":"#41b6c4","path":"M 0 2 L 5 2 M 0 4 L 5 4"}},"data":[{"x":2005,"y":157.38},{"x":2006,"y":42.32},{"x":2007,"y":72.5},{"x":2008,"y":17.58},{"x":2009,"y":10.6},{"x":2010,"y":128.61},{"x":2011,"y":418.9},{"x":2012,"y":0},{"x":2013,"y":0},{"x":2014,"y":34.02},{"x":2015,"y":0},{"x":2016,"y":0},{"x":2017,"y":0},{"x":2018,"y":0},{"x":2019,"y":0},{"x":2020,"y":0},{"x":2021,"y":0},{"x":2022,"y":0},{"x":2023,"y":0},{"x":2024,"y":0}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Mixed and undifferentiated materials","color":{"pattern":{"width":5,"height":5,"stroke":"#FFFFFF","strokeWidth":2,"color":"#4663ac","path":"M 2 0 L 2 5 M 4 0 L 4 5"}},"data":[{"x":2005,"y":49.66},{"x":2006,"y":0},{"x":2007,"y":16.32},{"x":2008,"y":35.7},{"x":2009,"y":0},{"x":2010,"y":17},{"x":2011,"y":0},{"x":2012,"y":0},{"x":2013,"y":0},{"x":2014,"y":0},{"x":2015,"y":0},{"x":2016,"y":0},{"x":2017,"y":0},{"x":2018,"y":0},{"x":2019,"y":0},{"x":2020,"y":0},{"x":2021,"y":0},{"x":2022,"y":0},{"x":2023,"y":0},{"x":2024,"y":0}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Sorting residues","color":{"pattern":{"width":5,"height":5,"stroke":"#111111","strokeWidth":2,"color":"lightgrey","path":"M 0 5 L 5 0 M -0.5 0.5 L 0.5 -0.5 M 4.5 5.5 L 5.5 4.5"}},"data":[{"x":2005,"y":0},{"x":2006,"y":0},{"x":2007,"y":0},{"x":2008,"y":0},{"x":2009,"y":0},{"x":2010,"y":0},{"x":2011,"y":0},{"x":2012,"y":0},{"x":2013,"y":0},{"x":2014,"y":0},{"x":2015,"y":0},{"x":2016,"y":0},{"x":2017,"y":0},{"x":2018,"y":0},{"x":2019,"y":0},{"x":2020,"y":0},{"x":2021,"y":0},{"x":2022,"y":0},{"x":2023,"y":296},{"x":2024,"y":0}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Spent solvents","color":{"pattern":{"width":5,"height":5,"strokeWidth":2,"strokeWidth.1":2,"color":"#7cb5ec","path":"M 0 0 L 5 5 M 4.5 -0.5 L 5.5 0.5 M -0.5 4.5 L 0.5 5.5\""}},"data":[{"x":2005,"y":0},{"x":2006,"y":0},{"x":2007,"y":45.22},{"x":2008,"y":0},{"x":2009,"y":0},{"x":2010,"y":0},{"x":2011,"y":0},{"x":2012,"y":0},{"x":2013,"y":0},{"x":2014,"y":0},{"x":2015,"y":0},{"x":2016,"y":0},{"x":2017,"y":0},{"x":2018,"y":0},{"x":2019,"y":0},{"x":2020,"y":0},{"x":2021,"y":0},{"x":2022,"y":0},{"x":2023,"y":0},{"x":2024,"y":0}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Waste containing PCB","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"#c0d4ff","path":"M 0 10 L 10 0 M -1 1 L 1 -1 M 9 11 L 11 9"}},"data":[{"x":2005,"y":0},{"x":2006,"y":0},{"x":2007,"y":0},{"x":2008,"y":0},{"x":2009,"y":0},{"x":2010,"y":18.18},{"x":2011,"y":0},{"x":2012,"y":2039.52},{"x":2013,"y":0},{"x":2014,"y":0},{"x":2015,"y":0},{"x":2016,"y":0},{"x":2017,"y":0},{"x":2018,"y":0},{"x":2019,"y":0},{"x":2020,"y":0},{"x":2021,"y":0},{"x":2022,"y":0},{"x":2023,"y":0},{"x":2024,"y":0}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Wood wastes","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"#41b6c4","path":"M 0 0 L 10 10 M 9 -1 L 11 1 M -1 9 L 1 11"}},"data":[{"x":2005,"y":0},{"x":2006,"y":0},{"x":2007,"y":279.04},{"x":2008,"y":122.48},{"x":2009,"y":0},{"x":2010,"y":0},{"x":2011,"y":0},{"x":2012,"y":0},{"x":2013,"y":0},{"x":2014,"y":0},{"x":2015,"y":0},{"x":2016,"y":0},{"x":2017,"y":0},{"x":2018,"y":0},{"x":2019,"y":0},{"x":2020,"y":0},{"x":2021,"y":0},{"x":2022,"y":0},{"x":2023,"y":0},{"x":2024,"y":0}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Chemical wastes","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"#4663ac","path":"M 5 5 m -4 0 a 4 4 0 1 1 8 0 a 4 4 0 1 1 -8 0"}},"data":[{"x":2005,"y":3.32},{"x":2006,"y":7842.27},{"x":2007,"y":134.56},{"x":2008,"y":252.62},{"x":2009,"y":112.3},{"x":2010,"y":362.28},{"x":2011,"y":125.9},{"x":2012,"y":35.8},{"x":2013,"y":32.1},{"x":2014,"y":19.44},{"x":2015,"y":16.98},{"x":2016,"y":6.58},{"x":2017,"y":13.64},{"x":2018,"y":326.56},{"x":2019,"y":189.2},{"x":2020,"y":164},{"x":2021,"y":39},{"x":2022,"y":171},{"x":2023,"y":5},{"x":2024,"y":47}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Discarded equipment (excluding discarded vehicles, batteries and accumulators wastes)","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"lightgrey","path":"M 3 3 L 8 3 L 8 8 L 3 8 Z"}},"data":[{"x":2005,"y":1.12},{"x":2006,"y":18.24},{"x":2007,"y":22.44},{"x":2008,"y":6},{"x":2009,"y":0},{"x":2010,"y":0},{"x":2011,"y":1.12},{"x":2012,"y":2.44},{"x":2013,"y":0.16},{"x":2014,"y":0},{"x":2015,"y":0},{"x":2016,"y":0},{"x":2017,"y":0},{"x":2018,"y":0},{"x":2019,"y":0},{"x":2020,"y":189},{"x":2021,"y":517},{"x":2022,"y":132},{"x":2023,"y":110},{"x":2024,"y":69}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Mineral waste from construction and demolition","color":{"pattern":{"width":10,"height":10,"stroke":"#FFFFFF","strokeWidth":2,"color":"#7cb5ec","path":"M 0 0 L 5 10 L 10 0"}},"data":[{"x":2005,"y":1585.16},{"x":2006,"y":626.46},{"x":2007,"y":6320.52},{"x":2008,"y":4768.75},{"x":2009,"y":6174.910000000001},{"x":2010,"y":139},{"x":2011,"y":24587.4},{"x":2012,"y":15264.61},{"x":2013,"y":10189.35},{"x":2014,"y":192.16},{"x":2015,"y":1636.8},{"x":2016,"y":889.8},{"x":2017,"y":1789.66},{"x":2018,"y":3472.78},{"x":2019,"y":37.59999999999999},{"x":2020,"y":98},{"x":2021,"y":158},{"x":2022,"y":9},{"x":2023,"y":512},{"x":2024,"y":89}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Used oils","color":{"pattern":{"width":5,"height":5,"stroke":"#FFFFFF","strokeWidth":2,"color":"#c0d4ff","path":"M 0 1.5 L 2.5 1.5 L 2.5 0 M 2.5 5 L 2.5 3.5 L 5 3.5"}},"data":[{"x":2005,"y":36.77},{"x":2006,"y":24.585},{"x":2007,"y":0},{"x":2008,"y":0},{"x":2009,"y":0},{"x":2010,"y":194.44},{"x":2011,"y":197.94},{"x":2012,"y":116},{"x":2013,"y":54.78},{"x":2014,"y":0},{"x":2015,"y":0},{"x":2016,"y":0},{"x":2017,"y":0},{"x":2018,"y":0},{"x":2019,"y":0},{"x":2020,"y":0},{"x":2021,"y":0},{"x":2022,"y":0},{"x":2023,"y":110},{"x":2024,"y":122}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Soils","color":{"pattern":{"width":5,"height":5,"stroke":"#FFFFFF","strokeWidth":2,"color":"#41b6c4","path":"M 0 2 L 5 2 M 0 4 L 5 4"}},"data":[{"x":2005,"y":47722.26},{"x":2006,"y":82918},{"x":2007,"y":76984.25999999999},{"x":2008,"y":105316.68},{"x":2009,"y":73958.06},{"x":2010,"y":57571.16},{"x":2011,"y":94662.66},{"x":2012,"y":102496.89},{"x":2013,"y":4787.78},{"x":2014,"y":11978.02},{"x":2015,"y":27209.08},{"x":2016,"y":15858.93},{"x":2017,"y":9423.620000000001},{"x":2018,"y":9642.07},{"x":2019,"y":6191.2},{"x":2020,"y":3921},{"x":2021,"y":973},{"x":2022,"y":3871},{"x":2023,"y":4663},{"x":2024,"y":1167}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Sludges and liquid wastes from waste treatment","color":{"pattern":{"width":5,"height":5,"stroke":"#FFFFFF","strokeWidth":2,"color":"#4663ac","path":"M 2 0 L 2 5 M 4 0 L 4 5"}},"data":[{"x":2005,"y":0},{"x":2006,"y":0},{"x":2007,"y":204.72},{"x":2008,"y":427.82},{"x":2009,"y":137.42},{"x":2010,"y":0},{"x":2011,"y":357.3},{"x":2012,"y":6595.52},{"x":2013,"y":9440.280000000001},{"x":2014,"y":3.04},{"x":2015,"y":120.44},{"x":2016,"y":128.08},{"x":2017,"y":44.92},{"x":2018,"y":3094.04},{"x":2019,"y":5609.7},{"x":2020,"y":4686},{"x":2021,"y":5719},{"x":2022,"y":3441},{"x":2023,"y":3633},{"x":2024,"y":3957}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Mineral wastes from waste treatment and stabilised wastes","color":{"pattern":{"width":5,"height":5,"stroke":"#111111","strokeWidth":2,"color":"lightgrey","path":"M 0 5 L 5 0 M -0.5 0.5 L 0.5 -0.5 M 4.5 5.5 L 5.5 4.5"}},"data":[{"x":2005,"y":191},{"x":2006,"y":14.5},{"x":2007,"y":471.98},{"x":2008,"y":661.48},{"x":2009,"y":1535.38},{"x":2010,"y":1491},{"x":2011,"y":1033.24},{"x":2012,"y":614.88},{"x":2013,"y":481.56},{"x":2014,"y":188.56},{"x":2015,"y":402.1},{"x":2016,"y":177.7},{"x":2017,"y":10709.14},{"x":2018,"y":5299.36},{"x":2019,"y":7032.6},{"x":2020,"y":5509},{"x":2021,"y":5418},{"x":2022,"y":9682},{"x":2023,"y":10061},{"x":2024,"y":6143}],"tooltip":{"valueSuffix":" tonnes"}},{"name":"Other mineral wastes","color":{"pattern":{"width":5,"height":5,"strokeWidth":2,"strokeWidth.1":2,"color":"#7cb5ec","path":"M 0 0 L 5 5 M 4.5 -0.5 L 5.5 0.5 M -0.5 4.5 L 0.5 5.5\""}},"data":[{"x":2005,"y":26337.4},{"x":2006,"y":27047.22},{"x":2007,"y":25692.87},{"x":2008,"y":26796.76},{"x":2009,"y":21113.49},{"x":2010,"y":27074.82},{"x":2011,"y":17990.23},{"x":2012,"y":16222.78},{"x":2013,"y":10586.36},{"x":2014,"y":20747.74},{"x":2015,"y":22493.11},{"x":2016,"y":23119.59},{"x":2017,"y":24670.89},{"x":2018,"y":23521.27},{"x":2019,"y":21938.9},{"x":2020,"y":13676},{"x":2021,"y":26377},{"x":2022,"y":20727},{"x":2023,"y":24428},{"x":2024,"y":18269}],"tooltip":{"valueSuffix":" tonnes"}}],"legend":{"reversed":true,"itemWidth":200,"maxHeight":"10000px","itemStyle":{"color":"#000000","fontWeight":200,"textOverflow":"ellipsis"}}},"theme":{"chart":{"backgroundColor":"transparent"},"colors":["#7cb5ec","#434348","#90ed7d","#f7a35c","#8085e9","#f15c80","#e4d354","#2b908f","#f45b5b","#91e8e1"]},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadCSV":"Download CSV","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","downloadXLS":"Download XLS","drillUpText":"◁ Back to {series.name}","exitFullscreen":"Exit from full screen","exportData":{"annotationHeader":"Annotations","categoryDatetimeHeader":"DateTime","categoryHeader":"Category"},"hideData":"Hide data table","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbolMagnitude":1000,"numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"shortWeekdays":["Sat","Sun","Mon","Tue","Wed","Thu","Fri"],"thousandsSep":" ","viewData":"View data table","viewFullscreen":"View in full screen","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":[],"debug":false},"evals":["hc_opts.exporting.buttons.hideAllButton.onclick","hc_opts.exporting.buttons.showAllButton.onclick","hc_opts.tooltip.formatter"],"jsHooks":[]}</script>
+                            <p><br></p>
+                            </div>
+                            <div id="table---hazardous-landfill" class="section level6 unlisted unnumbered toc-ignore">
+                            <h6 class="unlisted unnumbered toc-ignore">Table - Hazardous landfill</h6>
+                            <div id="table-landfilled-haz" class="df-caption df-tab">
+                            <div class="df-prefix">
+                            Table 2. 
+                            </div>
+                            <div class="df-caption-text">
+                            Hazardous waste landfilled in Scotland by waste category 2005 - 2024 (tonnes)
+                            </div>
+                            </div>
+                            <p><br></p>
+                            <div class="datatables html-widget html-fill-item" id="htmlwidget-1e1d8e3bc3a7a14dbf6e" style="width:100%;height:auto;"></div>
+                            <script type="application/json" data-for="htmlwidget-1e1d8e3bc3a7a14dbf6e">{"x":{"filter":"none","vertical":false,"class":"display","extensions":["Buttons"],"data":[["Soils","Other mineral wastes","Mineral waste from construction and demolition","Mineral wastes from waste treatment and stabilised wastes","Industrial effluent sludges","Mixed and undifferentiated materials","Used oils","Chemical wastes","Discarded equipment (excluding discarded vehicles, batteries and accumulators wastes)","Acid, alkaline or saline wastes","Batteries and accumulators wastes","Combustion wastes","Discarded vehicles","Dredging spoils","Health care and biological wastes","Sludges and liquid wastes from waste treatment","Sorting residues","Spent solvents","Waste containing PCB","Wood wastes"],[47722.26,26337.4,1585.16,191,157.38,49.66,36.77,3.32,1.12,0,0,0,0,0,0,0,0,0,0,0],[82918,27047.22,626.46,14.5,42.32,0,24.585,7842.27,18.24,0,0,0,0,0,0,0,0,0,0,0],[76984.25999999999,25692.87,6320.52,471.98,72.5,16.32,0,134.56,22.44,0,0,702.3200000000001,0,0,0,204.72,0,45.22,0,279.04],[105316.68,26796.76,4768.75,661.48,17.58,35.7,0,252.62,6,0,542.48,0,20.3,1.56,0,427.82,0,0,0,122.48],[73958.06,21113.49,6174.910000000001,1535.38,10.6,0,0,112.3,0,0,0,0,0,0,0,137.42,0,0,0,0],[57571.16,27074.82,139,1491,128.61,17,194.44,362.28,0,0,0,248,0,5100,0,0,0,0,18.18,0],[94662.66,17990.23,24587.4,1033.24,418.9,0,197.94,125.9,1.12,0.06,0,159.38,0,0,0,357.3,0,0,0,0],[102496.89,16222.78,15264.61,614.88,0,0,116,35.8,2.44,0,0,0,0,0,6.86,6595.52,0,0,2039.52,0],[4787.78,10586.36,10189.35,481.56,0,0,54.78,32.1,0.16,0,0,0,0,0,0,9440.280000000001,0,0,0,0],[11978.02,20747.74,192.16,188.56,34.02,0,0,19.44,0,0,0,1644.38,0,0,0,3.04,0,0,0,0],[27209.08,22493.11,1636.8,402.1,0,0,0,16.98,0,0,0,2646.86,0,0,0,120.44,0,0,0,0],[15858.93,23119.59,889.8,177.7,0,0,0,6.58,0,0,0,2578.58,0,0,0,128.08,0,0,0,0],[9423.620000000001,24670.89,1789.66,10709.14,0,0,0,13.64,0,0,0,1165.26,0,0,0,44.92,0,0,0,0],[9642.07,23521.27,3472.78,5299.36,0,0,0,326.56,0,0,0,557.1799999999999,0,0,0,3094.04,0,0,0,0],[6191.2,21938.9,37.59999999999999,7032.6,0,0,0,189.2,0,0,0,0,0,0,0,5609.7,0,0,0,0],[3921,13676,98,5509,0,0,0,164,189,3,0,0,0,0,0,4686,0,0,0,0],[973,26377,158,5418,0,0,0,39,517,0,0,0,0,0,0,5719,0,0,0,0],[3871,20727,9,9682,0,0,0,171,132,0,0,0,0,0,0,3441,0,0,0,0],[4663,24428,512,10061,0,0,110,5,110,0,0,0,0,0,1,3633,296,0,0,0],[1167,18269,89,6143,0,0,122,47,69,0,0,0,0,0,0,3957,0,0,0,0]],"container":"<table class=\"dt-lf-haz-series\">\n  <thead>\n    <tr>\n      <th>Waste category<\/th>\n      <th>2005<\/th>\n      <th>2006<\/th>\n      <th>2007<\/th>\n      <th>2008<\/th>\n      <th>2009<\/th>\n      <th>2010<\/th>\n      <th>2011<\/th>\n      <th>2012<\/th>\n      <th>2013<\/th>\n      <th>2014<\/th>\n      <th>2015<\/th>\n      <th>2016<\/th>\n      <th>2017<\/th>\n      <th>2018<\/th>\n      <th>2019<\/th>\n      <th>2020<\/th>\n      <th>2021<\/th>\n      <th>2022<\/th>\n      <th>2023<\/th>\n      <th>2024<\/th>\n    <\/tr>\n  <\/thead>\n  <tfoot>\n    <tr>\n      <th>Total<\/th>\n      <th>76,084<\/th>\n      <th>118,534<\/th>\n      <th>110,947<\/th>\n      <th>138,970<\/th>\n      <th>103,042<\/th>\n      <th>92,344<\/th>\n      <th>139,534<\/th>\n      <th>143,395<\/th>\n      <th>35,572<\/th>\n      <th>34,807<\/th>\n      <th>54,525<\/th>\n      <th>42,759<\/th>\n      <th>47,817<\/th>\n      <th>45,913<\/th>\n      <th>40,999<\/th>\n      <th>28,246<\/th>\n      <th>39,201<\/th>\n      <th>38,033<\/th>\n      <th>43,819<\/th>\n      <th>29,863<\/th>\n    <\/tr>\n  <\/tfoot>\n<\/table>","options":{"dom":"lfrtipB","buttons":["copy",{"extend":"csv","title":"haz-lf-trend2005-2024","footer":true},{"extend":"excel","title":"haz-lf-trend2005-2024","footer":true},{"extend":"pdf","title":"haz-lf-trend2005-2024","footer":true},"print"],"order":[[19,"desc"]],"lengthMenu":[[5,10,-1],["5","10","All"]],"columnDefs":[{"targets":1,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":8,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":9,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":10,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":11,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":12,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":13,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":14,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":15,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":16,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":17,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":18,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":19,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":20,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]},{"name":"WASTE_CAT","targets":0},{"name":"2005","targets":1},{"name":"2006","targets":2},{"name":"2007","targets":3},{"name":"2008","targets":4},{"name":"2009","targets":5},{"name":"2010","targets":6},{"name":"2011","targets":7},{"name":"2012","targets":8},{"name":"2013","targets":9},{"name":"2014","targets":10},{"name":"2015","targets":11},{"name":"2016","targets":12},{"name":"2017","targets":13},{"name":"2018","targets":14},{"name":"2019","targets":15},{"name":"2020","targets":16},{"name":"2021","targets":17},{"name":"2022","targets":18},{"name":"2023","targets":19},{"name":"2024","targets":20}],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'white-space':'nowrap'});\n}"}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render","options.columnDefs.6.render","options.columnDefs.7.render","options.columnDefs.8.render","options.columnDefs.9.render","options.columnDefs.10.render","options.columnDefs.11.render","options.columnDefs.12.render","options.columnDefs.13.render","options.columnDefs.14.render","options.columnDefs.15.render","options.columnDefs.16.render","options.columnDefs.17.render","options.columnDefs.18.render","options.columnDefs.19.render","options.rowCallback"],"jsHooks":[]}</script>
+                            </div>
+                            </div>
+                            <div id="section-3" class="section level5 unlisted unnumbered toc-ignore">
+                            <h5 class="unlisted unnumbered toc-ignore"></h5>
+                            </div>
+                            </div>
+                            <div id="bmw-landfilled-2020-target" class="section level3 unlisted unnumbered">
+                            <h3 class="unlisted unnumbered">BMW landfilled (2020 target)</h3>
+                            <p>Municipal waste is defined as waste within certain EWC codes (see <a href='./landfilled-qr-2024.html#table-BMW-bio-qr'>Table 1</a> of the landfill quality report), namely all Chapter 20 codes and certain Chapter 15 and 19 codes. Biodegradable Municipal Waste (BMW) is the fraction of municipal waste this that will degrade giving rise to methane emissions over time when landfilled.</p>
+                            <p>It should be noted that the measure of BMW to landfill differs from that for the 2025 BMW landfill ban<a href="#fn1"><sup>1</sup></a>, which applies to the whole amount of waste containing BMW, not just the BMW fraction.</p>
+                            <p>In 2024, 336,000 tonnes of BMW were disposed of to landfill in Scotland (<a class='df-xref' href='#chart-BMW' onclick="(()=> {
+                                        const tabAnchorHRef = '#' + $('.df-caption#chart-BMW').closest('.tab-pane').attr('id');
+                                        console.log(tabAnchorHRef);
+                                         $(`a[href='${tabAnchorHRef}']`).click();
+                                         return true;
+                                         } )() " >Figure 3</a>). This was a decrease of 218,000 tonnes (39.4%) from 2023 and a reduction of 1.70 million tonnes (83.5%) since 2005.</p>
+                            <p>Scotland had a target to reduce the quantity of BMW disposed of to landfill in Scotland to less than 1.26 million tonnes by 2020<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>. Scotland has met this target since 2012 (<a class='df-xref' href='#chart-BMW' onclick="(()=> {
+                                        const tabAnchorHRef = '#' + $('.df-caption#chart-BMW').closest('.tab-pane').attr('id');
+                                        console.log(tabAnchorHRef);
+                                         $(`a[href='${tabAnchorHRef}']`).click();
+                                         return true;
+                                         } )() " >Figure 3</a>).</p>
+                            <p>In 2024 the BMW disposed of to landfill comprised mainly two waste categories: Household and similar wastes, predominantly EWC 20 03 01 (mixed municipal waste), which comprised 49.6% of the total and Sorting residues, primarily EWC 19 12 12 (Other non-hazardous wastes from mechanical treatment of waste), which comprised 49.4% of the total (data not shown).</p>
+                            <p><BR></p>
+                            <div id="section-4" class="section level5 unnumbered tabset">
+                            <h5 class="unnumbered tabset"></h5>
+                            <div id="figure---bmw" class="section level6 unlisted unnumbered toc-ignore">
+                            <h6 class="unlisted unnumbered toc-ignore">Figure - BMW</h6>
+                            <div id="chart-BMW" class="df-caption df-fig">
+                            <div class="df-prefix">
+                            Figure 3. 
+                            </div>
+                            <div class="df-caption-text">
+                            BMW landfilled in Scotland 2005 - 2024 (tonnes)
+                            </div>
+                            </div>
+                            <p><br></p>
+                            <div class="highchart html-widget html-fill-item" id="figure-BMW-landfilled" style="width:672px;height:480px;"></div>
+                            <script type="application/json" data-for="figure-BMW-landfilled">{"x":{"hc_opts":{"chart":{"reflow":true,"backgroundColor":"white"},"title":{"text":null},"yAxis":{"title":{"text":"BMW landfilled (tonnes)"}},"credits":{"enabled":false},"exporting":{"enabled":true,"filename":"figure-BMW-landfilled","chartOptions":{"title":{"text":"Figure 3. BMW landfilled in Scotland 2005 - 2024 (tonnes)","align":"left"}},"buttons":{"contextButton":{"enabled":true}}},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"}},"xAxis":{"title":{"text":"Year","style":{"color":"black"}},"tickInterval":1,"categories":[2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"crosshair":true,"type":"category","allowDecimals":false,"labels":{"autoRotation":[-10,-20,-30,-40,-50,-60,-70,-80,-90]}},"tooltip":{"valueDecimals":1,"valueSuffix":" tonnes","formatter":"\n     function() {\n      //var stackName = this.series.userOptions.stack;\n\n      return `\n      \n      <b>${this.x}<\/b> <br/>\n       <b>${this.series.name}:<\/b> ${ Highcharts.numberFormat(this.y, 0, '.', ',')} tonnes <br/>\n       \n    `\n     }\n     "},"series":[{"name":"Tonnes Landfilled","type":"column","yAxis":0,"data":[2039328,1899423,1877891,1801940,1538060,1403883,1281683.5,1143740.7,1079866.9,971021.1,922056.8,981960.9,924187.8,904768.1,743766.9,731837.2,876868.4,698664.3,554312.8,336029.8],"tooltip":{"valueSuffix":" tonnes"},"color":"#80a8ff"},{"name":"2020 Target (1.26 million tonnes)","type":"line","yAxis":0,"data":[1260000,1260000,1260000,1260000,1260000,1260000,1260000,1260000,1260000,1260000,1260000,1260000,1260000,1260000,1260000,1260000,1260000,1260000,1260000,1260000],"tooltip":{"valueSuffix":"tonnes"},"color":"grey"}],"legend":{"layout":"vertical","align":"right","width":"30%","verticalAlign":"middle","itemStyle":{"textOverflow":"null"}}},"theme":{"chart":{"backgroundColor":"transparent"},"colors":["#7cb5ec","#434348","#90ed7d","#f7a35c","#8085e9","#f15c80","#e4d354","#2b908f","#f45b5b","#91e8e1"]},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadCSV":"Download CSV","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","downloadXLS":"Download XLS","drillUpText":"◁ Back to {series.name}","exitFullscreen":"Exit from full screen","exportData":{"annotationHeader":"Annotations","categoryDatetimeHeader":"DateTime","categoryHeader":"Category"},"hideData":"Hide data table","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbolMagnitude":1000,"numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"shortWeekdays":["Sat","Sun","Mon","Tue","Wed","Thu","Fri"],"thousandsSep":" ","viewData":"View data table","viewFullscreen":"View in full screen","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":[],"debug":false},"evals":["hc_opts.tooltip.formatter"],"jsHooks":[]}</script>
+                            <p><br></p>
+                            </div>
+                            <div id="table---bmw" class="section level6 unlisted unnumbered toc-ignore">
+                            <h6 class="unlisted unnumbered toc-ignore">Table - BMW</h6>
+                            <div id="table-BMW" class="df-caption df-tab">
+                            <div class="df-prefix">
+                            Table 3. 
+                            </div>
+                            <div class="df-caption-text">
+                            BMW landfilled in Scotland 2005 - 2024 (tonnes)
+                            </div>
+                            </div>
+                            <p><br></p>
+                            <div class="datatables html-widget html-fill-item" id="htmlwidget-1fdc0a4186c7caca03be" style="width:100%;height:auto;"></div>
+                            <script type="application/json" data-for="htmlwidget-1fdc0a4186c7caca03be">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[[2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],[2039328,1899423,1877891,1801940,1538060,1403883,1281683.46,1143740.69,1079866.88,971021.0999999997,922056.7899999999,981960.9099999999,924187.7899999999,904768.0700000003,743766.8667120001,731837.1799999999,876868.42,698664.2999999999,554312.8099999999,336029.84]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Year<\/th>\n      <th>BMW<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ftB","buttons":["copy",{"extend":"csv","title":"BMW_PerYear"},{"extend":"excel","title":"BMW_PerYear"},{"extend":"pdf","title":"BMW_PerYear"},"print"],"order":[[0,"asc"]],"pageLength":-1,"columnDefs":[{"targets":1,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[0,1]},{"name":"Year","targets":0},{"name":"BMW","targets":1}],"autoWidth":false,"orderClasses":false,"lengthMenu":[-1,10,25,50,100]}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script>
+                            <p><BR><BR></p>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            <div id="about-landfilled-waste-statistics" class="section level2">
+                            <h2>About landfilled waste statistics</h2>
+                            <div id="an-official-statistics-publication-for-scotland" class="section level3">
+                            <h3>An Official Statistics publication for Scotland</h3>
+                            <p>This is an Official Statistics publication. These statistics have been produced to the high
+                            professional standards defined in the Code of Practice for Official Statistics, which sets out
+                            fourteen principles under the pillars of Trustworthiness, Quality and Value. More information on
+                            the <a href="https://code.statisticsauthority.gov.uk/the-code">Official Statistics Code of Practice web-site</a>.</p>
+                            <p>Lead Statistician - Peter Ferrett, SEPA</p>
+                            </div>
+                            <div id="user-statement" class="section level3">
+                            <h3>User statement</h3>
+                            <p>Data on waste generation and management are collected to support policy development and monitor policy effectiveness, particularly the commitments in <a href="https://www.gov.scot/publications/making-things-last-circular-economy-strategy-scotland/">Making Things Last - A Circular Economy Strategy for Scotland</a>, and Scotland’s <a href="https://www.gov.scot/publications/scotlands-circular-economy-waste-route-map-2030-consultation/">Circular Economy and Waste Route Map to 2030</a>. The data contribute to the <a href="https://www.gov.uk/government/statistics/uk-waste-data/uk-statistics-on-waste">UK Statistics on waste</a> and are also used extensively by local and central government, the waste industry, researchers and the general public.</p>
+                            </div>
+                            <div id="feedback" class="section level3">
+                            <h3>Feedback</h3>
+                            <p>We welcome feedback on the data from all users including how and why the data are used. This helps us to understand the value of the statistics to external users. Please see our <a href="contact.html">contact details</a>.</p>
+                            </div>
+                            <div id="revisions-policy" class="section level3">
+                            <h3>Revisions policy</h3>
+                            <p>SEPA will provide information about any revisions made to this release and any associated datasets. Revisions could occur for various reasons, including when data from third parties are unavailable or provisional at the time of publishing or if there are subsequent methodological improvements or refinements. The figures are accurate at the time of publication. However, the data may be updated if further revisions are necessary. Normally these revisions will be published concurrent with the next release.</p>
+                            <p>Revisions to the 2023 waste landfilled in Scotland data since the last statistical publication are shown in <a class='df-xref' href='#table-revisions' onclick="(()=> {
+                                        const tabAnchorHRef = '#' + $('.df-caption#table-revisions').closest('.tab-pane').attr('id');
+                                        console.log(tabAnchorHRef);
+                                         $(`a[href='${tabAnchorHRef}']`).click();
+                                         return true;
+                                         } )() " >Table 4</a>. These changes are due to revised waste returns.</p>
+                            <div id="table-revisions" class="df-caption df-tab">
+                            <div class="df-prefix">
+                            Table 4. 
+                            </div>
+                            <div class="df-caption-text">
+                            Revisions to the 2023 landfill dataset (tonnes)
+                            </div>
+                            </div>
+                            <p><br></p>
+                            <div class="datatables html-widget html-fill-item" id="htmlwidget-f3c1559fb86eac97a220" style="width:100%;height:auto;"></div>
+                            <script type="application/json" data-for="htmlwidget-f3c1559fb86eac97a220">{"x":{"filter":"none","vertical":false,"class":"display","extensions":["Buttons"],"data":[["Acid, alkaline or saline wastes","Animal and mixed food waste","Animal faeces, urine and manure","Batteries and accumulators wastes","Chemical wastes","Combustion wastes","Common sludges","Discarded equipment (excluding discarded vehicles, batteries and accumulators wastes)","Discarded vehicles","Dredging spoils","Glass wastes","Health care and biological wastes","Household and similar wastes","Industrial effluent sludges","Metallic wastes, ferrous","Metallic wastes, mixed ferrous and non-ferrous","Metallic wastes, non-ferrous","Mineral waste from construction and demolition","Mineral wastes from waste treatment and stabilised wastes","Mixed and undifferentiated materials","Other mineral wastes","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Sludges and liquid wastes from waste treatment","Soils","Sorting residues","Spent solvents","Textile wastes","Used oils","Vegetal wastes","Waste containing PCB","Wood wastes"],[0,1807,28,0,526,1120,2879,319,0,251,2789,6381,529996,6039,0,3,23,35240,222260,32777,28918,71,1646,189,4206,526750,592433,0,1260,110,543,0,61],[0,1807,28,0,526,1120,2879,319,0,251,2789,6381,529996,6039,0,3,23,35240,222260,32777,28918,71,1646,189,4206,512777,592433,0,1260,110,543,0,61],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13973,0,0,0,0,0,0,0]],"container":"<table class=\"table_revision_summary\">\n  <thead>\n    <tr>\n      <th>Waste category<\/th>\n      <th>Original<\/th>\n      <th>Revised<\/th>\n      <th>difference<\/th>\n    <\/tr>\n  <\/thead>\n  <tfoot>\n    <tr>\n      <th>Total<\/th>\n      <th>1,998,625<\/th>\n      <th>1,984,652<\/th>\n      <th>13,973<\/th>\n    <\/tr>\n  <\/tfoot>\n<\/table>","options":{"dom":"lfrtipB","buttons":["copy",{"extend":"csv","title":"lf-revisions-2023","footer":true},{"extend":"excel","title":"lf-revisions-2023","footer":true},{"extend":"pdf","title":"lf-revisions-2023","footer":true},"print"],"order":[[3,"asc"]],"lengthMenu":[[5,10,-1],["5","10","All"]],"columnDefs":[{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":1,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[1,2,3]},{"name":"WASTE_CAT","targets":0},{"name":"LANDFILLED.orig","targets":1},{"name":"LANDFILLED.rev","targets":2},{"name":"LF.ORIG_REV","targets":3}],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render"],"jsHooks":[]}</script>
+                            </div>
+                            <div id="quality-report" class="section level3">
+                            <h3>Quality report</h3>
+                            <p>Data are taken from permitted waste site returns submitted to SEPA. <!-- can't use RMarkdown for opening links in new window, so use html -->
+                            Further information on the methodology can be found in the accompanying <a href="landfilled-qr-2024.html">landfilled waste quality report</a>.</p>
+                            </div>
+                            <div id="enquiries" class="section level3">
+                            <h3>Enquiries</h3>
+                            <p>Enquiries on this publication to: SEPA Communications Department: <a href="mailto:media@sepa.org.uk">media@sepa.org.uk</a></p>
+                            <p>For further contact details please see <a href="contact.html">contact</a>.</p>
+                            </div>
+                            <div id="pre-release-access" class="section level3">
+                            <h3>Pre-release access</h3>
+                            <p>Pre-release access was made available to relevant persons five working days prior to publication in accordance with <a href="https://www.legislation.gov.uk/ssi/2008/399">The Pre-release Access to Official Statistics (Scotland) Order 2008</a>.</p>
+                            <p>Besides analytical staff involved in the production and quality assurance of
+                            this publication, the following post holders in SEPA and the Scottish
+                            Government were given pre-release access up to 5 days before release:</p>
+                            <ul>
+                            <li><p>Cabinet Secretary for Net Zero and Energy</p></li>
+                            <li><p>Scottish Government Special Adviser x 1</p></li>
+                            <li><p>Scottish Government Analyst x 3</p></li>
+                            <li><p>Scottish Government Policy Official x 13</p></li>
+                            <li><p>Scottish Government Communications Official x 2</p></li>
+                            <li><p>Zero Waste Scotland Communications Official x 8</p></li>
+                            <li><p>Zero Waste Scotland Policy Official x 4</p></li>
+                            <li><p>SEPA Policy Official x 6</p></li>
+                            <li><p>SEPA Communications Official x 10</p></li>
+                            <li><p>SEPA Analyst x 4</p></li>
+                            </ul>
+                            </div>
+                            <div id="lbl-glossary" class="section level3">
+                            <h3>Glossary of terms</h3>
+                            <p><strong>EWC Code</strong> – a six-digit code listed in the European Waste Catalogue. These codes are used to identify and classify waste into different categories. They are structured as three pairs of numbers, each representing chapters, sub-chapters, and individual entries. For example, 12 01 06*.</p>
+                            <p><strong>BMW</strong> – Biodegradable Municipal Waste. The biodegradable fraction of Municipal Waste that is capable of undergoing anaerobic or aerobic decomposition, such as food and garden waste, and paper and cardboard. It is calculated in this report by multiplying the tonnage for each EWC Code that comprises Municipal waste by the associated biodegradability factor listed in Table 1 of the <a href="landfilled-qr-2024.html">landfilled waste quality report</a>.</p>
+                            <p><strong>Hazardous Waste</strong> – waste with hazardous properties which may render it harmful to human health or the environment. Hazardous waste is also called Special Waste in Scotland as defined in the <a href="https://www.legislation.gov.uk/uksi/1996/972/contents">Special Waste Regulation 1996</a>.</p>
+                            <p><strong>Municipal Waste</strong> – all wastes of EWC Chapter 20 and selected wastes of EWC Chapter 19 and Chapter 15 (see Table 1 of the <a href="landfilled-qr-2024.html">landfilled waste quality report</a>) are considered municipal sources.</p>
+                            <p><strong>Permitted Sites</strong> – waste management facilities which landfill waste and are permitted by SEPA under the Pollutions Prevention and Control (Scotland) Regulations 2012.</p>
+                            <p><strong>Sorting Residues</strong> – waste from mechanical sorting processes, including the sorting of residual waste to remove recyclable or combustible materials, the sorting of mixed wastes according to material or recyclability at a Materials Recovery Facility (MRF), and non-composted residues from composting.</p>
+                            <p><strong>Waste landfilled</strong> – waste from all sources (i.e. from commercial, industrial, construction and demolition and household sources) that is disposed of to landfill.</p>
+                            <p><strong>Waste categories</strong> - Definitions of the waste categories used within this report can be found in Annex I (Section 2) and Annex III (table of equivalence) of the <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02002R2150-20101018#tocId12">EU waste statistics regulations</a></p>
+                            <!-- repeatable footnotes -->
+                            <!-- [^1^](#fn1) -->
+                            </div>
+                            </div>
+                            <div class="footnotes footnotes-end-of-document">
+                            <hr />
+                            <ol>
+                            <li id="fn1"><p>The <a href="http://www.legislation.gov.uk/ssi/2012/148/contents/made">Waste (Scotland) Regulations 2012</a> set out a number of provisions which help Scotland move toward the objectives and targets set out in the Scotland’s Zero Waste Plan and help transition toward a circular economy. These provisions include a ban on biodegradable municipal waste going to landfill from the 31 December 2025 which is implemented by amending the Landfill (Scotland) Regulations 2003. For further information refer to the <a href="https://www.sepa.org.uk/regulations/waste/landfill/biodegradable-municipal-waste-landfill-ban/">BMW landfill ban</a> on SEPA’s web site.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+                            <li id="fn2"><p>This target was set as part of EU landfill legislation and has been adjusted for Scotland in Section 13 of the <a href="https://www.gov.scot/publications/making-things-last-circular-economy-strategy-scotland/pages/17/">Making Things Last: a circular economy for Scotland report</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+                            </ol>
+                            </div>
+              <!-- PF 25/9/25 
+              tocify-extend-page removes the extra space b/w the main body and the footnote when
+              there is a floating TOC -->
+              <div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>
+            </div>
+            
+            <!-- Content to be included after the main body -->
+                        
+                        
+          </main> <!-- /#main-content -->
+        </div> <!-- /.ds_wrapper -->
+      </div> <!-- /#body-wrapper -->
+    </div> <!-- /.ds_page__middle -->
+    
+    <!-- "Back to top" floating button -->
+    <nav data-module="ds-back-to-top">
+      <div class="ds_back-to-top">
+        <a class="ds_back-to-top__button" href="#page-top">
+          Back to top
+        </a>
+      </div>
+    </nav>
+    
+    <!-- Page bottom section -->
+    <!-- Contains: Footer; scripts -->
+    <div class="ds_page__bottom">
+      
+      <!-- Site footer -->
+      <footer class="ds_site-footer ds_reversed">
+        <div class="ds_wrapper">
+          <div class="ds_site-footer__content">
+            
+            <!-- Links -->
+            <!-- Links are referred to as "items" in the Design System vocabulary -->
+            <!-- This section should contain links to accessibility and privacy statements, cookie controls, and contact information -->
+                          <ul class="ds_site-footer__site-items">
+                                  <li class="ds_site-items__item">
+                      <a href="accessibility.html">
+                                          Accessibility
+                                          </a>
+                  </li>
+                                  <li class="ds_site-items__item">
+                      <a href="contact.html">
+                                          Contact
+                                          </a>
+                  </li>
+                              </ul>
+                        
+            <!-- Copyright statement -->
+            <div class="ds_site-footer__copyright">
+              <a class="ds_site-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">
+                <img src="template_libs/sg/images/logos/ogl.svg" alt="Open Government License Logo" />
+              </a>
+              <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>, except for graphic assets and where otherwise stated.</p>
+              <p>&copy; Crown Copyright</p>
+            </div>
+            
+          </div>
+        </div>
+      </footer>
+      
+    </div> <!-- /.ds_page__bottom -->
+    
+  </div> <!-- /.ds_page -->
+  
+  <div id="embedded-scripts">
+    
+    <!-- MathJax -->
+    <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    
+    <!-- Navbar -->
+          <script>
+        // Manage active state of menu based on current page
+        $(document).ready(function () {
+          // Active menu anchor
+          href = window.location.pathname
+          href = href.substr(href.lastIndexOf('/') + 1)
+          if (href === "")
+            href = "index.html";
+          var menuAnchor = $('a[href="' + href + '"]');
+
+          // Mark it active
+          menuAnchor.parent().addClass('active');
+
+          // If it's got a parent navbar menu, mark it active as well
+          menuAnchor.closest('li.dropdown').addClass('active');
+        });
+      </script>
+        
+    <!-- Tabsets -->
+    <script>
+      $(document).ready(function () {
+        window.buildTabsets("TOC");
+      });
+    </script>
+    
+    <!-- Tocify -->
+        <script>
+      $(document).ready(function () {
+    
+      // move toc-ignore selectors from section div to header
+      $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+    
+      // establish options
+      var options = {
+        selectors: "h1,h2,h3",
+        theme: "bootstrap3",
+        context: '.toc-content',
+        hashGenerator: function (text) {
+          return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+        },
+        ignoreSelector: ".toc-ignore",
+        scrollTo: 0
+      };
+    
+              options.showAndHide = true;
+          
+              options.smoothScroll = true;
+          
+    // these updated by PF
+    // see http://gregfranko.com/jquery.tocify.js/docs/jquery.tocify.html
+      options.smoothScroll = false
+      options.smoothScrollSpeed = 'fast'
+      options.showEffect = 'none'
+      options.hideEffect = 'none'
+      // Tocify
+        var toc = $("#TOC").tocify(options).data("toc-tocify");
+        
+      });
+    </script>
+    
+    <style type="text/css">
+                    
+      .ds_side-navigation ul {
+        list-style-type: none;
+      }
+    </style>
+    
+  </div> <!-- /#embedded-scripts -->
+  
+</body>
+
+</html>

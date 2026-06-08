@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<!-- Built with sgtemplates v.1.0.0 (2021-05-12) -->
+<!-- https://github.com/DataScienceScotland/sgtemplates/ -->
+<html xmlns="https://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+          <meta name="generator" content="pandoc">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="shortcut icon" href="template_libs/sg/images/favicons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="template_libs/sg/images/favicons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="template_libs/sg/images/favicons/favicon-16x16.png" type="image/png" sizes="16x16">
+  
+  <link rel="apple-touch-icon" href="template_libs/sg/images/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="mask-icon" href="template_libs/sg/images/favicons/safari-pinned-tab.svg" color="#0065bd">
+  
+  <title></title>
+  
+  <!-- RStudio's default scripts and style sheets -->
+      <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+      <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+      <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+      <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+      <style>h1 {font-size: 34px;}
+             h1.title {font-size: 38px;}
+             h2 {font-size: 30px;}
+             h3 {font-size: 24px;}
+             h4 {font-size: 18px;}
+             h5 {font-size: 16px;}
+             h6 {font-size: 12px;}
+             code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+             pre:not([class]) { background-color: white }</style>
+      <script src="site_libs/navigation-1.1/tabsets.js"></script>
+      <link href="site_libs/panelset-0.3.0/panelset.css" rel="stylesheet" />
+      <script src="site_libs/panelset-0.3.0/panelset.js"></script>
+      <link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+      <script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+      <link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+      <script src="site_libs/datatables-binding-0.34.0/datatables.js"></script>
+      <link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet" />
+      <link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet" />
+      <script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+      <link href="site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet" />
+      <script src="site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+      <script src="site_libs/jszip-1.13.6/jszip.min.js"></script>
+      <script src="site_libs/pdfmake-1.13.6/pdfmake.js"></script>
+      <script src="site_libs/pdfmake-1.13.6/vfs_fonts.js"></script>
+      <link href="site_libs/dt-ext-buttons-1.13.6/css/buttons.dataTables.min.css" rel="stylesheet" />
+      <script src="site_libs/dt-ext-buttons-1.13.6/js/dataTables.buttons.min.js"></script>
+      <script src="site_libs/dt-ext-buttons-1.13.6/js/buttons.html5.min.js"></script>
+      <script src="site_libs/dt-ext-buttons-1.13.6/js/buttons.colVis.min.js"></script>
+      <script src="site_libs/dt-ext-buttons-1.13.6/js/buttons.print.min.js"></script>
+    
+  <!-- SG's style sheets -->
+  <!-- Style sheets are broken up into separate files, where possible, to make them easier for users to change -->
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/design-system-base.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/design-system-fixes.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/layout.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/navbar.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/navbar-full.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/navbar-mobile.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/print.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/toc.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/tocify.css">
+  
+    
+  <!-- User style sheets -->
+    
+    
+  
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Ferrett, Peter</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">4490300.00000000</mso:Order>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:SharedWithUsers msdt:dt="string"></mso:SharedWithUsers>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Ferrett, Peter</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:ContentTypeId msdt:dt="string">0x010100D4A211F6D815FC43BD5F92C607DE9A2C</mso:ContentTypeId>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body class="article layout--component">
+  
+  <div class="ds_page">
+    
+    <!-- Page top section -->
+    <!-- Contains: Notifications; header; navigation elements (except breadcrumbs) -->
+    <div class="ds_page__top">
+      
+      <!-- Header -->
+      <header class="ds_site-header ds_site-header--gradient" role="banner">
+        <span id="page-top"></span>
+        
+        <!-- Site branding -->
+        <div class="ds_site-header__top">
+          <div class="ds_wrapper">
+            <div class="ds_site-header__content">
+              <div class="ds_site-branding">
+                <a class="ds_site-branding__logo ds_site-branding__link" href="/">
+                  <img class="ds_site-branding__logo-image" src="template_libs/sg/images/logos/scottish-government.svg" alt="Scottish Government logo" />
+                </a>
+                <div class="ds_site-branding__title">
+                                      <img src="sepa-logo.png" width="250" alt="sepa-logo" />
+                                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Phase banner -->
+                
+        <!-- Elements included before the body -->
+        <!-- Includes Bootstrap / default RStudio navbar -->
+                  <div class="ds_wrapper">
+                          
+                          <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+                            <div class="container">
+                              <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="index.html">waste-stats-navbar</a>
+                              </div>
+                              <div id="navbar" class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav">
+                                  <li>
+                            <a href="index.html">Home</a>
+                          </li>
+                          <li>
+                            <a href="wfas.html">Waste from all sources</a>
+                          </li>
+                          <li>
+                            <a href="household.html">Household</a>
+                          </li>
+                          <li>
+                            <a href="landfilled.html">Landfill</a>
+                          </li>
+                          <li>
+                            <a href="incinerated.html">Incineration</a>
+                          </li>
+                                </ul>
+                                <ul class="nav navbar-nav navbar-right">
+                                  
+                                </ul>
+                              </div><!--/.nav-collapse -->
+                            </div><!--/.container -->
+                          </div><!--/.navbar -->
+                      </div>
+                
+      </header>
+      
+      
+    </div>
+    
+    <!-- Page middle section -->
+    <!-- Contains breadcrumbs, table of contents, body, and main content -->
+    <div class="ds_page__middle">
+      <div id="body-wrapper" class="body-wrapper">
+        
+        <!-- Breadcrumbs -->
+                
+        <!-- Main content -->
+        <div class="ds_wrapper">
+          <!-- Elements within main-content are arranged according to the grid layout -->
+          <main id="main-content" class="ds_layout ds_layout--pl-component">
+            
+            <!-- Sidebar -->
+            <!-- Contains automatically-generated table of contents -->
+            <div class="ds_layout__sidebar">
+              <nav class="ds_side-navigation" aria-label="Sections" data-module="ds-side-navigation">
+                                  <ul>
+                                  <li><a href="#introduction" id="toc-introduction">Introduction</a></li>
+                                  <li><a href="#progress-against-targets" id="toc-progress-against-targets">Progress against Targets</a></li>
+                                  <li><a href="#household-waste" id="toc-household-waste">Household waste</a></li>
+                                  <li><a href="#enquiries" id="toc-enquiries">Enquiries</a></li>
+                                  <li><a href="#lbl-appendix1" id="toc-lbl-appendix1">Appendix 1</a></li>
+                                  <li><a href="#lbl-appendix2" id="toc-lbl-appendix2">Appendix 2</a></li>
+                                  <li><a href="#lbl-appendix3" id="toc-lbl-appendix3">Appendix 3</a></li>
+                                  <li><a href="#lbl-appendix4" id="toc-lbl-appendix4">Appendix 4</a></li>
+                                  <li><a href="#lbl-appendix5" id="toc-lbl-appendix5">Appendix 5</a></li>
+                                  <li><a href="#lbl-appendix6" id="toc-lbl-appendix6">Appendix 6. Glossary</a></li>
+                                  </ul>
+                              </nav>
+            </div>
+            
+            <!-- Main body header -->
+                          <div class="ds_layout__header">
+                <header class="heading">
+                  <div class="ds_page-header">
+                                          <span class="ds_page-header__label ds_content-label">Report</span>
+                                        <h1 class="ds_page-header__title title toc-ignore">Quality Report for Household Waste Generated and Managed in Scotland 2024</h1>
+                                        <dl class="ds_page-header__metadata ds_metadata">
+                                                                </dl>
+                  </div>
+                </header>
+              </div>
+                        
+            <!-- Main body content -->
+            <div class="ds_layout__content toc-content">
+                            <style type="text/css">
+
+                            .tocify {
+                                color: rgb(0,101,189);
+                            }
+
+
+                            .tocify .tocify-item a, .tocify .list-group-item {
+                                /* padding: 5px; */
+                                padding: 5px;
+                                padding-top: 0px;
+                                padding-bottom: 0px;
+                                line-height: 18px;
+                                margin-top: 8px;
+                                margin-bottom: 8px;
+                            }
+
+                            .tocify-item .active{
+                              /*color: black;*/
+                              background-color: #d9effc;
+                            }
+
+                            .tocify-item.active, .tocify-item.active:focus, .tocify-item.active:hover {
+                                z-index: 2;
+                                 color: rgb(0,101,189);
+                                background-color: #d9effc;
+                                border-color: #d9effc;
+                                
+                            }
+
+
+                            }
+                            .tocify-subheader > .tocify-item {
+                              text-indent: initial;
+                              padding-left: 2em;
+
+                            }
+
+                            .tocify-header > .tocify-item {
+                              text-indent: initial;
+                              padding-left: 6px;
+
+                            }
+
+                            <!important-- remove the large white space between end of page and the footnotes -->
+                            .tocify-extend-page {
+                              height: 0px !important;
+                            }
+
+
+                            .exporting_chart_class .highcharts-background {
+                              fill: white;
+                              background-color: white;
+                              
+                            }
+
+
+
+                            .footnotes.footnotes-end-of-document{
+                              margin-left: 24px;
+                              margin-right: 24px;
+                              
+                            }
+
+                            /* Generic css styles */
+
+                            .mt-6 {  margin-top: 6px; }
+                            .mt-3 {  margin-top: 3px;}
+                            .mb-3 {  margin-bottom: 3px;}
+                            .mb-6 {  margin-bottom: 6px;}
+
+
+                            .highcharts-container {
+                              margin: 0 auto;
+                            }
+
+                            /*
+                            these remove padding from the toc, and make it sticky
+                            combination of both make it possible to see long menu's 
+                            on most screens
+                            */
+                            .ds_side-navigation {
+                            position: sticky;
+                            top: 10px;
+                            }
+
+                            nav.ds_side-navigation ul > li > a
+                            {
+
+                            padding: 0px;
+                            padding-top: 3px;
+                            padding-bottom: 3px;
+                            }
+
+                            @media only screen and (max-height: 800px) {
+                             nav.ds_side-navigation ul > li > a
+                            {
+
+                            padding: 0px;
+
+                            }
+                            }
+
+
+
+                            /* styles for captins */
+
+                            .df-caption {
+                            /*color: darkgrey; */
+                            display: flex;
+                            margin-top: 12px;
+                            margin-bottom: -12px;
+                            }
+
+
+
+                            .df-caption>div {
+                            display: inline-block;
+                            }
+                            .df-caption .df-prefix {
+                            font-weight: bold;
+                            }
+
+                            .df-fig { }
+
+                            .df-tab { }
+
+
+                            table.table-sites-input tr:nth-child(3),
+                            table.table-sites-input tr:nth-child(6){
+                              font-weight: bold;
+                             
+                            }
+
+                            table.table-sites-input tr:nth-child(3) td:nth-child(1), 
+                            table.table-sites-input tr:nth-child(6) td:nth-child(1){
+                              padding-left: 24px;
+                            }
+
+
+
+                            /*
+                            indicator triangles for collapsible paragraphs
+                            the markup must be in format
+                            <details>
+                            <summary><div class="indicator"></div>Summary text here</summary>
+
+                            Details here
+
+                            </details>
+
+                            */
+
+
+                            details summary div.indicator  {
+                            display: inline-block;
+                              width: 0; 
+                              height: 0; 
+                              border-top: 6px solid transparent;
+                              border-bottom: 6px solid transparent;
+                              border-left: 6px solid black;
+                            }
+
+                            details[open] summary div.indicator  {
+
+                               width: 0; 
+                              height: 0; 
+                              border-left: 6px solid transparent;
+                              border-right: 6px solid transparent;
+                              border-top: 6px solid black;
+                            }
+                            </style>
+                            <style type="text/css">
+
+                            h2 {
+                            margin-top: 24px !important;
+                            }
+
+
+                            .caption-notes {
+                            /*width: 80%;*/
+                            margin-top: 6px;
+                            margin-left: auto;
+                            margin-right: auto;
+                            background-color: #f3f3f3;
+                            }
+
+
+                             td.waste-cat
+                            {
+                               /* font-weight: bold; */
+                                white-space: nowrap;
+                            }
+                            </style>
+                            <style type="text/css">
+
+                            /* this is to make very large TOC's scrollable
+                            see  https://stackoverflow.com/questions/67877935/how-to-make-a-table-of-contents-that-can-be-scrolled-manually-in-rmarkdown */
+
+                            </style>
+                            <p><strong>An Official Statistics Publication for Scotland</strong></p>
+                            <p><b>Published on 28th October 2025 9:30 AM</b></p>
+                            <div id="introduction" class="section level3">
+                            <h3>Introduction</h3>
+                            <p>This report describes the methodologies to produce summary household waste data for Scotland for the 2024 calendar year. The report should be used alongside the 2024 Household waste data official statistics and associated data tables.</p>
+                            <p>The 2024 data are presented as follows:</p>
+                            <ul>
+                            <li><p>The Household waste data for Scotland and associated data tables are presented in a <a href="household.html" target="_blank">summary and commentary document</a>. This narrative describes the major trends and provides an interpretation of the data.</p></li>
+                            <li><p>Scotland’s Environment Household Waste Discover Data tool presents the waste from household sources in an interactive and visual format and is found on <a href="https://informatics.sepa.org.uk/HouseholdWaste/">Scotland’s Environment web</a>.</p></li>
+                            <li><p>Scotland’s Environment Waste Discover Data tool presents the Waste From all Sources (WFAS) in an interactive and visual format and is found on <a href="https://informatics.sepa.org.uk/WasteAllSources/">Scotland’s Environment web</a>. This tool covers the total waste managed, whether it be waste from households, waste from construction and demolition, or waste from commerce and industry. This tool includes waste generated and waste management methods including waste recycled, incinerated, composted and waste landfilled.</p></li>
+                            </ul>
+                            <p>In some cases, the quantities of household waste and WFAS are counter intuitive. For
+                            example, there may be more household waste than WFAS for a given reporting category.
+                            This is a product of using different datasets and corresponding methodologies which are
+                            not comparable. If such an inconsistency exists, attempts have been made in this
+                            document to outline possible reasons for the inconsistency and steps that are planned to
+                            address the shortcomings.</p>
+                            <p>Unlike the WFAS statistics, in which no attempt is made to balance the waste generated
+                            with waste managed, the household waste generated and waste managed are balanced,
+                            except for waste sent to interim storage. For example, in the household statistic, ‘incineration’ is net inputs to incinerators to avoid double-counting of incinerator
+                            outputs. SEPA in partnership with Zero Waste Scotland and the Scottish Government is
+                            currently reviewing <a href="https://www.environment.gov.scot/data/waste-data-strategy/">Scotland’s waste data strategy</a>. Part of this review is to identify and address gaps in the reporting dataset.</p>
+                            <p><a href="#lbl-appendix1">Appendix 1</a> provides a fuller description of the WasteDataFlow data source including any links to return forms and guidance.</p>
+                            <p><a href="#lbl-appendix2">Appendix 2</a> and <a href="#lbl-appendix3">Appendix 3</a> list the waste reporting categories used in the household waste methodology.</p>
+                            <p><a href="#lbl-appendix4">Appendix 4</a> lists the carbon factors used by Zero Waste Scotland (ZWS) to produce the carbon metric.</p>
+                            <p><a href="#lbl-appendix5">Appendix 5</a> lists the waste composition factors used by ZWS and SEPA to produce the carbon metric.</p>
+                            <p><a href="#lbl-appendix6">Appendix 6</a> provides a glossary of terms</p>
+                            <p><a href="#lbl-appendix7">Appendix 7</a> provides a list of acronyms.</p>
+                            <div id="revisions-policy" class="section level4">
+                            <h4>Revisions Policy</h4>
+                            <p>Revisions could occur for various reasons, including when data from third parties are
+                            unavailable or provisional at the time of publishing or if there are subsequent
+                            methodological improvements or refinements.</p>
+                            <p>The figures are accurate at the time of publication. However, the data may be updated if
+                            further revisions are necessary. Normally, in line with SEPA’s published <a href="https://www.sepa.org.uk/media/421155/data_correction_policy.pdf">corrections policy</a>, revisions will be published concurrent with the next release.</p>
+                            <p>Where there have been changes in methodology for the waste data tables, the complete
+                            dataset is revised for all years to ensure that comparisons between years are valid.</p>
+                            </div>
+                            </div>
+                            <div id="progress-against-targets" class="section level3">
+                            <h3>Progress against Targets</h3>
+                            <div id="introduction-1" class="section level4">
+                            <h4>Introduction</h4>
+                            <p>The Scottish Government’s <a href="https://www.gov.scot/publications/making-things-last-circular-economy-strategy-scotland/">Making Things Last – A Circular Economy Strategy for
+                            Scotland</a> sets out the Scottish Government’s vision for a zero waste society. This vision
+                            describes a Scotland where all waste is seen as a resource, where waste is minimised,
+                            where valuable resources are not disposed of in landfills, and where most waste is sorted,
+                            leaving only limited amounts to be treated.</p>
+                            <p>This policy document sets a number of objective and measurable targets for tracking progress against the objectives specified in the Zero Waste Plan (2010). Some of these targets are derived from EU directives such as the Waste Framework Directive. A summary of these targets for household waste are provided in <a class='df-xref' href='#table-policy-targets' onclick="(()=> {
+                                        const tabAnchorHRef = '#' + $('.df-caption#table-policy-targets').closest('.tab-pane').attr('id');
+                                        console.log(tabAnchorHRef);
+                                         $(`a[href='${tabAnchorHRef}']`).click();
+                                         return true;
+                                         } )() " >Table 1</a> below.</p>
+                            <p>The <a href="https://www.gov.scot/publications/scotlands-circular-economy-waste-route-map-2030-consultation/">Circular Economy and Waste Route Map to 2030</a>, Scotland’s strategic plan to deliver its sustainable resource and circular economy ambitions, was published in December 2024. Its actions are complemented by provisions in the <a href="https://www.legislation.gov.uk/asp/2024/13/contents">Circular Economy (Scotland) Act 2024</a>. The Act establishes the legislative framework to support Scotland’s transition to a zero waste and circular economy, significantly increase reuse and recycling rates, and modernise and improve waste and recycling services.</p>
+                            <div id="table-policy-targets" class="df-caption df-tab">
+                            <div class="df-prefix">
+                            Table 1. 
+                            </div>
+                            <div class="df-caption-text">
+                            Scottish Government Policy Targets
+                            </div>
+                            </div>
+                            <p><br></p>
+                            <div class="datatables html-widget html-fill-item" id="htmlwidget-24a6a69cff831e620f2a" style="width:100%;height:auto;"></div>
+                            <script type="application/json" data-for="htmlwidget-24a6a69cff831e620f2a">{"x":{"filter":"none","vertical":false,"data":[["60% recycling/composting and preparing for re-use of household waste","Recycling and preparing for re-use of 50% by weight of household waste and similar"],[2020,2020],["Scottish Government","EU"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Target<\/th>\n      <th>Year<\/th>\n      <th>Set By<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"ordering":false,"pageLength":-1,"dom":"t","columnDefs":[{"className":"dt-right","targets":1},{"name":"Target","targets":0},{"name":"Year","targets":1},{"name":"Set.By","targets":2}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[-1,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+                            <p><br></p>
+                            </div>
+                            <div id="recyclingcomposting-and-preparing-for-re-use-of-household-waste" class="section level4">
+                            <h4>Recycling/composting and preparing for re-use of household waste</h4>
+                            <p>The method used to prepare the household waste recycling/composting and preparing for re-use figure is based on household waste reported in WasteDataFlow.
+                            The total waste reused, composted, and recycled for all 32 Scottish local authorities is calculated as depicted in <a class='df-xref' href='#fig-rr-calcs' onclick="(()=> {
+                                        const tabAnchorHRef = '#' + $('.df-caption#fig-rr-calcs').closest('.tab-pane').attr('id');
+                                        console.log(tabAnchorHRef);
+                                         $(`a[href='${tabAnchorHRef}']`).click();
+                                         return true;
+                                         } )() " >Figure 1</a> below.</p>
+                            <p>The meaning of household waste changed in 2011 with the introduction of the Zero Waste Plan. The household waste recycling figures use the revised meaning for 2011 – 2024. Changes in the definition of household waste include:</p>
+                            <ul>
+                            <li>compost like output from mechanical and biological treatment (MBT) of household wastes previously counted as recycled was re-classified as ‘Other recovery’;</li>
+                            <li>metals and ash from incineration previously counted as recycled was re-classified as ‘Other recovery’;</li>
+                            <li>street-sweeping, gully waste, healthcare waste, and beach-cleansing waste were re-classified from household to commercial waste.</li>
+                            <li>waste that failed to meet the publicly available specification (PAS) standard for composting and anaerobic digestion was classified as ‘Other recovery’.</li>
+                            </ul>
+                            <p>In 2022, the definition of recycling further changed to include metals from incineration.</p>
+                            </div>
+                            <div id="the-preparing-for-re-use-and-the-recycling-by-weight-of-waste-materials-such-as-paper-metal-plastic-and-glass-from-household-waste-and-similar" class="section level4">
+                            <h4>The preparing for re-use and the recycling by weight of waste materials such as paper, metal, plastic, and glass from household waste and similar</h4>
+                            <p>Previously, we reported to Eurostat under Article 11(2)(a) of the Waste Framework Directive (Directive 2008/98/EC), which specifies that member states must meet a recycling target of 50% by weight for the recycling of waste materials such as paper, metal, plastic, and glass from households. Commonly known as the “Waste from households (WfH)” calculation, Defra continue to publish these data for the UK and devolved nations as part of their <a href="https://www.gov.uk/government/statistics/uk-waste-data/uk-statistics-on-waste">UK Statistics on Waste</a>.</p>
+                            <p>The WfH calculation is depicted in <a class='df-xref' href='#fig-wfh-calcs' onclick="(()=> {
+                                        const tabAnchorHRef = '#' + $('.df-caption#fig-wfh-calcs').closest('.tab-pane').attr('id');
+                                        console.log(tabAnchorHRef);
+                                         $(`a[href='${tabAnchorHRef}']`).click();
+                                         return true;
+                                         } )() " >Figure 2</a> below. The key differences between the Scotland household waste recycling rate and the Waste from households recycling rate are summarised in <a class='df-xref' href='#table-rr-vs-wfh' onclick="(()=> {
+                                        const tabAnchorHRef = '#' + $('.df-caption#table-rr-vs-wfh').closest('.tab-pane').attr('id');
+                                        console.log(tabAnchorHRef);
+                                         $(`a[href='${tabAnchorHRef}']`).click();
+                                         return true;
+                                         } )() " >Table 2</a> below. Further information about differences between the national recycling measures of the four UK countries may be found in the <a href="https://assets.publishing.service.gov.uk/media/65b8f1b7e9e10a00130310a6/Recycling_Explainer_2223.pdf/preview">Recycling Explainer</a> published by Defra in consultation with the environmental agencies of the four UK countries.</p>
+                            <div id="fig-rr-calcs" class="df-caption df-fig">
+                            <div class="df-prefix">
+                            Figure 1. 
+                            </div>
+                            <div class="df-caption-text">
+                            Scottish household waste recycling rate calculation
+                            </div>
+                            </div>
+                            <p><br></p>
+                            <p><span class="math display">\[
+                              Percentage\ household\ waste\ recycled\
+                            =\ \frac{Household\ waste \
+                            recycled}{Household\ waste\
+                            generated}
+                            \]</span></p>
+                            <p><br></p>
+                            <div id="fig-wfh-calcs" class="df-caption df-fig">
+                            <div class="df-prefix">
+                            Figure 2. 
+                            </div>
+                            <div class="df-caption-text">
+                            Waste from households recycling rate (by material) calculation
+                            </div>
+                            </div>
+                            <p><br></p>
+                            <p><span class="math display">\[
+                            WfH\ generated\ (tonnes)\
+                            =\ Household\ waste\\ generated\ -\ Soils\ and\ Construction\ waste\ recycled
+                            \]</span>
+                            <span class="math display">\[
+                            Percentage\ WfH\ recycled\
+                            =\ \frac{(Household\ waste\ recycled\ \\- Soils\ and\ Construction\ waste\ recycled
+                            generated\ \\+\ waste\ composted\ at\ non\ PAS\ facilities) *\ 100}
+                                    {WfH\ Generated}
+                            \]</span></p>
+                            <p><br></p>
+                            <div id="table-rr-vs-wfh" class="df-caption df-tab">
+                            <div class="df-prefix">
+                            Table 2. 
+                            </div>
+                            <div class="df-caption-text">
+                            Comparison of Scotland national household waste recycling measure vs EU (Defra) waste from households measure
+                            </div>
+                            </div>
+                            <p><br></p>
+                            <div class="datatables html-widget html-fill-item" id="htmlwidget-fc97b87d838c2b293f6b" style="width:100%;height:auto;"></div>
+                            <script type="application/json" data-for="htmlwidget-fc97b87d838c2b293f6b">{"x":{"filter":"none","vertical":false,"data":[["Include waste sent to non PAS compost facility","Include construction waste from householders","Include metals from incineration recycled"],["✘","✔","✔"],["✔","✘","✔"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Measure<\/th>\n      <th>Scotland national method<\/th>\n      <th>UK waste from households<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-center","targets":[1,2]},{"orderable":false,"targets":[0,1,2]},{"name":"Measure","targets":0},{"name":"Scotland","targets":1},{"name":"UK","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+                            <small>
+                            <details open>
+                            <summary>
+                            <div class="indicator">
+
+                            </div>
+                            Notes:
+                            </summary>
+                            A methodological change was made in 2022 to include metals from incineration bottom
+                            ash sent for recycling as part of the Scotland’s national household waste recycling rate. Previously, these
+                            wastes were counted as Other Diversion from Landfill
+                            </details>
+                            <p></small></p>
+                            <p><br></p>
+                            </div>
+                            </div>
+                            <div id="household-waste" class="section level3">
+                            <h3>Household waste</h3>
+                            <div id="introduction-2" class="section level4">
+                            <h4>Introduction</h4>
+                            <p>This section describes how we report on household waste generated in Scotland; and Scottish household waste managed in Scotland or elsewhere. Data are taken from all 32 Scottish local authority returns using the web-based reporting tool WasteDataFlow (WDF). Further details of the WDF dataset can be found in Appendix 1. Throughout this section reference is made to question numbers on WDF.</p>
+                            <p>In 2024 local authorities submitted returns annually. All returns were checked and verified by SEPA staff for data entry errors, consistency with previous WDF returns and consistency with the site returns dataset.</p>
+                            <p>All waste collected is reported in WDF in the same return period in which it is sent to management. This allows balancing of the waste generated and waste managed for a period. The waste generated figures may include treated waste stockpiled prior to final management. The waste managed figures exclude treated waste held in stockpile at the end of the reporting year.</p>
+                            </div>
+                            <div id="methodology" class="section level4">
+                            <h4>Methodology</h4>
+                            <div id="wastedataflow-question-100" class="section level5">
+                            <h5>WasteDataFlow Question 100</h5>
+                            <p>Local authorities report waste managed in WDF using Question 100 (Q100). Data entry is via building a graphical ‘tree’ that depicts the movement of waste in a chain. Each ‘branch’ of the tree is associated with a waste facility and tonnage inputs to and outputs from each facility are reported. Question 100 covers the following waste management categories:</p>
+                            <ul>
+                            <li><p>Wastes sent direct to landfill, incineration and composting facilities, and waste sent to the same facilities following the sorting/treatment of mixed wastes e.g. at a materials recovery facility (MRF) or mechanical biological treatment (MBT) plant</p></li>
+                            <li><p>Segregated recyclates sent direct to reprocessors and reuse facilities, and waste sent to the same facilities following the sorting/treatment of mixed wastes (e.g. MRFs, MBT)</p></li>
+                            </ul>
+                            <p>A “primary facility” in Q100 is a facility where the authority records waste as sent direct from collection. When entering data, the input tonnages to the facility at this level are broken down into three waste sources by local authorities: Household, Commercial, Industrial. The household tonnages are directly obtained from the data for these facilities.</p>
+                            <p>Where the facility is not a primary facility (e.g. the waste sent to landfill is recorded as an output from another facility such as a materials recycling facility), the household waste tonnage is not specifically recorded. In this instance the household waste was calculated by applying the percentage household waste at the primary level in the tree to the total tonnage of waste sent to the facility. For example, if waste inputs to a MRF facility are 80% household wastes, the output rejects from the MRF sent to landfill will be designated as 80% household in origin.</p>
+                            </div>
+                            </div>
+                            <div id="waste-categories" class="section level4">
+                            <h4>Waste categories</h4>
+                            <p>A list of SEPA reporting categories and corresponding WDF waste types are provided in <a href="#lbl-appendix2">Appendix 2</a> and <a href="#lbl-appendix3">Appendix 3</a>.</p>
+                            <p>For simplicity, in the <a href="household.html">official statistics commentary document</a> for household waste generated and managed, the statistical waste categories “Metallic wastes, ferrous“, “Metallic wastes, non-ferrous”, and “Metallic wastes, mixed ferrous and non-ferrous” have been combined into the one category of “Metallic wastes” . Similarly the statistical waste categories “Mineral waste from construction and demolition” and “Soils” have been combined into one “Construction and soils” category. The <a href="https://informatics.sepa.org.uk/HouseholdWaste/">Household Waste Discover Data tool</a> retains all the reporting categories.</p>
+                            </div>
+                            <div id="household-waste-generated" class="section level4">
+                            <h4>Household waste generated</h4>
+                            <p>Household waste generated were taken from the household tonnage inputs to primary level facilities in Q100.</p>
+                            </div>
+                            <div id="household-waste-landfilled" class="section level4">
+                            <h4>Household waste landfilled</h4>
+                            <p>Household waste sent to landfill was derived from the waste recorded as sent to a landfill
+                            facility in Q100, either directly or as secondary outputs to landfill following the treatment of
+                            waste.</p>
+                            </div>
+                            <div id="household-waste-recovered-by-incineration-recovered-by-co-incineration-disposed-by-incineration" class="section level4">
+                            <h4>Household waste recovered by incineration, recovered by co-incineration, disposed by incineration</h4>
+                            <p>The quantity of household waste incinerated reported in the <a href="https://informatics.sepa.org.uk/HouseholdWaste/">Household Waste Discover Data tool</a> and in the official statistics <a href="household.html">commentary document</a> for household waste generated and managed is the net tonnage input to the incinerator. Note that this differs from the <a href="https://informatics.sepa.org.uk/WasteAllSources/">WFAS Waste Discover Data tool</a>, in which gross inputs to incineration<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> are reported.</p>
+                            <p>Incineration tonnages were allocated to the incineration by recovery category where the incineration facility met the R1 incineration efficiency as set out in Annex II of the <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02008L0098-20180705">Waste Framework Directive criteria</a> . Similarly, where waste was incinerated in a co-incineration process, tonnages were allocated to the incineration by co-incineration category in the data tables. Where the incinerator was not recognised as meeting R1 incineration efficiency, the incineration tonnages were allocated to the incineration by disposal category. It was assumed that all waste exported outside the UK was sent for incineration by recovery. For waste exported to an England incinerator, where the R1 incinerator status was undetermined, it was assumed the waste was sent to incineration by disposal or incineration by co-incineration.</p>
+                            </div>
+                            <div id="household-waste-recycled" class="section level4">
+                            <h4>Household waste recycled</h4>
+                            <p>The quantity of household waste recycled is the net sum of household waste recorded as sent to reprocessor facilities in Q100. This includes waste sent direct to a reprocessor from collection and also the recyclable materials sent to a reprocessor following sorting of mixed wastes at a waste treatment facility (e.g. MRFs, MBT).</p>
+                            <p>Under Scotland’s Zero Waste Plan the compost-like output (CLO) from the mechanical biological treatment of household waste, and any recycled incinerator bottom ash from the incineration of household waste do not count towards household waste recycling targets and are excluded from household waste recycling figures but they are included under “other diversion from landfill” unless these materials are landfilled.</p>
+                            </div>
+                            <div id="household-waste-prepared-for-reuse" class="section level4">
+                            <h4>Household waste prepared for reuse</h4>
+                            <p>The quantity of household waste prepared for reuse is the net sum of household waste recorded as sent to reuse facilities in Q100, either directly or as outputs from a sorting facility.</p>
+                            </div>
+                            <div id="household-organic-waste-recycled-through-biological-treatment" class="section level4">
+                            <h4>Household organic waste recycled through biological treatment</h4>
+                            <p>The quantity of household organic waste recycled through biological treatment is the net sum of household waste recorded as sent to organic recycling facilities in Q100. There are three categories of organic recycling facilities in Q100: windrow composting, in-vessel composting, and anaerobic digestion facilities.</p>
+                            <p>In 2024 only PAS100 / PAS110 accredited facilities were considered for the recycling data in line with Scotland’s <a href="https://www.gov.scot/publications/making-things-last-circular-economy-strategy-scotland/">Cicular Economy policy: Making Things Last</a>. This change stems from a Scottish Government policy to improve the quality of recycling, first introduced with the publication of the Zero Waste Plan in 2010. Waste composted or digested that has not reached the quality standards set by PAS 100 / PAS 110 and diverted from landfill was counted under “Other diversion from landfill”.</p>
+                            </div>
+                            <div id="household-waste-managed-by-other-methods" class="section level4">
+                            <h4>Household waste managed by other methods</h4>
+                            <p>Recycled bottom ash from the incineration of household waste (excluding metals recycled) do not
+                            count towards household waste recycling targets and are excluded from household waste
+                            recycling figures. These materials have been allocated into the “Other diversion from landfill”
+                            category in the household waste data tables. Also included in this category is any process
+                            loss during waste treatment, and process loss of organic waste composted in which the
+                            compost product is disposed, and compost-like outputs from mechanical biological
+                            treatment which are sent for recycling</p>
+                            </div>
+                            <div id="final-destination-reporting" class="section level4">
+                            <h4>Final destination reporting</h4>
+                            <p>The geographic allocation (Scotland / Outwith Scotland) for household waste recycling / disposal / recovery relies on the accurate reporting of the final destination of waste materials. For example, a final destination for glass bottles would be the site where the bottles are reprocessed into new materials. A final destination for rejected material from a MRF might be landfill or incineration.</p>
+                            <p>SEPA’s WDF guidance requires authorities to report the final destination of the waste in Q100 (i.e. the facility where waste is recycled, recovered or disposed). Waste often goes through a
+                            complex chain of sites before reaching its final destination. This, together with the
+                            reluctance of some operators to report where waste is sent due to commercial
+                            confidentiality, means many authorities struggle to obtain final destination information for
+                            the WDF report.</p>
+                            <p>Although the roll out of Q100 has improved final destination reporting,
+                            many authorities still continue to report MRFs as final destinations. The geographic
+                            information for household waste managed, in particular the household waste recycled,
+                            should therefore be treated with caution in the waste data tables. It is anticipated that the
+                            <a href="https://www.gov.uk/government/publications/digital-waste-tracking-service/mandatory-digital-waste-tracking">UK digital waste tracking service</a>, when implemented, will provide more detailed and
+                            accurate data on the destination of waste managed by local authorities.</p>
+                            </div>
+                            <div id="composting-and-other-diversion" class="section level4">
+                            <h4>2011 - 2013 Composting and Other Diversion</h4>
+                            <p>In 2014, the meaning of recycling changed in Scotland. After 2014 waste that was composted at PAS100 / PAS110 certified facilities counted towards recycling, and waste sent to facilities which were not certified did not count towards recycling but were part of the “Other diversion from landfill” category.</p>
+                            <p>From 2014 to 2019, the old and new methods were published in the statistical bulletin side by
+                            side. However, as we move further away from the old composting measure, it becomes
+                            less important, and a back series is helpful for understanding changes over a long period of
+                            time. For 2011 – 2013 the waste that met the PAS 100 / PAS 110 standard was modelled to
+                            produce a back series. For each authority, the proportion of waste that was sent to a PAS
+                            100 / PAS 110 facility on average in 2014 - 2015 was applied to the waste sent for composting for each of the years 2011, 2012 and 2013. Further information about the formula for
+                            calculating the non-PAS tonnes and the factors used for each authority may be found in the
+                            <a href="https://www.sepa.org.uk/environment/waste/waste-data/waste-data-reporting/household-waste-data/">2021 household waste quality report</a>.</p>
+                            </div>
+                            <div id="carbon-metric" class="section level4">
+                            <h4>Carbon Metric</h4>
+                            <p>The carbon metric is a measure of the whole-life carbon impacts of waste, from resource extraction and manufacturing emissions, right through to waste management emissions, regardless of where in the world these impacts occur. The carbon impact of waste was developed by Zero Waste Scotland (<a href="https://www.zerowastescotland.org.uk/content/what-carbon-metric" class="uri">https://www.zerowastescotland.org.uk/content/what-carbon-metric</a>).</p>
+                            <p>Calculation of the carbon metric depends upon the waste category and how it is managed.
+                            The waste category for each management type is multiplied by the carbon factor listed in
+                            <a href="#lbl-appendix4">Appendix 4</a>. The carbon factors have, for each year up to 2021, been provided by Zero Waste Scotland, and the methodology on how they are produced may be found in the
+                            carbon metric technical reports on Zero Waste Scotland’s web site. For 2022, 2023, and 2024, the carbon factors for 2021 were used. This was done as year-on-year changes in factors are
+                            relatively minor; for example, the total carbon emissions per tonne of Animal and mixed
+                            food waste over the last five years (sum of emissions from waste generated, recycled,
+                            incinerated, landfilled or diverted) varied by less than 0.3%; and resources could be
+                            focused on developing factors for Scotland’s Waste Environmental Footprint Tool (SWEFT).</p>
+                            <p>The Household and similar wastes category, which comprises mixed residual waste, was
+                            first divided up into individual waste compositional categories before multiplying by the
+                            relevant carbon factor. This was achieved by using the composition of residual waste
+                            published in Zero Waste Scotland’s 2014 <a href="https://www.zerowastescotland.org.uk/resources/composition-household-waste-kerbside-2013-14">waste composition study</a>. Not all Scottish local
+                            authorities were included in the 2014 waste composition study. Therefore, the average
+                            waste composition across all Scottish authorities was applied to each authority. It should
+                            be noted that the waste composition for authorities can vary, depending on the amount of
+                            source segregated collections undertaken in a local authority area. Therefore, care should
+                            be taken when comparing local authority carbon metric data.</p>
+                            <p>It is almost certain that, due to the introduction of source segregated food waste collections, the food waste composition of residual waste will have decreased since 2014. To account for this, the amount of food waste over segregated and residual waste streams was assumed to be constant over any year. For each year, the amount of food waste in the residual waste stream was then calculated by subtracting the amount of waste contained within segregated waste stream for that year from the amount of food waste across both the segregated and residual waste streams in 2014.
+                            The final waste composition used for the carbon metric each year is list in <a href="#lbl-appendix5">Appendix 5</a>. It should be noted that, due to the infrequency of waste composition studies, the variation due to sampling error for waste composition is unknown. Zero Waste Scotland has a planned program for regular waste composition studies which will provide a better estimate of year to year variation of the waste composition, and consequently, the variation in the carbon metric analysis.</p>
+                            </div>
+                            </div>
+                            <div id="enquiries" class="section level3">
+                            <h3>Enquiries</h3>
+                            <p>For further contact details please see <a href="contact.html" target="_blank">contact information</a>.</p>
+                            <p><br></p>
+                            </div>
+                            <div id="lbl-appendix1" class="section level2">
+                            <h2>Appendix 1</h2>
+                            <div id="datasets-used-in-the-2024-methodology" class="section level3 unlisted">
+                            <h3 class="unlisted">Datasets used in the 2024 methodology</h3>
+                            <p>In 2024, all 32 Scottish local authorities reported on a quarterly or annual basis using an electronic return system called WasteDataFlow (WDF). WDF is a UK wide system administered by Defra. Local authorities are responsible for entering data, which cannot be modified by SEPA. Data entry is via a series of <a href="www.wastedataflow.org/documents/guidancenotes/Scotland/GeneralGuidance/Scotland%20WDF">numbered questions</a>.</p>
+                            <p>In 2024 there was a 100% response rate. SEPA reviewed the annual data using a verification tool and informed local authorities where possible of inconsistencies which required checking. Data checking included the consistency of reported tonnages collected and managed for residual waste, segregated recycling, and organic wastes.</p>
+                            <p>Where waste is reported per person, such as waste generated per person and carbon impact (tCO<sub>2</sub>e per person), the population data was sourced from Scotland’s <a href="https://www.nrscotland.gov.uk/media/lchj5a15/mid-year-population-estimates-time-series-data.xlsx">Mid-2024 Population Estimates Scotland</a>.</p>
+                            <p><br></p>
+                            </div>
+                            </div>
+                            <div id="lbl-appendix2" class="section level2">
+                            <h2>Appendix 2</h2>
+                            <div id="segregated-household-waste-categories-for-sepa-reporting-and-wastedataflow" class="section level3 unlisted">
+                            <h3 class="unlisted">Segregated Household waste categories for SEPA reporting and WasteDataFlow</h3>
+                            <div class="datatables html-widget html-fill-item" id="htmlwidget-65ba48bc270822dc5c8d" style="width:100%;height:auto;"></div>
+                            <script type="application/json" data-for="htmlwidget-65ba48bc270822dc5c8d">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["Animal and mixed food waste","Animal and mixed food waste","Animal and mixed food waste","Batteries and accumulators wastes","Batteries and accumulators wastes","Combustion wastes","Construction and demolition waste","Construction and demolition waste","Discarded electrical and electronic equipment","Discarded electrical and electronic equipment","Discarded electrical and electronic equipment","Discarded electrical and electronic equipment","Discarded machines and","equipment components","Discarded vehicles","Glass wastes","Glass wastes","Glass wastes","Glass wastes","Health care and biological wastes","Household and similar wastes","Household and similar wastes","Household and similar wastes","Metal wastes, ferrous","Metal wastes, mixed ferrous and non-ferrous","Metal wastes, mixed ferrous and non-ferrous","Metal wastes, non-ferrous","Metal wastes, non-ferrous","Mixed and undifferentiated","materials","Mixed and undifferentiated","materials","Mixed and undifferentiated","materials","Off-specification chemical wastes","Off-specification chemical wastes","Off-specification chemical wastes","Off-specification chemical wastes","Off-specification chemical wastes","Paper and cardboard wastes","Paper and cardboard wastes","Paper and cardboard wastes","Paper and cardboard wastes","Paper and cardboard wastes","Plastic wastes","Plastic wastes","Plastic wastes","Plastic wastes","Plastic wastes","Plastic wastes","Plastic wastes","Plastic wastes","Plastic wastes","Plastic wastes","Rubber wastes","Rubber wastes","Rubber wastes","Rubber wastes","Soils","Textile wastes","Textile wastes","Textile wastes","Textile wastes","Used oils","Vegetal wastes","Vegetal wastes","Vegetal wastes","Wood wastes","Wood wastes","Wood wastes","Wood wastes"],["Waste food only","25% of Mixed garden and food waste","Vegetable oil","Automotive batteries","Post-consumer, non-automotive batteries","Incinerator bottom ash","Rubble","Plasterboard","WEEE - Large domestic apps","WEEE - Small domestic apps","WEEE - Cathode ray tubes","WEEE - Fridges and freezers","WEEE - Fluorescent tubes and other light bulbs",null,"Bicycles","Green glass","Brown glass","Clear glass","Mixed glass","Adsorbent Hygiene Products (AHP)","Furniture","Bric-a-brac","Mattresses","Steel cans","Mixed cans","Other scrap metal","Aluminium cans","Aluminium foil","Cardboard beverage packaging",null,"Co-mingled materials",null,"Other materials",null,"Aerosols","Fire extinguishers","Gas Bottles","Ink and toner cartridges","Paint","Paper","Card","Books","Mixed paper and card","Yellow pages","Mixed plastics","Mixed plastic bottles","PET","HDPE","PVC","LDPE","PP","PS","Other plastics","Video tapes, DVDs and CDs","Car tyres","Van tyres","Large vehicle tyres","Mixed tyres","Soil","Textiles only","Footwear only","Textiles and footwear","Carpets","Mineral oil","Green garden waste only","Other compostable waste","75% of Mixed garden and food waste","Wood for composting","Wood","Chipboard and MDF","Composite wood materials"],["NH","NH","NH","H","NH","NH","NH","NH","H","H","H","H","H",null,"NH","NH","NH","NH","NH","NH","NH","NH","NH","NH","NH","NH","NH","NH","NH",null,"NH",null,"NH",null,"NH","H","H","NH","NH","NH","NH","NH","NH","NH","NH","NH","NH","NH","NH","NH","NH","NH","NH","NH","NH","NH","NH","NH","NH",null,null,"NH","NH","H","NH","NH","NH","NH","NH","NH","NH"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>SEPA Reporting Category<\/th>\n      <th>WasteDataFlow<\/th>\n      <th>Hazardous (H) / non-hazardous (NH)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"dom":"lftpB","lengthMenu":[[5,10,-1],["5","10","All"]],"buttons":["copy",{"extend":"csv","title":"table-waste-categories"},{"extend":"excel","title":"table-waste-categories"},{"extend":"pdf","title":"table-waste-categories"},"print"],"columnDefs":[{"name":"SEPA Reporting Category","targets":0},{"name":"WasteDataFlow","targets":1},{"name":"Hazardous (H) / non-hazardous (NH)","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+                            <p><br></p>
+                            </div>
+                            </div>
+                            <div id="lbl-appendix3" class="section level2">
+                            <h2>Appendix 3</h2>
+                            <div id="mixed-household-waste-categories-for-sepa-reporting-and-wastedataflow" class="section level3 unlisted">
+                            <h3 class="unlisted">Mixed household waste categories for SEPA reporting and WasteDataFlow</h3>
+                            <div class="datatables html-widget html-fill-item" id="htmlwidget-e3ad039907705d1a9901" style="width:100%;height:auto;"></div>
+                            <script type="application/json" data-for="htmlwidget-e3ad039907705d1a9901">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["Household and similar wastes","Household and similar wastes","Household and similar wastes","Household and similar wastes","Other mineral wastes"],["Collected household waste: Regular Collection","Collected household waste: Bulky Waste","Collected household waste: other","Civic amenity sites waste: Household","Asbestos Waste separately collected"],["NH","NH","NH","NH","H"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>SEPA Reporting Category<\/th>\n      <th>WasteDataFlow<\/th>\n      <th>Hazardous (H) / non-hazardous (NH)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-center","targets":2},{"orderable":false,"targets":[0,1,2]},{"name":"SEPA Reporting Category","targets":0},{"name":"WasteDataFlow","targets":1},{"name":"Hazardous (H) / non-hazardous (NH)","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+                            <p><br></p>
+                            </div>
+                            </div>
+                            <div id="lbl-appendix4" class="section level2">
+                            <h2>Appendix 4</h2>
+                            <div id="carbon-metric-factors-2011---2024" class="section level3 unlisted">
+                            <h3 class="unlisted">Carbon Metric Factors 2011 - 2024</h3>
+                            <p><em>All factors in units of CO2eq per tonne of material</em></p>
+                            <div class="datatables html-widget html-fill-item" id="htmlwidget-f352a3e4c8166dcb2f6e" style="width:100%;height:auto;"></div>
+                            <script type="application/json" data-for="htmlwidget-f352a3e4c8166dcb2f6e">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[[2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011],["Animal and mixed food waste","Batteries and accumulators wastes","Chemical wastes","Combustion wastes","Discarded equipment","Discarded vehicles","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, ferrous","Metallic wastes, mixed ferrous and non-ferrous","Metallic wastes, non-ferrous","Mineral waste from construction and demolition","Mixed and undifferentiated materials","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Soils","Textile wastes","Used oils","Vegetal wastes","Wood wastes","Animal and mixed food waste","Batteries and accumulators wastes","Chemical wastes","Combustion wastes","Discarded equipment","Discarded vehicles","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, ferrous","Metallic wastes, mixed ferrous and non-ferrous","Metallic wastes, non-ferrous","Mineral waste from construction and demolition","Mixed and undifferentiated materials","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Soils","Textile wastes","Used oils","Vegetal wastes","Wood wastes","Animal and mixed food waste","Batteries and accumulators wastes","Chemical wastes","Combustion wastes","Discarded equipment","Discarded vehicles","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, ferrous","Metallic wastes, mixed ferrous and non-ferrous","Metallic wastes, non-ferrous","Mineral waste from construction and demolition","Mixed and undifferentiated materials","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Soils","Textile wastes","Used oils","Vegetal wastes","Wood wastes","Animal and mixed food waste","Batteries and accumulators wastes","Chemical wastes","Combustion wastes","Discarded equipment","Discarded vehicles","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, ferrous","Metallic wastes, mixed ferrous and non-ferrous","Metallic wastes, non-ferrous","Mineral waste from construction and demolition","Mixed and undifferentiated materials","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Soils","Textile wastes","Used oils","Vegetal wastes","Wood wastes","Animal and mixed food waste","Batteries and accumulators wastes","Chemical wastes","Combustion wastes","Discarded equipment","Discarded vehicles","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, ferrous","Metallic wastes, mixed ferrous and non-ferrous","Metallic wastes, non-ferrous","Mineral waste from construction and demolition","Mixed and undifferentiated materials","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Soils","Textile wastes","Used oils","Vegetal wastes","Wood wastes","Animal and mixed food waste","Batteries and accumulators wastes","Chemical wastes","Combustion wastes","Discarded equipment","Discarded vehicles","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, ferrous","Metallic wastes, mixed ferrous and non-ferrous","Metallic wastes, non-ferrous","Mineral waste from construction and demolition","Mixed and undifferentiated materials","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Soils","Textile wastes","Used oils","Vegetal wastes","Wood wastes","Animal and mixed food waste","Batteries and accumulators wastes","Chemical wastes","Combustion wastes","Discarded equipment","Discarded vehicles","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, ferrous","Metallic wastes, mixed ferrous and non-ferrous","Metallic wastes, non-ferrous","Mineral waste from construction and demolition","Mixed and undifferentiated materials","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Soils","Textile wastes","Used oils","Vegetal wastes","Wood wastes","Animal and mixed food waste","Batteries and accumulators wastes","Chemical wastes","Combustion wastes","Discarded equipment","Discarded vehicles","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, ferrous","Metallic wastes, mixed ferrous and non-ferrous","Metallic wastes, non-ferrous","Mineral waste from construction and demolition","Mixed and undifferentiated materials","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Soils","Textile wastes","Used oils","Vegetal wastes","Wood wastes","Animal and mixed food waste","Batteries and accumulators wastes","Chemical wastes","Combustion wastes","Discarded equipment","Discarded vehicles","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, ferrous","Metallic wastes, mixed ferrous and non-ferrous","Metallic wastes, non-ferrous","Mineral waste from construction and demolition","Mixed and undifferentiated materials","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Soils","Textile wastes","Used oils","Vegetal wastes","Wood wastes","Animal and mixed food waste","Batteries and accumulators wastes","Chemical wastes","Combustion wastes","Discarded equipment","Discarded vehicles","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, ferrous","Metallic wastes, mixed ferrous and non-ferrous","Metallic wastes, non-ferrous","Mineral waste from construction and demolition","Mixed and undifferentiated materials","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Soils","Textile wastes","Used oils","Vegetal wastes","Wood wastes","Animal and mixed food waste","Batteries and accumulators wastes","Chemical wastes","Combustion wastes","Discarded equipment","Discarded vehicles","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, ferrous","Metallic wastes, mixed ferrous and non-ferrous","Metallic wastes, non-ferrous","Mineral waste from construction and demolition","Mixed and undifferentiated materials","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Soils","Textile wastes","Used oils","Vegetal wastes","Wood wastes","Animal and mixed food waste","Batteries and accumulators wastes","Chemical wastes","Combustion wastes","Discarded equipment","Discarded vehicles","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, ferrous","Metallic wastes, mixed ferrous and non-ferrous","Metallic wastes, non-ferrous","Mineral waste from construction and demolition","Mixed and undifferentiated materials","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Soils","Textile wastes","Used oils","Vegetal wastes","Wood wastes","Animal and mixed food waste","Batteries and accumulators wastes","Chemical wastes","Combustion wastes","Discarded equipment","Discarded vehicles","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, ferrous","Metallic wastes, mixed ferrous and non-ferrous","Metallic wastes, non-ferrous","Mineral waste from construction and demolition","Mixed and undifferentiated materials","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Soils","Textile wastes","Used oils","Vegetal wastes","Wood wastes","Animal and mixed food waste","Batteries and accumulators wastes","Chemical wastes","Combustion wastes","Discarded equipment","Discarded vehicles","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, ferrous","Metallic wastes, mixed ferrous and non-ferrous","Metallic wastes, non-ferrous","Mineral waste from construction and demolition","Mixed and undifferentiated materials","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Soils","Textile wastes","Used oils","Vegetal wastes","Wood wastes"],[3744,12105.676,1319.60236,null,1754.456186,6850,1210,null,3205.072228,2912.7568,3884.075564,12936.5568,19.1118474,1885.7468,874.3220601,3175.542176,3100,null,20443.78171,1401,null,510.1247652,3744,12105.676,1319.60236,null,1754.456186,6850,1210,null,3205.072228,2912.7568,3884.075564,12936.5568,19.1118474,1885.7468,874.3220601,3175.542176,3100,null,20443.78171,1401,null,510.1247652,3744,12105.676,1319.60236,null,1754.456186,6850,1210,null,3205.072228,2912.7568,3884.075564,12936.5568,19.1118474,1885.7468,874.3220601,3175.542176,3100,null,20443.78171,1401,null,510.1247652,3744,12105.676,1319.60236,null,1754.456186,6850,1210,null,3205.072228,2912.7568,3884.075564,12936.5568,19.1118474,1885.7468,874.3220601,3175.542176,3100,null,20443.78171,1401,null,510.1247652,3744,12106.673,1320.45978,null,1754.456186098269,6850,1210,null,3207.233002755485,2919.5364,3890.588523099277,12943.3364,20.10407150985841,1892.5264,879.4624844186046,3182.303779808039,3100,null,20443.78171258096,1401,null,514.471685186957,3744,12106.673,1320.45978,null,1754.45618609827,6850,1210,null,3207.23300275548,2919.5364,3890.58852309928,12943.3364,20.1040715098584,1892.5264,879.462484418605,3182.30377980804,3100,null,20443.781712581,1401,null,514.471685186957,3744,12107.104,1320.83044,null,1754.45618609827,6850,1210,null,3204.87453308648,2922.4672,3893.40405498689,12946.2672,20.533006907503,1895.4572,881.694063139535,3185.22679997052,3100,null,20443.781712581,1401,null,516.350845186957,3744,12107.098,1320.82528,null,1754.45618609827,6850,1210,null,3204.94342688154,2922.4264,3893.36485964739,12946.2264,20.5270356490671,1895.4164,882.233118139535,3185.18610827452,3100,null,20443.781712581,1401,null,516.324685186957,3744,12107.631,1321.28366,0,1754.45618609827,6850,1210,0,3206.0846528473,2926.0508,3896.84671230655,12949.8508,21.0574824401217,1899.0408,884.910494418604,3188.80088726897,3100,0,20443.781712581,1401,0,518.6485651869569,3744,12106.48,1320.2938,0,1754.45618609827,6850,1210,0,3203.62683767793,2918.224,3889.32773967861,12942.024,19.9119960301707,1891.214,879.174959302326,3180.99486358679,3100,0,20443.781712581,1401,0,513.630205186957,3744,12109.189,1322.62354,0,1754.45618609827,6850,1210,0,3209.48798993715,2936.6452,3907.02443546409,12960.4452,22.6080192139738,1909.6352,893.206324767442,3199.36716432964,3100,0,20443.781712581,1401,0,525.441445186957,3744,12109.209,1322.64074,0,1754.45618609827,6850,1210,0,3194.72881933994,2936.7812,3907.15508659577,12960.5812,22.6279234087601,1909.7712,893.319240465116,3199.50280331629,3100,0,20443.781712581,1401,0,525.528645186957,3744,12109,1323,0,1754,6850,1210,0,3195,2937,3907,12961,23,1910,894,3200,3100,0,20444,1401,0,526,3744,12109,1323,0,1754,6850,1210,0,3195,2937,3907,12961,23,1910,894,3200,3100,0,20444,1401,0,526],[-16.80991344,-578.6239108,4040.39764,null,-180.5248663,-1616.149361,-754.9629200000001,null,-648.1045436000001,-1761.76284,-2530.942563,-9955.044658999999,2.21,-1202.763234,-546.4625804,-532.0414935,-514.4904638,0.9891416,-5828.034184,-725,-50.03233055,-284.0662918,-16.80991344,-578.6239108,4040.39764,null,-180.5248663,-1616.149361,-754.9629200000001,null,-648.1045436000001,-1761.76284,-2530.942563,-9955.044658999999,2.21,-1202.763234,-546.4625804,-532.0414935,-514.4904638,0.9891416,-5828.034184,-725,-50.03233055,-284.0662918,-16.80991344,-578.6239108,4040.39764,null,-180.5248663,-1616.149361,-754.9629200000001,null,-648.1045436000001,-1761.76284,-2530.942563,-9955.044658999999,2.21,-1202.763234,-546.4625804,-532.0414935,-514.4904638,0.9891416,-5828.034184,-725,-50.03233055,-284.0662918,-16.80991344,-578.6239108,4040.39764,null,-180.5248663,-1616.149361,-754.9629200000001,null,-648.1045436000001,-1761.76284,-2530.942563,-9955.044658999999,2.21,-1202.763234,-546.4625804,-532.0414935,-514.4904638,0.9891416,-5828.034184,-725,-50.03233055,-284.0662918,-16.69283317367967,-578.6239107869984,4039.54022,null,-180.524866251134,-1620.829347418454,-754.96292004635,null,-649.1123205735568,-1768.466498516279,-2537.328065680872,-9961.28181761628,2.21,-1209.482562790698,-546.5286224137211,-535.7604335516775,-514.4904637872971,1.00912335,-5828.034183829596,-725,-49.98587636523135,-286.8000735903036,-18.050050788897,-578.623910786998,4039.54022,null,-180.524866251134,-1620.82934741845,-754.96292004635,null,-650.948849339462,-1768.46649851628,-2537.32806568087,-9961.28181761628,2.21,-1209.4825627907,-546.528622413721,-535.760433551677,-514.490463787297,1.00912335,-5828.0341838296,-725,-51.0324760349666,-286.800073590304,-28.0875061613802,-578.623910786998,4039.16956,null,-180.524866251134,-1629.51270738907,-754.96292004635,null,-653.641061419405,-1782.71097063209,-2550.178938312,-9963.95005587209,2.21,-1212.38425426357,-546.5572545262399,-553.120025944196,-514.490463787297,1.0187737,-5828.0341838296,-725,-60.6656875451974,-287.975333616311,-19.2308560742661,-578.623910786998,4039.17472,null,-180.524866251134,-1621.13218338007,-754.96292004635,null,-655.694488240475,-1771.20857745209,-2539.76580667768,-9962.297198372091,2.21,-1212.15845426357,-546.56185724124,-537.12470650945,-514.490463787297,1.08010675,-5828.0341838296,-725,-51.8084740660744,-287.561535476228,-20.6879709427997,-578.623910786998,4038.71634,0,-180.524866251134,-1623.85630436407,-754.96292004635,0,-661.011270777294,-1774.82135419628,-2543.22815157722,-9965.83857511628,2.21,-1215.77362945736,-546.5965432103879,-539.160491837283,-514.490463787297,1.08316505,-5828.0341838296,-725,-53.0645060425784,-289.07232121832,-21.9399930231669,-578.623910786998,4039.7062,0,-180.524866251134,-1617.82298768758,-754.96292004635,0,-663.986721158148,-1766.99564989954,-2535.71476432752,-9958.053528139541,2.21,-1207.95172868217,-546.522044943799,-534.726106294213,-514.490463787297,1.08154081,-5828.0341838296,-725,-54.1489590462542,-285.777617355309,-22.1780899452996,-578.623910786998,4037.37646,0,-180.524866251134,-1630.33859330899,-754.96292004635,0,-668.819806394794,-1785.18425780651,-2553.02115641046,-9974.81394104651,2.21,-1226.18833178295,-546.7020529351551,-544.787889537241,-514.490463787297,1.14274022,-5828.0341838296,-725,-54.2798117593045,-293.161063884458,-20.9523259809583,-578.623910786998,4037.35926,0,-180.524866251134,-1630.40893654856,-754.96292004635,0,-622.226559115766,-1785.32487430698,-2553.15167515958,-9974.91155290698,2.21,-1226.31993643411,-546.70346369969,-544.8699914875421,-514.490463787297,1.14419741,-5828.0341838296,-725,-53.2182654901207,-293.209073854755,-21,-579,4037,0,-181,-1631,-755,0,-624,-1786,-2553,-9975,2,-1227,-547,-545,-514,1,-5828,-725,-54,-293,-21,-579,4037,0,-181,-1631,-755,0,-623,-1786,-2553,-9975,2,-1227,-547,-545,-514,1,-5828,-725,-53,-293],[1.225093333,null,382.0634267,null,41.06342667,328,48.39676,211.3800933,382.0634267,null,41.06342667,null,41.06342667,43.26342667,-93.22824,1887.665279,1810.59676,null,216.0869565,null,-14.04657333,-143.9199067,1.225093333,null,382.0634267,null,41.06342667,328,48.39676,211.3800933,382.0634267,null,41.06342667,null,41.06342667,43.26342667,-93.22824,1887.665279,1810.59676,null,216.0869565,null,-14.04657333,-143.9199067,1.225093333,null,382.0634267,null,41.06342667,328,48.39676,211.3800933,382.0634267,null,41.06342667,null,41.06342667,43.26342667,-93.22824,1887.665279,1810.59676,null,216.0869565,null,-14.04657333,-143.9199067,1.225093333,null,382.0634267,null,41.06342667,328,48.39676,211.3800933,382.0634267,null,41.06342667,null,41.06342667,43.26342667,-93.22824,1887.665279,1810.59676,null,216.0869565,null,-14.04657333,-143.9199067,1.080426666666664,null,382.2954266666666,null,41.29542666666667,328,48.62876,210.1343155555555,382.2954266666666,null,41.29542666666667,null,41.29542666666667,40.56209333333322,-94.19068444444446,1885.20268503544,1807.450982222222,null,216.0869565217391,null,-14.32346222222223,-145.32124,-0.5543066666666689,null,384.917026666667,null,43.9170266666667,328,51.25036,196.057026666667,384.917026666667,null,43.9170266666667,null,43.9170266666667,10.0370266666666,-105.066306666667,1857.37537210241,1771.90369333333,null,216.086956521739,null,-17.4523066666667,-161.156306666667,-2.54130333333334,null,388.103546666667,null,47.1035466666667,328,54.43688,178.946268888889,388.103546666667,null,47.1035466666667,null,47.1035466666667,-27.0657866666667,-118.285481111111,1823.55164262142,1728.69643555556,null,216.086956521739,null,-21.2553755555556,-180.40362,-7.52724,null,396.099426666667,null,55.0994266666667,328,62.43276,136.010537777778,396.099426666667,null,55.0994266666667,null,55.0994266666667,-120.16724,-151.456128888889,1738.67833817568,1620.27720444444,null,216.086956521739,null,-30.7983511111111,-228.700573333333,-11.86724,0,403.059426666667,0,62.0594266666667,328,69.39276,98.63720444444439,403.059426666667,0,62.0594266666667,0,62.0594266666667,-201.20724,-180.329462222222,1664.80051622959,1525.90387111111,0,216.086956521739,0,-39.1050177777778,-270.740573333333,-15.4839066666667,0,408.859426666667,0,67.85942666666671,328,75.19276000000001,67.4927599999999,408.859426666667,0,67.85942666666671,0,67.85942666666671,-268.740573333333,-204.390573333333,1603.23566460784,1447.25942666667,0,216.086956521739,0,-46.02724,-305.773906666667,-17.7985733333333,0,412.571426666667,0,71.5714266666667,328,78.90476,47.5603155555555,412.571426666667,0,71.5714266666667,0,71.5714266666667,-311.961906666667,-219.789684444444,1563.83415956992,1396.92698222222,0,216.086956521739,0,-50.4574622222222,-328.19524,-14.25424,0,406.887426666667,0,65.8874266666667,328,73.22076,78.081871111111,406.887426666667,0,65.8874266666667,0,65.8874266666667,-245.77924,-196.209795555556,1624.16771415923,1473.99853777778,0,216.086956521739,0,-43.6736844444444,-293.862573333333,-15,0,409,0,68,328,75,69,409,0,68,0,68,-266,-203,1606,1450,0,216,0,-46,-304,-15,0,408,0,67,328,74,74,408,0,67,0,67,-255,-200,1616,1463,0,216,0,-45,-299],[988.5569602,null,null,8.48,4.171918357,null,4.176992248,420,451.7761276,null,4.176992248,null,2.54407278,107.1769922,499.330388,4.173458414,null,1.2393136,570.6514234,null,213.6934264,860.8828455,988.5569602,null,null,8.48,4.171918357,null,4.176992248,420,451.7761276,null,4.176992248,null,2.54407278,107.1769922,499.330388,4.173458414,null,1.2393136,570.6514234,null,213.6934264,860.8828455,988.5569602,null,null,8.48,4.171918357,null,4.176992248,420,451.7761276,null,4.176992248,null,2.54407278,107.1769922,499.330388,4.173458414,null,1.2393136,570.6514234,null,213.6934264,860.8828455,988.5569602,null,null,8.48,4.171918357,null,4.176992248,420,451.7761276,null,4.176992248,null,2.54407278,107.1769922,499.330388,4.173458414,null,1.2393136,570.6514234,null,213.6934264,860.8828455,988.6413400930234,null,null,8.48,4.256195703859721,null,4.261372093023255,420,451.8242095394381,null,4.261372093023255,null,2.544072780203785,107.2613720930233,499.3303879707,4.257766871286348,null,1.2643491,570.6514234112476,null,213.7175348837209,860.9672253430233,988.641340093023,null,null,8.48,4.25619570385972,null,4.26137209302326,420,451.824209539438,null,4.26137209302326,null,2.54407278020378,107.261372093023,499.3303879707,4.25776687128635,null,1.2643491,570.6514234112479,null,213.717534883721,860.967225343023,1015.22479365742,null,null,8.48,4.29689813950423,null,4.30212403100775,420,465.234247120647,null,4.30212403100775,null,2.54407278020378,107.302124031008,510.608627081984,4.29848433216595,null,1.2764402,599.225399863905,null,213.729178294574,925.272106981011,1003.56077858322,null,null,8.48,4.55558352609707,null,4.56112403100775,420,461.340283549777,null,4.56112403100775,null,2.54407278020378,107.561124031008,504.028410049224,4.55726521203059,null,1.3532855,599.0685312609,null,213.803178294574,925.178302593912,993.195325337852,0,0,8.48,4.56848256695378,0,4.57403875968992,420,457.829392774147,0,4.57403875968992,0,2.54407278020378,107.57403875969,498.300671445342,4.57016901454636,0,1.3571173,598.931985255093,0,213.806868217054,924.884119350362,984.539826444745,0,0,8.48,4.56163198391055,0,4.56717984496124,420,454.893585324602,0,4.56717984496124,0,2.54407278020378,107.567179844961,493.527555942107,4.56331590262202,0,1.35508226,598.81819691692,0,213.804908527132,924.621345458773,979.263132517498,0,0,8.48,4.81975371493654,0,4.82561550387597,420,453.16479311594,0,4.82561550387597,0,2.54407278020378,107.825615503876,490.472762020036,4.82153291884731,0,1.43176012,598.745372380489,0,213.878747286822,924.715995532497,987.744953184681,0,0,8.48,4.82589972852121,0,4.83176899224806,420,479.694389689837,0,4.83176899224806,0,2.54407278020378,107.831768992248,495.150415213207,4.82768120122247,0,1.43358586,598.856884951899,0,213.880505426357,924.972945698192,985,0,0,8,5,0,5,420,479,0,5,0,3,108,494,5,0,1,599,0,214,925,987,0,0,8,5,0,5,420,479,0,5,0,3,108,494,5,0,1,599,0,214,925],[18.56960767,null,null,-2.174910463,null,null,null,null,18.56960767,null,-2489.879136,null,null,null,null,null,null,null,null,null,18.56960767,null,18.56960767,null,null,-2.174910463,null,null,null,null,18.56960767,null,-2489.879136,null,null,null,null,null,null,null,null,null,18.56960767,null,18.56960767,null,null,-2.174910463,null,null,null,null,18.56960767,null,-2489.879136,null,null,null,null,null,null,null,null,null,18.56960767,null,18.56960767,null,null,-2.174910463,null,null,null,null,18.56960767,null,-2489.879136,null,null,null,null,null,null,null,null,null,18.56960767,null,17.45685963483097,null,null,-3.167134572921469,null,null,null,null,17.45685963483097,null,-2496.032639014205,null,null,null,null,null,null,null,null,null,17.45685963483097,null,18.1038712962094,null,null,-3.16713457292147,null,null,null,null,18.1038712962094,null,-2493.41103901421,null,null,null,null,null,null,null,null,null,18.1038712962094,null,-2.29843931031636,null,null,-3.59606997056604,null,null,null,null,-2.29843931031636,null,-2503.07539164534,null,null,null,null,null,null,null,null,null,-2.29843931031636,null,19.6908249035057,null,null,-3.59009871213015,null,null,null,null,19.6908249035057,null,-2484.66638001102,null,null,null,null,null,null,null,null,null,19.6908249035057,null,18.233710034972,0,0,-4.1205455031848,0,0,0,0,18.233710034972,0,-2481.16872491055,0,0,0,0,0,0,0,0,0,18.233710034972,0,16.9816879546049,0,0,-2.97505909323376,0,0,0,0,16.9816879546049,0,-2467.85533766086,0,0,0,0,0,0,0,0,0,16.9816879546049,0,16.7435910324722,0,0,-5.67108227703686,0,0,0,0,16.7435910324722,0,-2481.4497297438,0,0,0,0,0,0,0,0,0,16.7435910324722,0,17.9693549968134,0,0,-5.69098647182316,0,0,0,0,17.9693549968134,0,-2487.26424849291,0,0,0,0,0,0,0,0,0,17.9693549968134,0,18,0,0,-6,0,0,0,0,18,0,-2486,0,0,0,0,0,0,0,0,0,18,0,18,0,0,-6,0,0,0,0,18,0,-2487,0,0,0,0,0,0,0,0,0,18,0]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Year<\/th>\n      <th>SEPA Reporting Category<\/th>\n      <th>Generated<\/th>\n      <th>Recycled / Composted<\/th>\n      <th>Incinerated<\/th>\n      <th>Landfilled<\/th>\n      <th>Other diversion<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 1, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 1, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 1, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 1, 3, \",\", \".\", null);\n  }"},{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 1, 3, \",\", \".\", null);\n  }"},{"className":"waste-cat","targets":1},{"className":"dt-right","targets":[0,2,3,4,5,6]},{"name":"Year","targets":0},{"name":"SEPA Reporting Category","targets":1},{"name":"Generated","targets":2},{"name":"Recycled / Composted","targets":3},{"name":"Incinerated","targets":4},{"name":"Landfilled","targets":5},{"name":"Other diversion","targets":6}],"pageLength":5,"dom":"lftpB","lengthMenu":[[5,10,25,50,-1],["5","10","25","50","All"]],"buttons":["copy",{"extend":"csv","title":"table-cm-factor"},{"extend":"excel","title":"table-cm-factor"},{"extend":"pdf","title":"table-cm-factor"},"print"],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render"],"jsHooks":[]}</script>
+                            <small>
+                            <details open>
+                            <summary>
+                            <div class="indicator">
+
+                            </div>
+                            Notes:
+                            </summary>
+                            For the 2024 dataset, the 2021 factors were used in the carbon metric to calculate tCO<sub>2</sub>e. Specific factors for 2024 were not developed as year-on-year changes in factors are relatively minor.
+                            </details>
+                            <p></small></p>
+                            </div>
+                            </div>
+                            <div id="lbl-appendix5" class="section level2">
+                            <h2>Appendix 5</h2>
+                            <div id="waste-composition-for-carbon-metric-2011---2024" class="section level3 unlisted">
+                            <h3 class="unlisted">Waste composition for carbon metric, 2011 - 2024</h3>
+                            <div class="datatables html-widget html-fill-item" id="htmlwidget-d70bd2ac69531f24a233" style="width:100%;height:auto;"></div>
+                            <script type="application/json" data-for="htmlwidget-d70bd2ac69531f24a233">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[[2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2024,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2023,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2022,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2018,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2014,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011],["Animal and mixed food waste","Discarded equipment","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, mixed ferrous and non-ferrous","Mineral waste from construction and demolition","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Textile wastes","Vegetal wastes","Wood wastes","Animal and mixed food waste","Discarded equipment","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, mixed ferrous and non-ferrous","Mineral waste from construction and demolition","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Textile wastes","Vegetal wastes","Wood wastes","Animal and mixed food waste","Discarded equipment","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, mixed ferrous and non-ferrous","Mineral waste from construction and demolition","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Textile wastes","Vegetal wastes","Wood wastes","Animal and mixed food waste","Discarded equipment","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, mixed ferrous and non-ferrous","Mineral waste from construction and demolition","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Textile wastes","Vegetal wastes","Wood wastes","Animal and mixed food waste","Discarded equipment","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, mixed ferrous and non-ferrous","Mineral waste from construction and demolition","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Textile wastes","Vegetal wastes","Wood wastes","Animal and mixed food waste","Discarded equipment","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, mixed ferrous and non-ferrous","Mineral waste from construction and demolition","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Textile wastes","Vegetal wastes","Wood wastes","Animal and mixed food waste","Discarded equipment","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, mixed ferrous and non-ferrous","Mineral waste from construction and demolition","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Textile wastes","Vegetal wastes","Wood wastes","Animal and mixed food waste","Discarded equipment","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, mixed ferrous and non-ferrous","Mineral waste from construction and demolition","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Textile wastes","Vegetal wastes","Wood wastes","Animal and mixed food waste","Discarded equipment","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, mixed ferrous and non-ferrous","Mineral waste from construction and demolition","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Textile wastes","Vegetal wastes","Wood wastes","Animal and mixed food waste","Discarded equipment","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, mixed ferrous and non-ferrous","Mineral waste from construction and demolition","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Textile wastes","Vegetal wastes","Wood wastes","Animal and mixed food waste","Discarded equipment","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, mixed ferrous and non-ferrous","Mineral waste from construction and demolition","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Textile wastes","Vegetal wastes","Wood wastes","Animal and mixed food waste","Discarded equipment","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, mixed ferrous and non-ferrous","Mineral waste from construction and demolition","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Textile wastes","Vegetal wastes","Wood wastes","Animal and mixed food waste","Discarded equipment","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, mixed ferrous and non-ferrous","Mineral waste from construction and demolition","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Textile wastes","Vegetal wastes","Wood wastes","Animal and mixed food waste","Discarded equipment","Glass wastes","Health care and biological wastes","Household and similar wastes","Metallic wastes, mixed ferrous and non-ferrous","Mineral waste from construction and demolition","Paper and cardboard wastes","Plastic wastes","Rubber wastes","Textile wastes","Vegetal wastes","Wood wastes"],[26.06701,2.0375,6.15795,9.19239,6.45085,3.99953,3.20377,14.27861,14.9026,0.00244,5.80452,5.32144,2.58179,26.13094897823284,2.036095315850286,6.15194789766937,9.182696611792595,6.448483792072674,3.995919831170482,3.202119093996626,14.26494782420444,14.88842444015959,0.002435508812716717,5.799327160201932,5.316556456417587,2.580498078029154,25.69980893321142,2.045570882090889,6.192390544249154,9.248076805366555,6.464466384722511,4.020281133042994,3.213231971389387,14.35708505043285,14.98398172500356,0.002452849474654956,5.834357686091573,5.349498484683688,2.589198538851039,23.93,2.08,6.36,9.520000000000001,6.529999999999999,4.12,3.26,14.74,15.38,0,5.98,5.489999999999999,2.62,23.88,2.09,6.36,9.520000000000001,6.529999999999999,4.12,3.26,14.75,15.39,0,5.98,5.489999999999999,2.63,25.29,2.05,6.23,9.31,6.48,4.04,3.22,14.44,15.07,0,5.87,5.38,2.6,25.49,2.05,6.21,9.279999999999999,6.47,4.03,3.22,14.4,15.03,0,5.850000000000001,5.37,2.59,24.72,2.07,6.279999999999999,9.4,6.5,4.08,3.24,14.57,15.2,0,5.91,5.42,2.61,24.24,2.08,6.329999999999999,9.470000000000001,6.52,4.100000000000001,3.25,14.67,15.31,0,5.949999999999999,5.46,2.62,24.75,2.07,6.279999999999999,9.390000000000001,6.5,4.07,3.24,14.56,15.19,0,5.91,5.42,2.61,25.29,2.05,6.23,9.31,6.48,4.04,3.22,14.45,15.08,0,5.87,5.38,2.6,26.2,2.03,6.15,9.17,6.45,3.99,3.2,14.25,14.87,0,5.79,5.31,2.58,23.86,2.09,6.370000000000001,9.529999999999999,6.529999999999999,4.12,3.26,14.75,15.39,0,5.98,5.489999999999999,2.63,21.2,2.14,6.61,9.93,6.63,4.27,3.330000000000001,15.32,15.98,0,6.2,5.69,2.68]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Year<\/th>\n      <th>Composition - waste category<\/th>\n      <th>Composition (%)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"className":"waste-cat","targets":1},{"className":"dt-right","targets":[0,2]},{"name":"Year","targets":0},{"name":"Composition - waste category","targets":1},{"name":"Composition (%)","targets":2}],"pageLength":5,"dom":"lftpB","lengthMenu":[[5,10,25,50,-1],["5","10","25","50","All"]],"buttons":["copy",{"extend":"csv","title":"table-cm-waste-comp"},{"extend":"excel","title":"table-cm-waste-comp"},{"extend":"pdf","title":"table-cm-waste-comp"},"print"],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script>
+                            <small>
+                            <details open>
+                            <summary>
+                            <div class="indicator">
+
+                            </div>
+                            Notes:
+                            </summary>
+                            The average waste composition across all Scottish authorities was applied to each authority. It should be noted that the waste composition for authorities can vary, depending on the amount of source segregated collections undertaken in a local authority area. Therefore, care should be taken when comparing local authority carbon metric data.
+                            </details>
+                            <p></small></p>
+                            <style type="text/css">
+
+                            .gloss-item{
+
+                            }
+
+
+                            .glossary {
+                            }
+
+                            .term{
+
+                            font-weight: bold;
+                            /*  font-size: 18px; */
+                            }
+
+
+                            .definition {
+                            }
+
+                            .definition::before {
+                              content: " - ";
+                            }
+
+                            </style>
+                            <p><br></p>
+                            </div>
+                            </div>
+                            <div id="lbl-appendix6" class="section level2">
+                            <h2>Appendix 6. Glossary</h2>
+                            <div id="glossary-of-terms" class="section level3 unlisted">
+                            <h3 class="unlisted">Glossary of terms</h3>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            Anaerobic digestion
+                            </span>
+                            <span class="definition">
+                            a process commonly used to break down biodegradable wastes (e.g. food and green wastes) in the absence of oxygen.</p>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            BSI PAS 100 / 110
+                            </span>
+                            <span class="definition">
+                            a national compost/digestate benchmark that specifies the minimum requirements for the process of composting/anaerobic digestion, the selection of material from which compost/digestate is made, and standards for the compost/digestate product quality. PAS 100 is applicable to composting facilities while PAS 110 is applicable to anaerobic digestion facilities. The use of this standard to improve the quality of compost/digestate in Scotland became Scottish Government policy in 2011, with 2014 being the first year it was applied to the household waste official statistics.</p>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            Carbon metric
+                            </span>
+                            <span class="definition">
+                            a measure of the whole-life carbon impacts of waste, from resource extraction and manufacturing emissions, right through to waste management emissions, regardless of where in the world these impacts occur. The carbon impact of waste was developed by <a href="https://www.zerowastescotland.org.uk/resources/carbon-metric-publications">Zero Waste Scotland</a>.</p>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            Compost like output
+                            </span>
+                            <span class="definition">
+                            partially digested waste outputs generated from the biological treatment of residual municipal solid wastes at a process that involves both mechanical and biological treatment. Outputs typically do not conform to composting standards such as PAS 100/110.</p>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            Household waste
+                            </span>
+                            <span class="definition">
+                            waste generated by households (see full definition in Paragraph 1.2 of the Zero Waste Plan - guidance for local authorities on the WasteDataFlow web site).</p>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            In-vessel composting
+                            </span>
+                            <span class="definition">
+                            A group of methods which confine the composting of organic waste materials within a building, container, or vessel.</p>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            Kerbside Collection
+                            </span>
+                            <span class="definition">
+                            a service provided by local authorities to households, of collecting and disposing of household waste and recyclables, which are presented to the householdholders on the kerb. It includes individual household waste containers, as well as communal bin stores provided to multiple tenants.</p>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            Mechanical biological treatment
+                            </span>
+                            <span class="definition">
+                            a type of waste processing plant that combines sorting and biological treatment.</p>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            Materials recovery facility
+                            </span>
+                            <span class="definition">
+                            A waste management plant which separates recyclable materials from mixed wastes.</p>
+                            </div>
+                            <div class="gloss-item">
+                            <span class="term">
+                            Other diversion from landfill
+                            </span>
+                            <span class="definition">
+                            describes the fate of waste material not recycled or landfilled. It includes:
+                            <ul>
+                            <li>
+                            household waste treated by incineration, including any incinerator bottom ash (excluding metals) that is recycled,
+                            </li>
+                            <li>
+                            weight loss that occurs during the composting/digestion of waste to PAS 100/110 and non-PAS 100/110 compost/digestate where the output is landfilled,
+                            <li>
+                            Compost-like outputs that is not landfilled,
+                            </li>
+                            <li>
+                            weight loss that occurs during mechanical and biological treatment processes (e.g. production of CLO and RDF),
+                            </li>
+                            <li>
+                            from 2014, any waste composted/digested that has not reached the quality standards set by PAS 100/110 and is not landfilled.
+                            </li>
+                            <ul>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            Segregated recyclate
+                            </span>
+                            <span class="definition">
+                            waste materials collected for recycling separately from residual waste collections. This includes collection of single materials as well as co-mingled materials.</p>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            tCO<sub>2</sub>e
+                            </span>
+                            <span class="definition">
+                            tonnes of carbon dioxide equivalent, which is a measure that allows the comparison of greenhouse gases relative to one unit of CO2.</p>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            Waste composted
+                            </span>
+                            <span class="definition">
+                            waste recycled by biological treatment through composting at a composting plant or through digestion at an anaerobic digestion facility.</p>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            Waste generated
+                            </span>
+                            <span class="definition">
+                            waste collected by or on behalf of local authorities that is managed within the relevant reporting year. This might include treated waste stockpiled prior to final management.</p>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            Waste landfilled</span>
+                            <span class="definition">
+                            includes all household waste that is disposed of at a landfill site instead of being recycled or diverted from landfill through other methods. It also includes incinerator ash that is landfilled, plus any recycling and composting rejects that occur during collection, sorting or further treatment that go to landfill.</p>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            Waste managed
+                            </span>
+                            <span class="definition">
+                            includes all wastes recycled, diverted from landfill and landfilled within the relevant reporting year. This includes stockpiled waste from a previous year sent to final management but excludes treated waste stockpiled prior to final management.</p>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            Waste recycled
+                            </span>
+                            <span class="definition">
+                            includes recyclable materials that have been recycled or prepared for reuse? and biodegradable materials that have been composted or digested. The amount of waste recycled as defined above is that accepted by the reprocessor facility. As such it excludes any recycling rejects that occur during collection, sorting or further treatment. From 2015, the composting figures do not include any waste composted that has not reached the quality standards set by PAS 100/110.</p>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            WasteDataFlow
+                            </span>
+                            <span class="definition">
+                            A web-based reporting tool used by local authorities to report the wastes they collect and manage.</p>
+                            </div>
+                            <p><br></p>
+                            <div id="lbl-appendix7" class="section level2">
+                            <h2>Appendix 7. Acronyms</h2>
+                            <div id="acronyms" class="section level3 unlisted">
+                            <h3 class="unlisted">Acronyms</h3>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            CLO
+                            </span>
+                            <span class="definition">
+                            Compost-Like Output</p>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            Defra
+                            </span>
+                            <span class="definition">
+                            Department of the Environment Food and Rural Affairs</p>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            EWC
+                            </span>
+                            <span class="definition">
+                            European Waste Catalogue</p>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            EWC-STAT
+                            </span>
+                            <span class="definition">
+                            European Waste Catalogue for Statistics</p>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            MBT
+                            </span>
+                            <span class="definition">
+                            Mechanical biological treatment</p>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            MRF
+                            </span>
+                            <span class="definition">
+                            Materials recovery facility</p>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            PAS
+                            </span>
+                            <span class="definition">
+                            Publicly Available Specification for Composted Materials</p>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            SEPA
+                            </span>
+                            <span class="definition">
+                            Scottish Environment Protection Agency</p>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            WFAS
+                            </span>
+                            <span class="definition">
+                            Waste From All Sources</p>
+                            </div>
+                            <div class="gloss-item">
+                            <p><span class="term">
+                            WDF
+                            </span>
+                            <span class="definition">
+                            WasteDataFlow</p>
+                            </div>
+                            <div class="caption-notes">
+                            <p><small>
+                            For information on accessing this document in an alternative format or language please contact SEPA by email at <a href="mailto:equalities@sepa.org.uk" class="email">equalities@sepa.org.uk</a>.</p>
+                            <p>If you are a user of British Sign Language (BSL) the Contact Scotland BSL service gives you access to an online interpreter enabling you to communicate with us using sign language.
+                            <a href="http://contactscotland-bsl.org/" class="uri">http://contactscotland-bsl.org/</a></p>
+                            <p></small></p>
+                            </div>
+                            </div>
+                            </div>
+                            <div id="lbl-enquiries" class="section level2">
+                            <h2>Enquiries</h2>
+                            <p>For further contact details please see <a href="contact.html" target="_blank">contact information</a>.</p>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="footnotes footnotes-end-of-document">
+                            <hr />
+                            <ol>
+                            <li id="fn1"><p>Net incineration is the gross inputs, less outputs such as bottom ash and metals which are disposed or recycled<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+                            </ol>
+                            </div>
+              <!-- PF 25/9/25 
+              tocify-extend-page removes the extra space b/w the main body and the footnote when
+              there is a floating TOC -->
+              <div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>
+            </div>
+            
+            <!-- Content to be included after the main body -->
+                        
+                        
+          </main> <!-- /#main-content -->
+        </div> <!-- /.ds_wrapper -->
+      </div> <!-- /#body-wrapper -->
+    </div> <!-- /.ds_page__middle -->
+    
+    <!-- "Back to top" floating button -->
+    <nav data-module="ds-back-to-top">
+      <div class="ds_back-to-top">
+        <a class="ds_back-to-top__button" href="#page-top">
+          Back to top
+        </a>
+      </div>
+    </nav>
+    
+    <!-- Page bottom section -->
+    <!-- Contains: Footer; scripts -->
+    <div class="ds_page__bottom">
+      
+      <!-- Site footer -->
+      <footer class="ds_site-footer ds_reversed">
+        <div class="ds_wrapper">
+          <div class="ds_site-footer__content">
+            
+            <!-- Links -->
+            <!-- Links are referred to as "items" in the Design System vocabulary -->
+            <!-- This section should contain links to accessibility and privacy statements, cookie controls, and contact information -->
+                          <ul class="ds_site-footer__site-items">
+                                  <li class="ds_site-items__item">
+                      <a href="accessibility.html">
+                                          Accessibility
+                                          </a>
+                  </li>
+                                  <li class="ds_site-items__item">
+                      <a href="contact.html">
+                                          Contact
+                                          </a>
+                  </li>
+                              </ul>
+                        
+            <!-- Copyright statement -->
+            <div class="ds_site-footer__copyright">
+              <a class="ds_site-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">
+                <img src="template_libs/sg/images/logos/ogl.svg" alt="Open Government License Logo" />
+              </a>
+              <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>, except for graphic assets and where otherwise stated.</p>
+              <p>&copy; Crown Copyright</p>
+            </div>
+            
+          </div>
+        </div>
+      </footer>
+      
+    </div> <!-- /.ds_page__bottom -->
+    
+  </div> <!-- /.ds_page -->
+  
+  <div id="embedded-scripts">
+    
+    <!-- MathJax -->
+    <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    
+    <!-- Navbar -->
+          <script>
+        // Manage active state of menu based on current page
+        $(document).ready(function () {
+          // Active menu anchor
+          href = window.location.pathname
+          href = href.substr(href.lastIndexOf('/') + 1)
+          if (href === "")
+            href = "index.html";
+          var menuAnchor = $('a[href="' + href + '"]');
+
+          // Mark it active
+          menuAnchor.parent().addClass('active');
+
+          // If it's got a parent navbar menu, mark it active as well
+          menuAnchor.closest('li.dropdown').addClass('active');
+        });
+      </script>
+        
+    <!-- Tabsets -->
+    <script>
+      $(document).ready(function () {
+        window.buildTabsets("TOC");
+      });
+    </script>
+    
+    <!-- Tocify -->
+        <script>
+      $(document).ready(function () {
+    
+      // move toc-ignore selectors from section div to header
+      $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+    
+      // establish options
+      var options = {
+        selectors: "",
+        theme: "bootstrap3",
+        context: '.toc-content',
+        hashGenerator: function (text) {
+          return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+        },
+        ignoreSelector: ".toc-ignore",
+        scrollTo: 0
+      };
+    
+              options.showAndHide = false;
+          
+              options.smoothScroll = false;
+          
+    // these updated by PF
+    // see http://gregfranko.com/jquery.tocify.js/docs/jquery.tocify.html
+      options.smoothScroll = false
+      options.smoothScrollSpeed = 'fast'
+      options.showEffect = 'none'
+      options.hideEffect = 'none'
+      // Tocify
+        var toc = $("#TOC").tocify(options).data("toc-tocify");
+        
+      });
+    </script>
+    
+    <style type="text/css">
+              .tocify-subheader {
+          display: inline;
+        }
+        .tocify-subheader .tocify-item {
+          font-size: 1em;
+        }
+            
+      .ds_side-navigation ul {
+        list-style-type: none;
+      }
+    </style>
+    
+  </div> <!-- /#embedded-scripts -->
+  
+</body>
+
+</html>
